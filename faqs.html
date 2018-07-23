@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <meta name="keywords" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <title>Page Blank</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <!--Tint Titlebar for Chrome-->
+    <meta name="theme-color" content="#3F51B5"/>
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link rel="stylesheet" href="css/custom/nuevo.css">
+    <link rel="stylesheet" href="css/custom/tema-indigo.css">
+    <link rel="stylesheet" href="css/custom/search.css">
+    <!-- Material-icons-->
+    <link href="fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+</head>
+
+<body>
+
+    <!-- Start Page Loading -->
+    <div class="preloader">
+        <div class="statusl">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Loading -->
+
+
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color">
+                <div class="nav-wrapper row">
+                   
+                    <ul class="left col s3">
+                        <li>
+                            <h1 class="logo-wrapper">
+                      <a href="#" class="brand-logo darken-1">
+                      <object type="image/svg+xml" data="images/logocredito.svg"></object>
+                      </a> <span class="logo-text">Materialize</span></h1>
+                        </li>
+                    </ul>
+                    <!--barra de busqueda en el header-->
+                    <!--<div class="header-search-wrapper hide-on-med-and-down">
+                        <i class="material-icons">search</i>
+                        <input type="text" name="Search" class="header-search-input"
+                        placeholder="Realice una consulta por Nombre o por Identidad"/>
+                    </div>-->
+                    <form class="left search col s6 hide-on-med-and-down">
+                            <div class="input-field">
+                                <input id="search" type="search" placeholder="Realice una Consulta" autocomplete="off">
+                                <label for="search"><i class="material-icons search-icon">search</i></label>
+                                <!--<i class="material-icons">close</i>-->
+                                <a href="#" onClick="limpiarfields();" class="close-search"><i class="material-icons clear-icon">close</i></a>
+                            </div>
+                            
+                    </form>
+                    <ul class="right hide-on-med-and-down col s3 nav-right-menu">
+                        <!--<li><a class="perfil-on-nav-button" href="#!" data-activates="perfil-on-nav">Victor Alvarado<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li class="waves-effect waves-light"><a href="">Sass</a></li>
+                        <li class="waves-effect waves-light"><a href="">Components</a></li>-->
+                        <!-- Dropdown Trigger -->
+                        <li><a href="#" class="brand-logo right logo2"><img src="images/logo-presidencia.png" alt=""></a></li>
+                    </ul>
+                    <div class="col col s8 m8 l8">
+                        <ul id="perfil-on-nav" class="dropdown-content">
+                            <li><a href="#"><i class="material-icons">face</i>
+                        <span class="option-user-select">Perfil</span>
+                        </a>
+                            </li>
+                            <li><a href="#"><i class="material-icons">account_circle</i>
+                        <span class="option-user-select">Cuenta</span>
+                        </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="material-icons">home</i>
+                        <span class="option-user-select">Salir</span>
+                        </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+            <aside id="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                    <li>
+                        <div class="userView">
+                            <div class="background">
+                                <img class="responsive-img" src="images/2b.jpg">
+                            </div><br><br><br>
+                            <!--código para agregar datos del usuario al sideNav, en esta pagina no es necesario-->
+                            <!--<a href="#!user"><img class="circle" src="../images/user.png"></a>
+                            <a href="#!name" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" data-activates="profile-dropdown"><i class="material-icons right white-text">arrow_drop_down</i><span class="white-text name">John Doe</span></a>
+                            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                            <ul id="profile-dropdown" class="dropdown-content">
+                                <li><a href="#"><i class="material-icons">face</i> Perfil</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">account_circle</i> Cuenta</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">help</i> Ayuda</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="material-icons">keyboard_backspace</i> Salir</a>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </li>
+                    <li onclick="toggleDivs('iniciar_sesion'); hideMenuOnClick()"><a href="#iniciar_sesion" class="waves-effect waves-blue"><i class="material-icons">account_circle</i>Inicio de Sesión</a></li>
+
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+
+                    <li><a class="subheader">Tipos de Consultas</a></li>
+                    <li onclick="toggleDivs('consultas'); hideMenuOnClick()"><a href="#consultas" class="waves-effect waves-blue" href="#!"><i class="material-icons">search</i>Consulta General</a></li>
+                    <li onclick="toggleDivs('censo'); hideMenuOnClick()"><a href="#censo" class="waves-effect waves-blue" href="#!"><i class="material-icons">search</i>Consulta al Censo</a></li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse  waves-effect waves-blue hide-on-large-only">
+                    <i class="material-icons white600 md-36">menu</i>
+                </a>
+
+            </aside>
+            <!-- END LEFT SIDEBAR NAV-->
+
+
+            <!-- START CONTENT -->
+            <section id="content">
+
+                <!--breadcrumbs start-->
+                <div id="breadcrumbs-wrapper">
+                    <!-- Search for small screen -->
+                    <div class="header-search-wrapper grey hide-on-large-only">
+                        <i class="material-icons active">search</i>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <!--<h5 class="breadcrumbs-title">Blank Page</h5>-->
+                                <ol class="breadcrumbs">
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li class="active">Preguntas Frecuentes</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--breadcrumbs end-->
+
+
+                <!--start container-->
+                <div class="container">
+                    <div class="section">
+                        <div class="row">
+                    <div class="col s12">
+                        <div class="page-title">PREGUNTAS FRECUEBTES (FAQ).</div>
+                    </div>
+                    <div class="col s12 m12 l8">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Preguntas y Problemas Frecuentes Solucionadas.</span>
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                        <div class="collapsible-header">1. Proin vehicula luctus libero sit amet pellentesque?</div>
+                                        <div class="collapsible-body"><p>Curabitur a lectus at risus porttitor facilisis. Duis ac fermentum mi, consequat finibus erat. Proin hendrerit, ex et gravida hendrerit, mauris quam lacinia nunc, et laoreet mi risus quis risus.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">2. Praesent accumsan et nisi gravida suscipit?</div>
+                                        <div class="collapsible-body"><p>Vestibulum laoreet nisi vel massa rutrum ullamcorper. Phasellus nec turpis lacus. Suspendisse pulvinar ut ligula ut egestas. Quisque posuere viverra enim sagittis pellentesque.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">3. Nulla eget turpis non risus dignissim cursus eget sed dolor?</div>
+                                        <div class="collapsible-body"><p>Mauris interdum erat ac sapien fringilla, at sollicitudin enim finibus.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">4. Morbi placerat sapien vitae lacus auctor?</div>
+                                        <div class="collapsible-body"><p>Proin non facilisis lorem, a finibus nulla. Donec sed eleifend nulla, nec dictum enim. Sed tempus non ex id pulvinar. Nam mollis in dolor quis convallis. Donec vulputate leo nibh, ac ultrices ex auctor eu. Praesent sit amet velit at dui tristique tincidunt.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">5. Aenean sit amet metus et magna viverra venenatis ac id lacus?</div>
+                                        <div class="collapsible-body"><p>Nunc vel risus quis sem posuere tincidunt. Vestibulum dignissim orci ut erat ullamcorper, pharetra dictum lorem rutrum.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">6. Curabitur bibendum et magna id condimentum?</div>
+                                        <div class="collapsible-body"><p>Maecenas nulla nunc, vehicula non ultricies in, maximus sed urna. Proin nibh enim, consequat vel metus et, auctor varius ex. Vestibulum facilisis leo non tellus commodo, feugiat condimentum urna pretium.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">7. Pellentesque porta dictum purus non molestie?</div>
+                                        <div class="collapsible-body"><p>Maecenas elementum lacinia neque, id mollis lorem aliquam at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla mi, pharetra eu nulla eu, consectetur convallis turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend sollicitudin enim, eget placerat odio pellentesque ut. Sed vel rhoncus leo, sit amet luctus lorem. Cras vitae dolor mi.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">8. Class aptent taciti sociosqu ad litora torquent per conubia nostra?</div>
+                                        <div class="collapsible-body"><p>Cras rutrum consectetur velit eget porta. Phasellus non odio id ligula mollis tempor eu et diam.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">9. Quisque bibendum mauris a rhoncus eleifend?</div>
+                                        <div class="collapsible-body"><p>Sed tincidunt dapibus lorem, eget iaculis massa ultrices a. Sed ornare neque sit amet mauris feugiat iaculis. In velit nisi, egestas id mauris nec, interdum pellentesque sem.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">10. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet?</div>
+                                        <div class="collapsible-body"><p>Phasellus nec turpis lacus. Suspendisse pulvinar ut ligula ut egestas. Quisque posuere viverra enim sagittis pellentesque.</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">11. Nam finibus interdum ipsum non pretium?</div>
+                                        <div class="collapsible-body"><p>Sed ac nunc sed ligula ultrices suscipit. Curabitur nec pharetra nulla, sit amet aliquet tortor. Proin consequat ultrices euismod. Quisque at nibh euismod, faucibus arcu a, porta orci. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Contactanos!</span>
+                                <p>¿Tienes Preguntas?, ¿Algún Problema?, ¿No encuentraste la Solución o la respuesta? Escribenos un correo electronico</p>
+                                <form>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="email" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="texthelp" type="text" class="validate">
+                                            <label for="texthelp">Comentario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <a href="#" class="btn waves-effect waves-light col s12">Enviar</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title black-text">Temas Populares</span>
+                                <div class="chip m-b-xs">
+                                    Consultas
+                                    <i class="material-icons close">close</i>
+                                </div>
+                                <div class="chip m-b-xs">
+                                    Iniciar Sesión
+                                    <i class="material-icons close">close</i>
+                                </div>
+                                <div class="chip m-b-xs">
+                                    Reportes
+                                    <i class="material-icons close">close</i>
+                                </div>
+                                <div class="chip m-b-xs">
+                                    Cartera en Mora
+                                    <i class="material-icons close">close</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                    <!-- Floating Action Button -->
+                    <div class="fixed-action-btn toolbar">
+                        <a class="btn-floating btn-large red waves-effect waves-light">
+                            <i class="large material-icons">mode_edit</i>
+                        </a>
+                        <ul>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Floating Action Button -->
+                </div>
+                <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+
+
+        </div>
+        <!-- END WRAPPER -->
+
+    </div>
+    <!-- END MAIN -->
+
+
+    <!-- START FOOTER -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <span>Copyright © 2016 <a class="grey-text text-lighten-4" href="#" target="_blank">Credito Solidario</a> All rights reserved.</span>
+                <span class="right"> Desarrollado por <a class="grey-text text-lighten-4" href="#">Credito Solidario</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+
+
+    <!-- ================================================
+    Scripts
+    ================================================ -->
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <!--prism
+    <script type="text/javascript" src="js/prism/prism.js"></script>-->
+    <!--scrollbar-->
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script src="js/custom-script.js"></script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+
+
+</body>
+
+</html>

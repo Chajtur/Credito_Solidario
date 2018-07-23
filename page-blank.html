@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <meta name="keywords" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <title>Page Blank</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <!--Tint Titlebar for Chrome-->
+    <meta name="theme-color" content="#3F51B5" />
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link rel="stylesheet" href="css/custom/nuevo.css">
+    <link rel="stylesheet" href="css/custom/tema-indigo.css">
+    <link rel="stylesheet" href="css/custom/search.css">
+    <!-- Material-icons-->
+    <link href="fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+    
+    <link rel="stylesheet" href="gerencia/metas/c3.css">
+</head>
+
+<body>
+
+    <!-- Start Page Loading -->
+    <div class="preloader">
+        <div class="statusl">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Loading -->
+
+
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color">
+                <div class="nav-wrapper row">
+
+                    <ul class="left col s3">
+                        <li>
+                            <h1 class="logo-wrapper">
+                                <a href="#" class="brand-logo darken-1">
+                                    <object type="image/svg+xml" data="images/logocredito.svg"></object>
+                                </a> <span class="logo-text">Materialize</span></h1>
+                        </li>
+                    </ul>
+                    <!--barra de busqueda en el header-->
+                    <!--<div class="header-search-wrapper hide-on-med-and-down">
+                        <i class="material-icons">search</i>
+                        <input type="text" name="Search" class="header-search-input"
+                        placeholder="Realice una consulta por Nombre o por Identidad"/>
+                    </div>-->
+                    <div class="left search col s6 hide-on-med-and-down">
+                        <div class="input-field">
+                            <input id="search1" type="search" placeholder="Realice una Consulta" autocomplete="off">
+                            <label for="search1"><i class="material-icons search-icon">search</i></label>
+                            <!--<i class="material-icons">close</i>-->
+                            <a href="#" onClick="limpiarfields();" class="close-search"><i class="material-icons clear-icon">close</i></a>
+                        </div>
+
+                    </div>
+                    <ul class="right hide-on-med-and-down col s3 nav-right-menu">
+                        <!--<li><a class="perfil-on-nav-button" href="#!" data-activates="perfil-on-nav">Victor Alvarado<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li class="waves-effect waves-light"><a href="">Sass</a></li>
+                        <li class="waves-effect waves-light"><a href="">Components</a></li>-->
+                        <!-- Dropdown Trigger -->
+                        <li>
+                            <a href="#" class="brand-logo right logo2"><img src="images/logo-presidencia.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <div class="col col s8 m8 l8">
+                        <ul id="perfil-on-nav" class="dropdown-content">
+                            <li><a href="#"><i class="material-icons">face</i>
+                        <span class="option-user-select">Perfil</span>
+                        </a>
+                            </li>
+                            <li><a href="#"><i class="material-icons">account_circle</i>
+                        <span class="option-user-select">Cuenta</span>
+                        </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="material-icons">home</i>
+                        <span class="option-user-select">Salir</span>
+                        </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+            <aside id="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                    <li>
+                        <div class="userView">
+                            <div class="background">
+                                <img class="responsive-img" src="images/2b.jpg">
+                            </div>
+                            <a href="#!user"><img class="circle" src="images/user.png"></a>
+                            <a href="#!name" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" data-activates="profile-dropdown"><i class="material-icons right white-text">arrow_drop_down</i><span class="white-text name">John Doe</span></a>
+                            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                            <ul id="profile-dropdown" class="dropdown-content">
+                                <li><a href="#"><i class="material-icons">face</i> Perfil</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">account_circle</i> Cuenta</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">help</i> Ayuda</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="material-icons">keyboard_backspace</i> Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#!" class="waves-effect waves-light"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                    <li><a href="#!" class="waves-effect waves-light">Second Link</a></li>
+
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-light">
+                                    <i class="material-icons">collections</i> Menejar Imagenes</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Albumes</a>
+                                        </li>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Galeria</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-light">
+                                    <i class="material-icons">collections</i> Menejar Imagenes</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Albumes</a>
+                                        </li>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Galeria</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-light">
+                                    <i class="material-icons">collections</i> Menejar Imagenes</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Albumes</a>
+                                        </li>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Galeria</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-light">
+                                    <i class="material-icons">collections</i> Menejar Imagenes</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Albumes</a>
+                                        </li>
+                                        <li><a onclick="hideMenuOnClick()" href="#"> Galeria</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li><a class="subheader">Subheader</a></li>
+                    <li><a class="waves-effect waves-light" href="#!">Third Link With Waves</a></li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse  waves-effect waves-light hide-on-large-only">
+                    <i class="material-icons white600 md-36">menu</i>
+                </a>
+
+            </aside>
+            <!-- END LEFT SIDEBAR NAV-->
+
+
+            <!-- START CONTENT -->
+            <section id="content">
+
+                <!--breadcrumbs start-->
+                <div id="breadcrumbs-wrapper">
+                    <!-- Search for small screen -->
+                    <div class="header-search-wrapper grey hide-on-large-only">
+                        <i class="material-icons active">search</i>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <!--<h5 class="breadcrumbs-title">Blank Page</h5>-->
+                                <ol class="breadcrumbs">
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="#">Paginas</a></li>
+                                    <li class="active">Pagina en blanco</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--breadcrumbs end-->
+
+
+                <!--start container-->
+                <div class="container">
+                    <div class="section">
+
+                        <p class="caption">Esta es una pagina en blanco que servirá como base.</p>
+                        <div class="divider"></div>
+
+                        <div class="row">
+                            <div class="col s12 m8 l8">
+                                <div id="work-collections" class="">
+                                    <div class="row">
+                                        <div class="col s12 m12 l12">
+                                            <!--<h4 class="header">Lista de usuarios registrados</h4>-->
+                                            <ul id="projects-collection" class="collection z-depth-1">
+                                                <li class="collection-item avatar">
+                                                    <i class="material-icons circle light-blue ">list</i>
+                                                    <span class="collection-header">Asesores</span>
+                                                    <p>registrados en la App</p>
+                                                    <div class="secondary-content actions">
+                                                        <input class="search-expandida fuzzy-search" type="search" placeholder="buscar usuario" />
+                                                        <a class="waves-effect waves-light icon-collapse-search btn-flat nopadding">
+                                                            <i class="material-icons center-align">search</i>
+                                                        </a>
+                                                        <form action="" method="" id="">
+                                                            <input type="hidden" name="user_id" id="hidden_id" value="">
+                                                            <button type="submit" class="waves-effect btn-flat nopadding"><i class="material-icons">description</i></button>
+                                                        </form>
+                                                    </div>
+                                                    <!--<a href="#" class="secondary-content waves-effect waves-green"><i class="material-icons">search</i></a>-->
+                                                </li>
+                                                <li class="collection-item">
+                                                    <div class="row">
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">Departamento</p>
+                                                        </div>
+                                                        <div class="col s8 m3 l3">
+                                                            <p class="collections-title">Créditos/Morosos</p>
+                                                        </div>
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">Desembolsado</p>
+                                                        </div>
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">Saldo/C. en Mora</p>
+                                                        </div>
+
+                                                    </div>
+                                                </li>
+                                                <li class="collection-item">
+                                                    <div class="row">
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">Atlantida</p>
+                                                            <span class="task-cat grey darken-3 collections-content">0101</span>
+                                                        </div>
+                                                        <div class="col s8 m3 l3">
+                                                            <p class="collections-title">31</p>
+                                                            <span class="task-cat purple darken-3 collections-content">10</span>
+                                                        </div>
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">10,000</p>
+                                                            <span class="task-cat grey darken-3 collections-content"></span>
+                                                        </div>
+                                                        <div class="col s3 hide-on-small-only">
+                                                            <p class="collections-title">45,000.00</p>
+                                                            <span class="task-cat grey darken-3 collections-content">11,000.00</span>
+                                                        </div>
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="work-collapsible">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <ul id="projects-collection" class="collapsible" data-collapsible="accordion">
+                                                <li class="collapsible-item-header avatar">
+                                                    <i class="material-icons circle light-blue">list</i>
+                                                    <span class="collapsible-title-header">Asesores
+                                        <div class="secondary-content actions">
+                                            <input class="search-expandida fuzzy-search" type="search" placeholder="buscar usuario" />
+                                            <a class="waves-effect waves-light icon-collapse-search btn-flat nopadding">
+                                                <i class="material-icons center-align">search</i>
+                                            </a>    
+                                            <form action="" method="" id="">
+                                                    <input type="hidden" name="user_id" id="hidden_id" value="">
+                                                    <button type="submit" class="waves-effect btn-flat nopadding"><i class="material-icons">description</i></button>
+                                            </form>
+                                        </div>
+                                    </span>
+                                                    <p>registrados en la App</p>
+
+                                                    <!--<a href="#" class="secondary-content waves-effect waves-green"><i class="material-icons">search</i></a>-->
+                                                </li>
+                                                <li>
+
+                                                    <div class="collapsible-header-titles  sin-icon">
+                                                        <div class="row">
+                                                            <div class="col s6 m3 l3">
+                                                                <p class="collapsible-title">Departamento</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3 ">
+                                                                <p class="collapsible-title">Capital en Mora</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3 hide-on-small-only">
+                                                                <p class="collapsible-title">hola mundo</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3 hide-on-small-only">
+                                                                <p class="collapsible-title">hola mundo</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header sin-icon">
+                                                        <div class="row">
+                                                            <div class="col s6 m3 l3">
+                                                                <p class="collapsible-content truncate">Atlantida</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3">
+                                                                <p class="collapsible-content truncate">L. 185,789.00</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3 hide-on-small-only light truncate">
+                                                                <p class="collapsible-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta in maiores. Nihil at, earum quibusdam dolor delectus modi? Cupiditate cumque distinctio iure at praesentium accusantium quisquam, reiciendis consequatur dolorem!</p>
+                                                            </div>
+                                                            <div class="col s6 m3 l3 hide-on-small-only light truncate">
+                                                                <p class="collapsible-content">#######</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="collapsible-header sin-icon"><i class="material-icons">whatshot</i>Third</div>
+                                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l4">
+                                <ul class="collection with-header z-depth-1">
+                                    <li class="collection-header">
+                                        <h5>###</h5>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Cantidad Total de Créditos<span class="secondary-content">###</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Monto Total Desembolsado<span class="secondary-content">####</span></div>
+                                    </li>
+                                </ul>
+
+                                <ul class="collection with-header z-depth-1">
+                                    <li class="collection-header">
+                                        <h5>Historico</h5>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Cantidad Total de Créditos<span class="secondary-content">###</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Monto Total Desembolsado<span class="secondary-content">###</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Beneficiarios<span class="secondary-content">###</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Saldo Capital<span href="#!" class="secondary-content">#####</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>Capital en Mora<span class="secondary-content">###</span></div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>% de Mora<span class="secondary-content">###</span></div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12 l3">
+                                <div class="card ">
+                                    <div id="cMora" class="card-content blue">
+                                        <span class="card-title white-text">Porcentaje Mora</span>
+                                        <!--<div class="divider"></div><br>-->
+                                        <!--<div id="chartcolocacion"></div>-->
+                                        <div class="chartc3" id="chart4"></div>
+                                    </div>
+                                    <div class="card-action">
+                                        <div class="row" style="padding-left: 15px; padding-right: 10px">
+                                            <span class="grey-text">Total de meta: 
+                                            <span class="metamensual" id="cMoraMonto">1,000,000.00</span>
+                                            <a class="botonEditarMetaCoor" href="#!" id="modalmetamora"><i class="material-icons right grey-text">more_vert</i></a>
+                                            </span>
+                                        </div>
+                                        <div class="row" style="padding-left: 15px; padding-right: 10px">
+                                            <h3 id="moraAFecha" class="montoafecha blue-text" style=":;">1,550,500.00</h3>
+                                            <i class="material-icons grey-text">trending_up</i>
+                                            <span class="grey-text" style="font-size:14px">recuperacion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12 m12 l3">
+                                <div class="card stats-card">
+                                   <div class="graph-card">
+                                       <span class="graph-card-title">Meta de Recuperación</span>
+                                       <div class="chartc3" id="chart1"></div>
+                                   </div>
+                                    <div class="card-content">
+                                       <div class="card-options">
+                                            <ul>
+                                                <li><a href="javascript:void(0)"><i class="material-icons">more_vert</i></a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="card-title">Comparación a la fecha</span>
+                                        <span class="stats-counter"><span class="counter">L. 350,254.00</span><small>úllt. mes</small></span>
+                                        <div class="percent-info green-text tooltipped" data-position="top" data-delay="50" data-tooltip="Meta a cumplir">L. 1,250,000.00 <i class="material-icons">trending_up</i></div>
+                                    </div>
+                                    <div class="progress stats-card-progress tooltipped" data-position="top" data-delay="50" data-tooltip="50%">
+                                        <div class="determinate "></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col s12 m12 l3">
+                                <div class="card stats-card">
+                                   <div class="graph-card">
+                                       <span class="graph-card-title">Meta de Recuperación</span>
+                                       <div class="chartc3" id="chart2"></div>
+                                   </div>
+                                    <div class="card-content">
+                                       <div class="card-options">
+                                            <ul>
+                                                <li><a href="javascript:void(0)"><i class="material-icons">more_vert</i></a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="card-title">Comparación a la fecha</span>
+                                        <span class="stats-counter"><span class="counter">L. 350,254.00</span><small>úllt. mes</small></span>
+                                        <div class="percent-info green-text tooltipped" data-position="top" data-delay="50" data-tooltip="Meta a cumplir">L. 1,250,000.00 <i class="material-icons">trending_up</i></div>
+                                    </div>
+                                    <div class="progress stats-card-progress tooltipped" data-position="top" data-delay="50" data-tooltip="50%">
+                                        <div class="determinate "></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col s12 m12 l3">
+                                <div class="card stats-card">
+                                   <div class="graph-card">
+                                       <span class="graph-card-title">Meta de Recuperación</span>
+                                       <div class="chartc3" id="chart3"></div>
+                                   </div>
+                                    <div class="card-content">
+                                       <div class="card-options">
+                                            <ul>
+                                                <li><a href="javascript:void(0)"><i class="material-icons">more_vert</i></a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="card-title">Comparación a la fecha</span>
+                                        <span class="stats-counter"><span class="counter">L. 350,254.00</span><small>úllt. mes</small></span>
+                                        <div class="percent-info green-text tooltipped" data-position="top" data-delay="50" data-tooltip="Meta a cumplir">L. 1,250,000.00 <i class="material-icons">trending_up</i></div>
+                                    </div>
+                                    <div class="progress stats-card-progress tooltipped" data-position="top" data-delay="50" data-tooltip="50%">
+                                        <div class="determinate "></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col s12 m12 l3">
+                                <div class="card stats-card">
+                                   <div class="graph-card">
+                                       <span class="graph-card-title">Meta de Recuperación</span>
+                                       <div class="chartc3" id="chart5"></div>
+                                   </div>
+                                    <div class="card-content">
+                                       <div class="card-options">
+                                            <ul>
+                                                <li><a href="javascript:void(0)"><i class="material-icons">more_vert</i></a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="card-title">Comparación a la fecha</span>
+                                        <span class="stats-counter"><span class="counter">L. 350,254.00</span><small>úllt. mes</small></span>
+                                        <div class="percent-info green-text tooltipped" data-position="top" data-delay="50" data-tooltip="Meta a cumplir">L. 1,250,000.00 <i class="material-icons">trending_up</i></div>
+                                    </div>
+                                    <div class="progress stats-card-progress tooltipped" data-position="top" data-delay="50" data-tooltip="50%">
+                                        <div class="determinate "></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <!-- Floating Action Button -->
+                    <div class="fixed-action-btn toolbar">
+                        <a class="btn-floating btn-large red waves-effect waves-light">
+                            <i class="large material-icons">mode_edit</i>
+                        </a>
+                        <ul>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
+                            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Floating Action Button -->
+                </div>
+                <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+
+
+        </div>
+        <!-- END WRAPPER -->
+
+    </div>
+    <!-- END MAIN -->
+
+
+    <!-- START FOOTER -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <span>Copyright © 2016 <a class="grey-text text-lighten-4" href="#" target="_blank">Credito Solidario</a> All rights reserved.</span>
+                <span class="right"> Desarrollado por <a class="grey-text text-lighten-4" href="#">Credito Solidario</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+
+
+    <!-- ================================================
+    Scripts
+    ================================================ -->
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <!--prism
+    <script type="text/javascript" src="js/prism/prism.js"></script>-->
+    <!--scrollbar-->
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script src="js/custom-script.js"></script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+    
+    <script src="../js/plugins/d3/c3/c3.js"></script>
+    <script src="../js/plugins/d3/d3.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('ul.tabs').tabs();
+            $('.tooltipped').tooltip({delay: 50});
+            
+            var number = 91;
+            
+            if(number > 0 && number <= 20){
+                $('.determinate').addClass('red');
+                $('.determinate').css('width', '50');
+                $('.counter').addClass('red-text');
+            } else if(number > 20 && number <= 50){
+                    $('.determinate').addClass('deep-orange');
+                    $('.determinate').css('width', number+'%');
+                    $('.counter').addClass('deep-orange-text');  
+                } else if(number > 20 && number <= 50){
+                    $('.determinate').addClass('amber');
+                    $('.determinate').css('width', number+'%');
+                    $('.counter').addClass('amber-text');  
+                } else if(number > 50 && number <= 80){
+                    $('.determinate').addClass('yellow');
+                    $('.determinate').css('width', number+'%');
+                    $('.counter').addClass('yellow-text');  
+                } else if(number > 80 && number <= 90){
+                    $('.determinate').addClass('lime');
+                    $('.determinate').css('width', number+'%');
+                    $('.counter').addClass('lime-text');  
+                } else if(number > 90 && number <= 100){
+                    $('.determinate').addClass('green');
+                    $('.determinate').css('width', number+'%');
+                    $('.counter').addClass('green-text');  
+                }
+            
+            
+            
+            //CREANDO OBJETO PARA ENVIAR A LA FUNCION QUE INICIALIZA LOS GRAFICOS
+                var objGraph = [
+                    {
+                        dato: 15,
+                        idChart: "#chart1",
+                        idContent: "#cDesembolsos",
+                        idMontoMeta: "#desembolsosAFecha"
+                    },
+                    {
+                        dato: 30,
+                        idChart: "#chart2",
+                        idContent: "#cColocacion",
+                        idMontoMeta: "#colocacionAFecha"
+                    },
+                    {
+                        dato: 40,
+                        idChart: "#chart3",
+                        idContent: "#cRecuperacion",
+                        idMontoMeta: "#recuperacionAFecha"
+                    },
+                    {
+                        dato: 50,
+                        idChart: "#chart5",
+                        idContent: "#cMora",
+                        idMontoMeta: "#moraAFecha"
+                    }
+                ];
+
+                inicializarGraficos(objGraph);
+            
+            
+                ////////////////////////// FUNCION PARA INICIALIZAR LOS GRAFICOS /////////////////////////////////////////////////
+        
+
+                function inicializarGraficos(objGraph) {
+
+                    $.each(objGraph, function(index, value) {
+
+                        var chart = c3.generate({
+                            bindto: value.idChart,
+                            data: {
+                                columns: [
+                                    ['data', 0]
+                                ],
+                                type: 'gauge',
+                                onclick: function(d, i) {
+                                    //console.log("onclick", d, i);
+                                },
+                                onmouseover: function(d, i) {
+                                    //console.log("onmouseover", d, i);
+                                },
+                                onmouseout: function(d, i) {
+                                    //console.log("onmouseout", d, i);
+                                }
+                            },
+                            gauge: {},
+                            color: {
+                                pattern: ['#FF0000', '#F6C600', '#0288D1', '#60B044'], // the three color levels for the percentage values.
+                                threshold: {
+                                    values: [29, 60, 90, 100]
+                                }
+                            },
+                            size: {
+                                height: 100
+                            },
+                            transition: {
+                                duration: 1000
+                            }
+                        });
+
+                        if (value.dato > 0 && value.dato < 30) {
+                            $(value.idContent).addClass('red darken-2');
+                            $(value.idMontoMeta).addClass('red-text text-darken-2');
+                        } else if(value.dato >= 30 && value.dato <= 60){
+                            $(value.idContent).addClass('amber darken-2');
+                            $(value.idMontoMeta).addClass('amber-text text-darken-2');
+                        } else if(value.dato > 60 && value.dato <= 90){
+                            $(value.idContent).addClass('blue darken-2');
+                            $(value.idMontoMeta).addClass('blue-text text-darken-2');
+                        } else {
+                            $(value.idContent).addClass('green darken-2');
+                            $(value.idMontoMeta).addClass('green-text text-darken-2');
+                        }
+
+                        setTimeout(function() {
+                            chart.load({
+                                columns: [
+                                    ['data', 100]
+                                ]
+                            });
+                        }, 150);
+                        setTimeout(function() {
+                            chart.load({
+                                columns: [
+                                    ['data', value.dato]
+                                ]
+                            });
+                        }, 1000);
+                    });
+
+                }
+            
+            
+            
+        });
+    </script>
+
+
+</body>
+
+</html>

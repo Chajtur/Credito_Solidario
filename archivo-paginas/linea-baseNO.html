@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="decripcion del sitio para la meta-data">
+    <meta name="keywords" content="decripcion del sitio para la meta-data">
+    <title>Formulario Línea Base</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="../images/favicon/apple-touch-icon-152x152.png">
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../css/custom/fonts-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <link rel="stylesheet" href="../font/material-icons/material-icons.css">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="../js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!--dataTables-->
+    <link href="../css/custom/datatable.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap4.min.css">-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="../js/plugins/d3/c3/c3.css">
+
+</head>
+
+<body class="bodyback">
+    <!-- Start Page Loading -->
+    <div class="preloader">
+        <div class="statusl">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Loading -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color darken-1">
+                <div class="nav-wrapper">
+                    <ul class="left">
+                        <li>
+                            <h1 class="logo-wrapper"><a href="#" class="brand-logo darken-1"><img src="../images/logo-credito-solidario.png" alt="materialize logo"></a> <span class="logo-text">creditosolidario</span></h1></li>
+                    </ul>
+                    <h5 class="logo-wrapper brand-logo grey-text text-lighten-3 center hide-on-med-and-down">
+                    Programa de Credito Solidario
+                </h5>
+                    <ul class="right">
+                        <li>
+                            <h1 class="logo-wrapper"><a href="#" class="brand-logo-r darken-1 right hide-on-med-and-down"><img src="../images/logo-presidencia.png" alt="materialize logo"></a> <span class="logo-text">presidencia</span></h1></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+    <!-- END HEADER -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+            <aside id="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                    <li class="user-details cyan darken-2">
+                        <div class="row">
+                            <div class="col col s4 m4 l4">
+                                <img src="../images/avatar.png" alt="" class="circle responsive-img valign profile-image">
+                            </div>
+                            <div class="col col s8 m8 l8">
+                                <ul id="profile-dropdown" class="dropdown-content">
+                                    <li><a href="#"><i class="mdi-action-face-unlock"></i> Perfil</a>
+                                    </li>
+                                    <li><a href="#"><i class="mdi-communication-live-help"></i> Ayuda</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Bloq</a>
+                                    </li>
+                                    <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Salir</a>
+                                    </li>
+                                </ul>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Nombre<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <p class="user-roal">Cargo</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Inicio</a>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="material-icons">layers</i> Ciclos</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#">Ciclo 1</a>
+                                        </li>
+                                        <li><a href="#">Ciclo 2</a>
+                                        </li>
+                                        <li><a href="#">Ciclo 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-action-search"></i> Consultas</a>
+                    </li>
+                    <li class="li-hover">
+                        <div class="divider"></div>
+                    </li>
+
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+            </aside>
+            <!-- END LEFT SIDEBAR NAV-->
+
+
+            <!-- START CONTENT -->
+            <section id="content">
+                <div class="row">
+
+                </div>
+
+                <!--start container-->
+                <div class="container">
+                    <div class=" section">
+                        <div class="col s12 m12 l12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <form id="example-form" action="#">
+                                        <div>
+                                            <h3>Línea Base</h3>
+                                            <section>
+                                                <div class="wizard-content">
+                                                    <div class="row">
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">home</i>
+                                                            <label class="grey-text"> ¿Solo para Vivienda?</label>
+                                                            <br/>
+                                                            <input class="with-gap validate required" name="soloParaVivienda" type="radio" id="solo_para_vivienda_si" data-error=".errorTxt1" />
+                                                            <label for="solo_para_vivienda_si">Si</label>
+
+                                                            <input class="with-gap validate required" name="soloParaVivienda" type="radio" id="solo_para_vivienda_no" data-error=".errorTxt1" />
+                                                            <label for="solo_para_vivienda_no">No</label>
+                                                            <br>
+                                                            <br>
+                                                            <div class="errorTxt1"></div>
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">timer</i>
+                                                            <label for="tResidir">¿Tiempo de Residir? *</label>
+                                                            <input id="tResidir" type="tel" name="tResidir">
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">format_paint</i>
+                                                            <label for="select_mateialPredomina"></label>
+                                                            <select required class="grey-text" id="select_mateialPredomina" name="select_mateialPredomina">
+                                                                <option value="" disabled selected>Material que predomina</option>
+                                                                <option value="1">Ladrillo</option>
+                                                                <option value="2">Adobe</option>
+                                                                <option value="3">Madera</option>
+                                                                <option value="4">Bloque</option>
+                                                                <option value="5">Otros</option>
+                                                            </select>
+
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">widgets</i>
+                                                            <label for="tipo_de_piso"></label>
+                                                            <select required type="select-one" class="grey-text" id="tipo_de_piso" name="tipo_de_piso">
+                                                                <option value="" disabled selected>Tipo de Pizo</option>
+                                                                <option value="1">Ceramica</option>
+                                                                <option value="2">Ladrillo</option>
+                                                                <option value="3">Cemento</option>
+                                                                <option value="4">Barro</option>
+                                                                <option value="5">Otros</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">person</i>
+                                                            <label for="cuantos_habitan">¿Cúantas Habitan? *</label>
+                                                            <input id="cuantos_habitan" type="tel" name="cuantos_habitan">
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">wc</i>
+                                                            <label for="cuantos_viven">¿Cúantas Familias Viven? *</label>
+                                                            <input id="cuantos_viven" type="tel" name="cuantos_viven">
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">work</i>
+                                                            <label for="cuantos_trabajan">¿Cúantos Trabajan? *</label>
+                                                            <input id="cuantos_trabajan" type="tel" name="cuantos_trabajan">
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">next_week</i>
+                                                            <label for="cuantos_Bempleos">¿Cúantos Buscan Empleo? *</label>
+                                                            <input id="cuantos_Bempleos" type="tel" name="cuantos_Bempleos">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="input-field col s12 m12 l4">
+                                                            <i class="material-icons prefix">highlight</i>
+                                                            <label class="grey-text">Servicios Públicos: *</label>
+                                                            <br>
+                                                            <br>
+                                                            <p>
+                                                                <input data-error=".errorTxt2" name="Spublicos" type="checkbox" class="filled-in" id="energia_electrica" />
+                                                                <label for="energia_electrica">Energía Eléctrica &emsp;</label>
+                                                                <input data-error=".errorTxt2" name="Spublicos" type="checkbox" class="filled-in" id="agua_potable" />
+                                                                <label for="agua_potable">Agua Potable &emsp;</label>
+                                                                <input data-error=".errorTxt2" name="Spublicos" type="checkbox" class="filled-in" id="telefono" />
+                                                                <label for="telefono">Teléfono Fijo&emsp;&emsp;&emsp;</label>
+                                                                <input data-error=".errorTxt2" name="Spublicos" type="checkbox" class="filled-in" id="pozo_septico" />
+                                                                <label for="pozo_septico">Pozo Séptico &emsp;</label>
+                                                                <br>
+                                                                <br>
+                                                                <div class="errorTxt2"></div>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l3">
+                                                            <i class="material-icons prefix">store_mall_directory</i>
+                                                            <label class="grey-text"> ¿Tiene Microempresa?</label>
+                                                            <br>
+                                                            <br>
+                                                            <p>
+                                                                <input class="with-gap required" name="tieneMicroEmp" type="radio" id="tiene_empresa_si" data-error=".errorTxt3" />
+                                                                <label for="tiene_empresa_si">Si</label>
+                                                            </p>
+                                                            <p>
+                                                                <input class="with-gap required" name="tieneMicroEmp" type="radio" id="tiene_empresa_no" data-error=".errorTxt3" />
+                                                                <label for="tiene_empresa_no">No</label>
+                                                            </p>
+                                                            <br>
+                                                            <div class="errorTxt3"></div>
+                                                        </div>
+
+                                                        <div class="input-field col s12 m12 l4">
+                                                            <i class="material-icons prefix">business_center</i>
+                                                            <label class="grey-text"> ¿Emprenderá una Micro empresa?</label>
+                                                            <br>
+                                                            <br>
+                                                            <p>
+                                                                <input class="with-gap" name="tendraMicoEmp" type="radio" id="emprendera_si" data-error=".errorTxt4" />
+                                                                <label for="emprendera_si">Si</label>
+                                                            </p>
+                                                            <p>
+                                                                <input class="with-gap" name="tendraMicoEmp" type="radio" id="emprendera_no" data-error=".errorTxt4" />
+                                                                <label for="emprendera_no">No</label>
+                                                            </p>
+                                                            <br>
+                                                            <div class="errorTxt4"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <h3>Educación</h3>
+                                            <section>
+                                                <div class="wizard-content">
+                                                    <input type="button" id="more_fields" onclick="add_fields();" value="Add More" />
+                                                    <div id="edu">
+                                                        <div class="row">
+                                                            <div class="label">Familiar 1</div>
+                                                            <div class="row">
+
+                                                                <div class="input-field col s12 m12 l3">
+                                                                    <!--<i class="material-icons prefix">person</i>-->
+                                                                    <label for="nombre_fam_edu">Nombre del familiar *</label>
+                                                                    <input id="nombre_fam_edu" type="text" name="nombre_fam_edu" class="required validate">
+                                                                </div>
+
+                                                                <div class="input-field col s12 m12 l2">
+                                                                    <!--<i class="material-icons prefix">explicit</i>-->
+                                                                    <label for="edad_fam_edu">Edad *</label>
+                                                                    <input id="edad_fam_edu" type="text" name="edad_fam_edu" class="required validate">
+                                                                </div>
+
+                                                                <div class="input-field col s12 m12 l2">
+                                                                    <!--<i class="material-icons prefix">school</i>-->
+                                                                    <label for="select_sexo"></label>
+                                                                    <select required class="grey-text" id="select_sexo" name="select_sexo">
+                                                                        <option value="" disabled selected>Sexo *</option>
+                                                                        <option value="1">Masculino</option>
+                                                                        <option value="2">Femenino</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="input-field col s12 m12 l2">
+                                                                    <!--<i class="material-icons prefix">school</i>-->
+                                                                    <label for="select_nivel_edu"></label>
+                                                                    <select required class="grey-text" id="select_nivel_edu" name="select_nivel_edu">
+                                                                        <option value="" disabled selected>N. Educación *</option>
+                                                                        <option value="1">Primaria</option>
+                                                                        <option value="2">Secundaria</option>
+                                                                        <option value="3">Superior</option>
+                                                                        <option value="4">Ninguno</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="input-field col s12 m12 l2">
+                                                                    <!--<i class="material-icons prefix">work</i>-->
+                                                                    <label for="oficio_edu">Oficio *</label>
+                                                                    <input id="oficio_edu" type="text" name="oficio_edu" class="required validate">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </section>
+                                            <h3>Enfermedades</h3>
+                                            <section>
+                                                <div class="wizard-content">
+
+                                                </div>
+                                            </section>
+                                            <h3>Revisión</h3>
+                                            <section>
+                                                <div class="wizard-content">
+
+                                                </div>
+                                            </section>
+                                            </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+            </div>
+            <!-- END WRAPPER -->
+
+        </div>
+        <!-- END MAIN -->
+
+
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- START FOOTER -->
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <span>Copyright © 2016 <a class="grey-text text-lighten-4" href="#" target="_blank">Banca Solidaria</a> All rights reserved.</span>
+                    <span class="right"> Diseñado por <a class="grey-text text-lighten-4" href="#">Credito Solidario</a></span>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+
+
+        <!-- ================================================
+    Scripts
+    ================================================ -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!--materialize js-->
+        <!--<script type="text/javascript" src="../js/materialize.js"></script>-->
+
+        <!--scrollbar-->
+        <script type="text/javascript" src="../js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+        <!--custom-script.js - Add your own theme custom JS-->
+        <script type="text/javascript" src="../js/custom-script.js"></script>
+
+        <!--    Otros Plugins-->
+        <script src="../js/plugins.js"></script>
+
+        <!--validaciones-->
+        <!--<script type="text/javascript" src="validaciones-lineabase.js"></script>-->
+
+        <!--formatter-->
+        <script type="text/javascript" src="../js/plugins/formatter/jquery.formatter.min.js"></script>
+
+        <!-- validate -->
+        <script type="text/javascript" src="../js/plugins/jquery-validation/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/jquery-validation/additional-methods.min.js"></script>
+        <script src="jquery-steps/jquery.steps.min.js"></script>
+        <script src="form-wizard.js"></script>
+        <script src="add_fields.js"></script>
+
+
+</body>
+
+</html>

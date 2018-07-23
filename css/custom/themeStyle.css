@@ -1,0 +1,17 @@
+/*Color to Nav Bar*/
+nav {
+    color: #fff;
+    background-color: #0D47A1;
+    
+}
+
+/*footer*/
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+    background-color: #0D47A1;
+}
+
+.colored-line, .colored-line-left {
+    background: #0D47A1;
+}

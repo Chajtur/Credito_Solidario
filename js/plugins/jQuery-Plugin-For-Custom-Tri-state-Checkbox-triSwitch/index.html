@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<link href="css/jquery.triSwitch.css" rel="stylesheet">
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+		body { padding: 16px; }
+		table{ margin-left:24px; 	}		
+        td { padding: 0 10px 10px 0; }
+    </style>
+<title>jQuery triSwitch Plugin Demos</title>
+</head>
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/form/jQuery-Plugin-For-Custom-Tri-state-Checkbox-triSwitch.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<h1 style="margin:150px auto 30px auto;">jQuery triSwitch Plugin Demos</h1>
+	<h2>States style</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="ts ts-ok">
+						<i></i>
+					</div>
+				</td>
+				<td>
+					<div class="ts ts-both">
+						<i></i>
+					</div>
+				</td>
+				<td>
+					<div class="ts ts-ko">
+						<i></i>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h2>Initializations</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td>default</td>
+				<td><input type="checkbox" id="ts-default" /></td>
+			</tr>
+			<tr>
+				<td>loop</td>
+				<td><input type="checkbox" id="ts-loop" /></td>
+			</tr>
+			<tr>
+				<td>noloop</td>
+				<td><input type="checkbox" id="ts-noloop" /></td>
+			</tr>
+			<tr>
+				<td>disabled</td>
+				<td><input type="checkbox" id="ts-disabled" disabled="disabled" /></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h2>Array initialization</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td>#0</td>
+				<td><input type="checkbox" id="ts-0" name="test" /></td>
+			</tr>
+			<tr>
+				<td>#1</td>
+				<td><input type="checkbox" id="ts-1" name="test" /></td>
+			</tr>
+			<tr>
+				<td>#2</td>
+				<td><input type="checkbox" id="ts-2" name="test" /></td>
+			</tr>
+			<tr>
+				<td>#3</td>
+				<td><input type="checkbox" id="ts-3" name="test"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<input type="button" value="Initialize" id="bt-init" />
+
+	<script src="js/jquery.triSwitch.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+
+            $("#ts-default")
+                .triSwitch()
+                .on("change", function () {
+                    console.info("default: " + $(this).val(), this);
+                });
+
+            $("#ts-loop")
+                .triSwitch({ loop: true })
+                .on("change", function () {
+                    console.info("loop: " + $(this).val(), this);
+                });
+
+            $("#ts-noloop")
+                .triSwitch({ loop: false, defaultValue: 0 })
+                 .on("change", function () {
+                     console.info("noloop: " + $(this).val(), this);
+                 });
+
+            $("#ts-disabled")
+                .triSwitch({ defaultValue: -1 })
+                .on("change", function () {
+                    console.log("disabled: you will never read this.");
+                });
+
+            $("#bt-init").on("click", function () {
+                $("input[name='test']")
+                    .triSwitch({ loop: true, defaultValue: -1 })
+                    .on("change", function () {
+						var s = $(this).attr("id") + ": " + $(this).val();
+						console.info(s, this);
+                    })
+                    .each(function () {
+						var s = "do stuff with: " + $(this).attr("id") + 
+									", value=" + $(this).val();
+                        console.info(s, this);
+                    });
+            });
+        });
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

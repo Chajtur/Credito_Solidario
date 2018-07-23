@@ -1,0 +1,145 @@
+ul.collection.listit {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+ul.collection.listit,
+ul.collection.listit li.collection-item,
+ul.collection.listit li.collection-item ul.collection li.collection-item,
+ul.collection.listit li.collection-item ul.collection,
+ul.collection.listit li.collection-item.title,
+ul.collection.listit li.collection-item.title ul.collection li.collection-item,
+ul.collection.listit li.collection-item.title ul.collection {
+    border: none;
+}
+
+
+
+ul.collection.listit li.collection-item.headers,
+ul.collection.listit li.collection-item.with-actions
+ {
+    border-top: 1px solid #e0e0e0 !important;
+    font-weight: bold;
+}
+
+ul.collection.listit li.collection-item {
+    border-top: 1px solid #e0e0e0 !important;
+}
+
+ul.collection.listit li.collection-item.headers, 
+ul.collection.listit li.collection-item.elem {
+    /* border-bottom: 1px solid #e0e0e0 !important; */
+}
+
+ul.collection.listit li.collection-item.with-actions {
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+
+ul.collection.listit > li.collection-item:first-child {
+    height: 64px;
+    padding: 16px 20px 20px 20px;
+}
+
+ul.collection.listit > li.collection-item:first-child .title {
+    font-size: 24px;
+    line-height: 2rem;
+}
+
+ul.collection.listit li.collection-item.title ul.collection,
+ul.collection.listit li.collection-item.with-actions div.input-field,
+ul.collection.listit li.collection-item.with-actions div.input-field input[type=search] {
+    margin: 0 !important;
+}
+
+ul.collection.listit li.collection-item.with-actions div.input-field input[type=search] {
+    padding-left: 20px !important;
+    border-bottom: none;
+}
+
+ul.collection.listit li.collection-item.with-actions div.input-field input[type=search]:focus {
+    background-color: #EEEEEE !important;
+    color: #000000;
+    border-bottom: none;
+}
+
+ul.collection.listit li.collection-item.with-actions div.input-field input[type=search]:focus
+ul.collection.listit li.collection-item.with-actions div.input-field input[type=search]::placeholder {
+    background-color: #BBDEFB !important;
+    color: #000000;
+    border-bottom: none;
+}
+
+ul.collection.listit li.collection-item.with-actions div.input-field .close {
+    padding-top: 7px;
+}
+
+ul.collection.listit li.collection-item.title {
+    padding: 0;
+}
+
+ul.collection.listit li.collection-item.empty {
+    /* border-top: 1px solid #e0e0e0; */
+}
+
+ul.collection.listit div.collapsible {
+    border-top: none; 
+    border-right: none; 
+    border-left: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+ul.collection.listit div.collapsible .collapsible-header {
+    border-bottom: none;
+}
+
+ul.collection.listit div.collapsible .collapsible-body {
+    border: none;
+}
+
+ul.collection.listit div.collapsible .collapsible-body a[disabled] {
+    background-color: transparent !important;
+}
+
+ul.collection.listit div.collapsible .collapsible-header:after,
+ul.collection.listit div.collapsible .collapsible-header.active:after {
+    content: none !important;
+}
+
+ul.collection.listit div.collapsible > li {
+    padding: 0px;
+}
+
+ul.collection.listit li.collection-item.active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+ul.collection.listit li.collection-item.empty {
+    padding: 10px 20px 10px 20px;
+}
+
+ul.collection.listit a i{ vertical-align: middle !important; }
+
+.listit-preloader-container {
+    padding: 10px;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+ul.collection.listit .with-pagination {
+    padding: 10px !important;
+    border-top: 1px solid #e0e0e0;
+}
+
+ul.collection.listit ul.pagination li a {
+    font-size: 14px !important;
+}
+
+ul.collection.listit .collapsible.popout > li {
+    box-shadow: none;
+    margin-left: 0;
+    margin-right: 0;
+}

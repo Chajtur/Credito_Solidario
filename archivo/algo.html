@@ -1,0 +1,55 @@
+<h3>Educación</h3>
+<section>
+    <div class="wizard-content">
+        <a class="waves-effect waves-light btn right"><i class="material-icons">add</i></a>
+        <br>
+        <br>
+        <!--<input class="btn right" type="button" id="more_fields" onclick="add_fields();" value="Add More" /><br><br>-->
+        <div id="edu2">
+            <div class="row">
+                <fieldset>
+                    <legend class="grey-text">Familiar 1</legend>
+                    <div class="input-field col s12 m12 l3">
+                        <label for="eNombre">Nombre del familiar *</label>
+                        <input id="eNombre" type="text" name="eNombre" class="required">
+                        <label for="eNombre" id="eNombre-error" class="error"></label>
+                    </div>
+
+                    <div class="input-field col s12 m12 l2">
+                        <label for="fEdad">¿Edad? (años) *</label>
+                        <input id="fEdad" type="text" name="fEdad" class="required">
+                        <label for="fEdad" id="fEdad-error" class="error"></label>
+                    </div>
+
+                    <div class="input-field col s12 m12 l2">
+                        <select required id="eEducacion" name="eEducacion" class="grey-text">
+                            <option value="" disabled selected>Educación *</option>
+                            <option value="1">Primaria</option>
+                            <option value="2">Secundaria</option>
+                            <option value="3">Superior</option>
+                            <option value="4">Ninguno</option>
+                        </select>
+                        <label for="eEducacion">Nivel de Educación</label>
+                        <label for="eEducacion" id="eEducacion-error" class="error"></label>
+                    </div>
+
+                    <div class="input-field col s12 m12 l3">
+                        <label for="eOficio">¿Oficio? *</label>
+                        <input id="eOficio" type="text" name="eOficio" class="required" data-error="errorTxt2">
+                        <div class="errorTxt2"></div>
+                    </div>
+
+                    <div class="input-field col s12 m12 l2">
+                        <select required id="eSexo" name="eSexo" class="grey-text">
+                            <option value="" disabled selected>Sexo? *</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                        </select>
+                        <label for="eSexo">Elija el Genero</label>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</section>

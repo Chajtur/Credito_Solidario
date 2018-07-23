@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Error 404</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="../images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link rel="stylesheet" href="../css/custom/nuevo.css">
+    <link rel="stylesheet" href="../css/custom/tema-indigo.css">
+    <!-- Custome CSS-->
+    <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--<link href="css/layouts/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+    <link href="../fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="../js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../js/plugins/animate-css/animate.css" type="text/css" rel="stylesheet" media="screen,projection">
+    
+    <!--Sweet Alert-->
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
+
+</head>
+
+<body class="error-page page-500">
+
+
+
+    <section id="content">
+        <div class="container">
+            <div class="center">
+                <h1 class="wow shake">
+                    <span>Error 404</span>
+                </h1>
+                <span class="text-white">
+                    Vaya! Parece que la página no existe.
+                </span><br><br>
+                <a class="btn-floating btn-large waves-effect waves-light indigo wow zoomIn" data-wow-duration="1.5s" href="../consultas/index.html">
+                    <i class="large material-icons">home</i>
+                </a>
+                <a class="btn-floating btn-large waves-effect waves-light indigo wow zoomIn" data-wow-duration="1.5s" href="#modal1">
+                    <i class="large material-icons">comment</i>
+                </a>
+            </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h5>Notifica este error al personal de TI</h5>
+                <form>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="nombre-error" type="text" class="validate">
+                            <label for="nombre-error">Nombre</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="texthelp" type="text" class="validate">
+                            <label for="texthelp">Describe el Error</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a id="enviarmsj" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+                <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ================================================
+    Scripts
+    ================================================ -->
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="../js/plugins/jquery-2.2.4.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="../js/materialize.js"></script>
+    <!--prism-->
+    <script type="text/javascript" src="../js/plugins/prism/prism.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="../js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script type="text/javascript" src="../js/custom-script.js"></script>
+    <!--wow.js - Add animation to items while scrollins-->
+    <script type="text/javascript" src="../js/wow-animation/wow.min.js"></script>
+    <!--init the wow.js script-->
+    <script>
+        new WOW().init();
+    </script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script src="../js/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+    <script src="errores.js"></script>
+
+
+
+</body>
+
+</html>

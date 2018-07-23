@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// Variables;
+@import "theme-components/variables";
+
+// Components
+@import "theme-components/global";
+@import "theme-components/typography";
+@import "theme-components/preloader";
+@import "theme-components/header";
+
+@import "theme-components/sidebar";
+@import "theme-components/slideout";
+
+@import "theme-components/breadcrumb";
+@import "theme-components/table";
+@import "theme-components/card";
+@import "theme-components/chart";
+@import "theme-components/calendar";
+
+// Miscellaneous
+@import "theme-components/miscellaneous";
+
+// Pages
+@import "theme-components/pages/icon";
+@import "theme-components/pages/error";
+@import "theme-components/pages/login";
+@import "theme-components/pages/profile";
+
+// Footer
+@import "theme-components/footer"; 

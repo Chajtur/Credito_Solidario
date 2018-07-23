@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Numeros</title>
+    <link rel="stylesheet" href="css/materialize.css">
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card-panel">
+            <h4>Inserte un numero</h4>
+            <input type="text" name="" id="numero" length="10" maxlength="10">
+            <button id="calcular" class="btn">Calcular</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        $("#calcular").click(function(){
+            
+            var num = $("#numero").val();
+            alert(NumeroALetras(num));
+            
+        });
+    </script>
+    
+</body>
+</html>

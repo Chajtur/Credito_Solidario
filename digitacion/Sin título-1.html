@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <meta name="keywords" content="credito solidario, banca solidaria, credito joven, banca, solidaria, honduras">
+    <title>Lista de Grupos Devueltos</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#">
+    <meta name="msapplication-TileImage" content="../images/favicon/mstile-144x144.png">
+    <!--Tint Titlebar for Chrome-->
+    <meta name="theme-color" content="#3F51B5" />
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--Sweet Alert-->
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
+    <!-- Custome CSS-->
+    <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link rel="stylesheet" href="../css/custom/nuevo.css">
+    <link rel="stylesheet" href="../css/custom/tema-indigo.css">
+    <link rel="stylesheet" href="../css/custom/search.css">
+    <!--fa fa fonts-->
+    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Material-icons-->
+    <link href="../fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <!-- <link href="../js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+    <link href="../js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+
+    <!--Sweet Alert-->
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
+
+    <!--<link rel="stylesheet" href="../js/plugins/candle-switch/css/candlestick.css">
+    <link rel="stylesheet" href="../js/plugins/candle-switch/css/candlestick-maerial.css">-->
+
+</head>
+
+<body>
+
+    <!-- Start Page Loading -->
+    <div class="preloader">
+        <div class="statusl">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Loading -->
+
+
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color">
+                <div class="nav-wrapper row">
+
+                    <ul class="left col s3">
+                        <li>
+                            <h1 class="logo-wrapper">
+                      <a href="#" class="brand-logo darken-1">
+                      <object type="image/svg+xml" data="../images/logocredito.svg"></object>
+                      </a> <span class="logo-text">Materialize</span></h1>
+                        </li>
+                    </ul>
+                    <!--barra de busqueda en el header-->
+                    <!--<div class="header-search-wrapper hide-on-med-and-down">
+                        <i class="material-icons">search</i>
+                        <input type="text" name="Search" class="header-search-input"
+                        placeholder="Realice una consulta por Nombre o por Identidad"/>
+                    </div>
+                    <div class="left search col s6 hide-on-med-and-down">
+                        <div class="input-field">
+                            <input id="search" type="search" placeholder="Busque un Beneficiario" autocomplete="off">
+                            <label for="search"><i class="material-icons search-icon">search</i></label>
+                            <!--<i class="material-icons">close</i>
+                            <a href="#" onClick="limpiarfields();" class="close-search"><i class="material-icons clear-icon">close</i></a>
+                        </div>
+
+                    </div>-->
+                    <ul class="right hide-on-med-and-down col s3 nav-right-menu">
+                        <!--<li><a class="perfil-on-nav-button" href="#!" data-activates="perfil-on-nav">Victor Alvarado<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li class="waves-effect waves-light"><a href="">Sass</a></li>
+                        <li class="waves-effect waves-light"><a href="">Components</a></li>-->
+                        <!-- Dropdown Trigger -->
+                        <li>
+                            <a href="#" class="brand-logo right logo2"><img src="../images/logo-presidencia.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <div class="col col s8 m8 l8">
+                        <ul id="perfil-on-nav" class="dropdown-content">
+                            <li><a href="#"><i class="material-icons">face</i>
+                        <span class="option-user-select">Perfil</span>
+                        </a>
+                            </li>
+                            <li><a href="#"><i class="material-icons">account_circle</i>
+                        <span class="option-user-select">Cuenta</span>
+                        </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="material-icons">home</i>
+                        <span class="option-user-select">Salir</span>
+                        </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+            <aside id="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+
+                    <li>
+                        <div class="userView">
+                            <div class="background">
+                                <img class="responsive-img" src="../images/2b.jpg">
+                            </div>
+                            <a href="#!user"><img class="circle" src="../images/user.png"></a>
+                            <a href="#!name" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" data-activates="profile-dropdown"><i class="material-icons right white-text">arrow_drop_down</i><span class="white-text name">Nombre Apellido</span></a>
+                            <a href="#!email"><span class="white-text email truncate">user@creditosolidario.hn</span></a>
+                            <ul id="profile-dropdown" class="dropdown-content">
+                                <li><a href="#"><i class="material-icons">face</i> Perfil</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">account_circle</i> Cuenta</a>
+                                </li>
+                                <li><a href="#"><i class="material-icons">help</i> Ayuda</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="../php/logout.php"><i class="material-icons">keyboard_backspace</i> Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li id="menu-btn-recepcion" class="menu-btn menu-btn-active" data-change="recepcion.php"><a class="waves-effect waves-light"><i class="material-icons">add_box</i>Recepción de Créditos</a></li>
+                    <li id="menu-btn-verificar" class="menu-btn" data-change="por-verificar.php"><a class="waves-effect waves-light"><i class="material-icons">list</i>Digítar Créditos</a></li>
+
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse  waves-effect waves-light hide-on-large-only">
+                    <i class="material-icons white600 md-36">menu</i>
+                </a>
+
+            </aside>
+            <!-- END LEFT SIDEBAR NAV-->
+
+
+            <!-- START CONTENT -->
+            <section id="content">
+
+                <!--breadcrumbs start-->
+                <div id="breadcrumbs-wrapper">
+                    <!-- Search for small screen -->
+                    <div class="header-search-wrapper grey hide-on-large-only">
+                        <i class="material-icons active">search</i>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <!--<h5 class="breadcrumbs-title">Blank Page</h5>-->
+                                <ol class="breadcrumbs">
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="#">Paginas</a></li>
+                                    <li class="active">Pagina en blanco</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--breadcrumbs end-->
+
+                <!--<div class="container center" id="loading">
+                    <br><br>
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+
+                <!--start container-->
+                <div class="container" id="main-container">
+
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12 m6 l8">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <form id="example-advanced-form" action="#">
+                                            <div>
+                                                <h3>Datos Personales</h3>
+                                                <section>
+                                                    <div class="wizard-content">
+                                                        <!--Fecha, Ciclo y Nombre de Grupo STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4 grey-text">
+                                                                <label for="num_ciclo">Ciclo 1</label>
+                                                                <input placeholder="Digíte el Ciclo 1" id="num_ciclo" type="text" name="num_ciclo" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 m12 l4 grey-text">
+                                                                <label for="nombre_grupo">Nombre del Grupo</label>
+                                                                <input placeholder="Nombre del Grupo" id="nombre_grupo" type="text" name="nombre_grupo" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 m12 l4 grey-text">
+                                                                <label for="fecha">Fecha</label>
+                                                                <input placeholder="Fecha" id="fecha" type="text" name="fecha" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--Fecha, Ciclo y Nombre de Grupo END-->
+
+                                                        <!--Número de Identidad, Nombre Completo  STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4 grey-text">
+                                                                <label for="num_id">Número Identidad</label>
+                                                                <input placeholder="número de identidad" id="num_id" type="text" name="num_id" class="required">
+                                                            </div>
+                                                            <br class="hide-on-large-only">
+                                                            <br class="hide-on-large-only">
+
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Primer Nombre" id="pri_nombre" type="text" name="pri_nombre" class="validate" required>
+                                                                <label for="pri_nombre">Primer Nombre</label>
+                                                            </div>
+
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Segundo Nombre" id="seg_nombre" type="text" name="seg_nombre" class="validate" required>
+                                                                <label for="seg_nombre">Segundo Nombre</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--Número de Identidad, Nombre Completo  END-->
+
+                                                        <!--Apellidos STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Primer Apellido" id="pri_apellido" type="text" name="pri_apellido" class="validate" required>
+                                                                <label for="pri_apellido">Primer Apellido</label>
+                                                            </div>
+
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Segundo Apellido" id="seg_apellido" type="text" name="seg_apellido" class="validate" required>
+                                                                <label for="seg_apellido">Segundo Apellido</label>
+                                                            </div>
+
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <label for="casado_apellido">Apellido de Casado *</label>
+                                                                <input placeholder="Apellido de Casdo" id="casado_apellido" type="text" name="casado_apellido" class="validate" required>
+                                                            </div>
+                                                        </div>
+                                                        <!--Apellidos END-->
+
+                                                        <!--Lugar de nacimiento, fecha de nacimiento y edad-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Lugar de Nacimiento" id="lugar_nacimiento" type="text" class="validate masked">
+                                                                <label for="lugar_nacimiento" data-error="Incompleto" data-success="Correcto">Lugar de Nacimiento</label>
+                                                            </div>
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="Fecha de Nacimiento" id="fecha_nacimiento" type="text" class="validate masked">
+                                                                <label for="fecha_nacimiento" data-error="Incompleto" data-success="Correcto">Fecha de Nacimiento</label>
+                                                            </div>
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="edad" id="edad" type="text" class="validate masked">
+                                                                <label for="edad" data-error="Incompleto" data-success="Correcto">Edad</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--Lugar de nacimiento, fecha de nacimiento y edad-->
+
+                                                        <!--sexo y estado civil. STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <select class="grey-text">
+                                                                    <option value="" disabled selected>Seleccione el Estado Civil</option>
+                                                                    <option value="1">Casado</option>
+                                                                    <option value="2">Soltero</option>
+                                                                    <option value="2">Viudo</option>
+                                                                    <option value="2">Unión Libre</option>
+                                                                </select>
+                                                                <label>Estado Civil</label>
+                                                            </div>
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <select class="grey-text">
+                                                                    <option value="" disabled selected>Seleccione el Sexo</option>
+                                                                    <option value="1">Hombre</option>
+                                                                    <option value="2">Mujer</option>
+                                                                    <option value="3">Otro</option>
+                                                                </select>
+                                                                <label>Sexo</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--sexo y estado civil. END-->
+
+                                                        <!--Telefono Fijo, Celular and Email STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 m12 l4">
+                                                                <input placeholder="digíte el número de teléfono" id="tel_fijo" type="text" class="validate masked" data-inputmask="'mask': '9999-9999'">
+                                                                <label for="tel_fijo" data-error="Incompleto" data-success="Correcto" class="active">Teléfono Fijo</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="digíte el número de celular" id="tel_celular" type="text" class="validate masked" data-inputmask="'mask': '9999-9999'">
+                                                                <label for="tel_celular" data-error="Incompleto" data-success="Correcto" class="active">Celular</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="Correo Electrónico" id="dir_email" type="email" name="dir_email" class="validate">
+                                                                <label for="dir_email" data-error="escríba una dirección de correo valida" data-success="Correcto">Email</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--Telefono Fijo, Celular and Email END-->
+
+                                                    </div>
+                                                </section>
+
+                                                <h3>Datos Domiciliares</h3>
+                                                <section>
+                                                    <div class="wizard-content">
+                                                        <!--Departamento, municipio, colonia STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="departamento">Departamento</label>
+                                                                <input placeholder="digíte el departamento" id="departamento" type="text" name="departamento" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="municipio">Municipio</label>
+                                                                <input placeholder="digíte el municipio" id="municipio" type="text" name="municipio" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="colonia">Colonia</label>
+                                                                <input placeholder="digíte la colonia" id="colonia" type="text" name="colonia" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--Departamento, municipio, colonia END-->
+
+                                                        <!--Barrio, Aldea, caserio STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="barrio">Barrio</label>
+                                                                <input placeholder="digíte el barrio" id="barrio" type="text" name="barrio" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="aldea">Aldea</label>
+                                                                <input placeholder="digíte el aldea" id="aldea" type="text" name="aldea" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="caserio">Caserio</label>
+                                                                <input placeholder="digíte la caserio" id="caserio" type="text" name="caserio" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--Barrio, Aldea, caserio END-->
+
+                                                        <!--calle, avenida bloque STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="calle">Calle</label>
+                                                                <input placeholder="digíte el calle" id="calle" type="text" name="calle" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="avenida">Avenida</label>
+                                                                <input placeholder="digíte el avenida" id="avenida" type="text" name="avenida" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="bloque">Bloque</label>
+                                                                <input placeholder="digíte la bloque" id="bloque" type="text" name="bloque" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--calle, avenida bloque END-->
+
+                                                        <!--numero de casa, tipo de vivienda y cuota mensual STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="calle">N° de Casa</label>
+                                                                <input placeholder="digíte el numeroCasa" id="numeroCasa" type="text" name="numeroCasa" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <select multiple>
+                                                                    <option value="" disabled selected>Seleccione Tipo de Vivienda</option>
+                                                                    <option value="1">Propia</option>
+                                                                    <option value="2">Familiar</option>
+                                                                    <option value="3">Alquilada</option>
+                                                                    <option value="4">Pagandola</option>
+                                                                </select>
+                                                                <label>Tipo de Vivienda</label>
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="cuota">Cuota Mensual</label>
+                                                                <input placeholder="digíte la cuota" id="cuota" type="text" name="cuota" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--numero de casa, tipo de vivienda y cuota mensual END-->
+
+                                                        <!--referencia STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l12">
+                                                                <label for="calle">Punto de Referencia</label>
+                                                                <input placeholder="punto De Referencia" id="puntoDeReferencia" type="text" name="puntoDeReferencia" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--referencia END-->
+
+                                                        <!--si alquila?? STAR-->
+                                                        <div class="row">
+                                                            <div class="input-field col s12 l3">
+                                                                <label for="alquilaSi" class="active">¿Alquila?</label>
+                                                                <input type="checkbox" id="alquilaSi" />
+                                                                <label for="alquilaSi">Si alquila</label>
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="nombrePropietario">Nombre del propietario</label>
+                                                                <input disabled placeholder="nombre del propietario" id="nombrePropietario" type="text" name="nombrePropietario" class="required">
+                                                            </div>
+                                                            <div class="input-field col s12 l4">
+                                                                <label for="telefonoPropietario">Teléfono del propietario</label>
+                                                                <input disabled placeholder="telefono del Propietario" id="telefonoPropietario" type="text" name="telefonoPropietario" class="required">
+                                                            </div>
+                                                        </div>
+                                                        <!--si alquila?? END-->
+                                                    </div>
+                                                </section>
+
+                                                <h3>Datos del Negocio</h3>
+                                                <section>
+                                                    <div class="wizard-content">
+                                                        <div class="row">
+                                                            <div class="input-field col s4">
+                                                                <select>
+                                                                    <option value="" disabled selected>Sector Económico</option>
+                                                                    <option value="1">Producción</option>
+                                                                    <option value="2">Comercio</option>
+                                                                    <option value="3">Servicios</option>
+                                                                </select>
+                                                                <label>Sector Económico</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="actividad económica" id="actividad-economica" type="text" class="validate" required>
+                                                                <label for="actividad-economica">Actividad Económica</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <select>
+                                                                    <option value="" disabled selected>Seleccionar Tipo de Cliente</option>
+                                                                    <option value="1">Emprendedor</option>
+                                                                    <option value="2">Microempresario</option>
+                                                                </select>
+                                                                <label>Tipo de Cliente</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="colonia/barrio/aldea económica" id="col-barrio-aldea-economica" type="text" class="validate" required>
+                                                                <label for="actividad-col-barrio-aldea">Colonia/barrio/aldea</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="zona/sector" id="zona-sector" type="text" class="validate" required>
+                                                                <label for="zona-sector">Zona/sector</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="calle" id="calle" type="text" class="validate" required>
+                                                                <label for="calle">Calle</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="avenida" id="avenida" type="text" class="validate" required>
+                                                                <label for="avenida">Avenida</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="bloque" id="bloque" type="text" class="validate" required>
+                                                                <label for="bloque">Bloque</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                <input placeholder="casaN" id="casaN" type="text" class="validate" required>
+                                                                <label for="casaN">Casa N°</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                                <h3>Referencias</h3>
+                                                <section>
+                                                    <div class="wizard-content">
+                                                        
+                                                        <!--referencias familiar 1-->
+                                                        <div class="row">
+                                                            <fieldset>
+                                                                <legend>Familiar 1</legend>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Nombre" id="ref-fam1-nombre" type="text" class="validate" required>
+                                                                    <label for="ref-fam1-nombre">Nombre</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Parentesco" id="ref-fam1-parentesco" type="text" class="validate" required>
+                                                                    <label for="ref-fam1-parentesco">Parentesco</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Dirección" id="ref-fam1-dir" type="text" class="validate" required>
+                                                                    <label for="ref-fam1-dir">Dirección</label>
+                                                                </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Teléfono" id="ref-fam1-telefono" type="text" class="validate" required>
+                                                                    <label for="ref-fam1-telefono">Teléfono</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Celular" id="ref-fam1-celular" type="text" class="validate" required>
+                                                                    <label for="ref-fam1-celular">Celular</label>
+                                                                </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <!--referencias familiar 1-->
+                                                        
+                                                        <!--refencias familiar 2-->
+                                                        <div class="row">
+                                                            <fieldset>
+                                                                <legend>Familiar 2</legend>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Nombre" id="ref-fam2-nombre" type="text" class="validate" required>
+                                                                    <label for="ref-fam2-nombre">Nombre</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Parentesco" id="ref-fam2-parentesco" type="text" class="validate" required>
+                                                                    <label for="ref-fam2-parentesco">Parentesco</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Dirección" id="ref-fam2-dir" type="text" class="validate" required>
+                                                                    <label for="ref-fam2-dir">Dirección</label>
+                                                                </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Teléfono" id="ref-fam2-telefono" type="text" class="validate" required>
+                                                                    <label for="ref-fam2-telefono">Teléfono</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Celular" id="ref-fam2-celular" type="text" class="validate" required>
+                                                                    <label for="ref-fam2-celular">Celular</label>
+                                                                </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <!--refencias familiar 2-->
+                                                        
+                                                        <!--refencias personales 1-->
+                                                        <div class="row">
+                                                            <fieldset>
+                                                                <legend>Personal 1</legend>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Nombre" id="ref-pers1-nombre" type="text" class="validate" required>
+                                                                    <label for="ref-pers1-nombre">Nombre</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Parentesco" id="ref-pers1-parentesco" type="text" class="validate" required>
+                                                                    <label for="ref-pers1-parentesco">Parentesco</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Dirección" id="ref-pers1-dir" type="text" class="validate" required>
+                                                                    <label for="ref-pers1-dir">Dirección</label>
+                                                                </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Teléfono" id="ref-pers1-telefono" type="text" class="validate" required>
+                                                                    <label for="ref-pers1-telefono">Teléfono</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Celular" id="ref-pers1-celular" type="text" class="validate" required>
+                                                                    <label for="ref-pers1-celular">Celular</label>
+                                                                </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <!--refencias personales 1-->
+                                                        
+                                                        <!--refencias personales 2-->
+                                                        <div class="row">
+                                                            <fieldset>
+                                                                <legend>Personal 2</legend>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Nombre" id="ref-pers2-nombre" type="text" class="validate" required>
+                                                                    <label for="ref-pers2-nombre">Nombre</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Parentesco" id="ref-pers2-parentesco" type="text" class="validate" required>
+                                                                    <label for="ref-pers2-parentesco">Parentesco</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Dirección" id="ref-pers2-dir" type="text" class="validate" required>
+                                                                    <label for="ref-pers2-dir">Dirección</label>
+                                                                </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                    <input placeholder="Teléfono" id="ref-pers2-telefono" type="text" class="validate" required>
+                                                                    <label for="ref-pers2-telefono">Teléfono</label>
+                                                                </div>
+                                                                <div class="input-field col s4">
+                                                                    <input placeholder="Celular" id="ref-pers2-celular" type="text" class="validate" required>
+                                                                    <label for="ref-pers2-celular">Celular</label>
+                                                                </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <!--refencias personales 2-->
+                                                        
+                                                    </div>
+                                                </section>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 l4">
+                                <div class="row" id="beneficiarios-list" data-target="red">
+                                    <div class="col s12">
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <span class="card-title">Buscar Grupos</span>
+                                                <div class="row">
+                                                    <form action="" class="col s12">
+                                                        <div class="row">
+                                                            <div class="input-field col s12">
+                                                                <input placeholder="Buscar Hash" id="buscarHas" type="text" class="validate">
+                                                                <label for="buscarHas">Buscar hash</label>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <ul class="collapsible z-depth-0" data-collapsible="accordion">
+                                                    <li>
+                                                        <div class="sin-icon collapsible-header active">
+                                                            <div class="row">
+                                                                <div class="col s2">
+                                                                    <i class="material-icons amber-text">warning</i>
+                                                                </div>
+                                                                <div class="col s2 l2 amber-text">
+                                                                    C9E3
+                                                                </div>
+                                                                <div class="col s6 l6 truncate">
+                                                                    Nombre del Grupo
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="collapsible-body">
+                                                            <div class="row margin">
+                                                                <fieldset>
+                                                                    <legend class="grey-text">Beneficiarios</legend>
+                                                                    <table id="tabla-verificar-call-center" class="striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="grey-text" data-field="id">Nombre</th>
+                                                                                <th class="grey-text" data-field="id">Identidad</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="beneficiario-row">
+                                                                                <td class="grey-text global-beneficiario-nombre"><a href="#!" class="">############</a></td>
+                                                                                <td class="grey-text global-beneficiario-identidad">############</td>
+                                                                            </tr>
+                                                                            <tr class="beneficiario-row">
+                                                                                <td class="grey-text global-beneficiario-nombre"><a href="#!" class="">############</a></td>
+                                                                                <td class="grey-text global-beneficiario-identidad">############</td>
+                                                                            </tr>
+                                                                            <tr class="beneficiario-row">
+                                                                                <td class="grey-text global-beneficiario-nombre"><a href="#!" class="">############</a></td>
+                                                                                <td class="grey-text global-beneficiario-identidad">############</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </div>
+
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#" class="waves-effect waves-green btn-flat green-text">Guardar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+
+        </div>
+        <!-- END WRAPPER -->
+
+    </div>
+    <!-- END MAIN -->
+
+    <!-- START FOOTER -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <span>Copyright © 2016 <a class="grey-text text-lighten-4" href="#" target="_blank">Credito Solidario</a> All rights reserved.</span>
+                <span class="right"> Desarrollado por <a class="grey-text text-lighten-4" href="#">Credito Solidario</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!--
+    =====================================================
+    Scripts
+    =====================================================
+    -->
+
+
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="../js/plugins/jquery-2.2.4.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="../js/materialize.js"></script>
+    <!--prism
+    <script type="text/javascript" src="js/prism/prism.js"></script>-->
+    <!--scrollbar-->
+    <script type="text/javascript" src="../js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script src="../js/custom-script.js"></script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="../js/plugins.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.form.js"></script>
+
+    <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.fuzzysearch.js/0.1.0/list.fuzzysearch.js"></script>
+
+    <script src="../js/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+    <script src="../js/plugins/data-change/data-change.js"></script>
+
+    <!--plugin to STEPS-->
+    <!--<script src="../js/steps/jquery.validate.js" type="text/javascript"></script>-->
+    <script src="../js/steps/jquery.steps.js" type="text/javascript"></script>
+    <script src="../js/steps/wizard.js" type="text/javascript"></script>
+
+    <script src="../js/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <script src="../js/plugins/jquery-inputmask/form-input-mask.js"></script>
+    <!--<script>
+        $(document).ready(function () {
+
+            $('#beneficiarios-list').pushpin({
+                top: 70,
+                offset: 40
+            });
+        });
+    </script>-->

@@ -1,0 +1,363 @@
+/*Custom css */
+
+/* Wizard */
+
+.wizard > .content > .title,
+.tabcontrol > .content > .title {
+    position: absolute;
+    left: -999em;
+}
+
+.wizard .actions {
+    position: relative;
+    display: block;
+    text-align: right;
+    width: 100%;
+
+}
+
+.wizard .actions ul li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.wizard .steps ul li a .current-info,
+.wizard .steps ul li a .number {
+    display: none;
+}
+
+.wizard .tabs {
+    box-shadow: none;
+}
+
+.wizard-content {
+    padding: 20px 0;
+}
+
+.wizard-content img {
+    display: block;
+    width: 100%;
+}
+
+.wizardTerms {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 40px;
+}
+
+.input-field label.error {
+    color: #F44336;
+    position: relative;
+    top: -1.3rem;
+    left: 0.15rem;
+    font-size: 0.8rem;
+    cursor: text;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    -ms-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.input-field label.error-radiobutton {
+    margin-top: 5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+/*CLASE PARA ADAPTAR EL LOGO DE CREDITO SOLIDARIO*/
+h1.logo-wrapper {
+  margin: 0;
+}
+h1 span.logo-text {
+  display: none;
+}
+
+header .brand-logo {
+  margin: 1px 0;
+  padding: 0px 20px;
+}
+header .brand-logo object {
+  width: 152px;
+}
+@media only screen and (max-width: 601px) {
+  header .brand-logo object {
+    width: 130px;
+  }
+    header h1 a.brand-logo {
+        height: 60px;
+    }
+}
+
+.brand-logo.right.logo2 {
+    position: inherit;
+}
+
+a.brand-logo.right.logo2 {
+    height: 60px;
+}
+
+.login-new {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.login2 {
+    margin-top: 40px;
+}
+
+
+/*CLASES PARA LAS PAGINAS DE ERRORES*/
+.error-page {
+    padding-top: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.error-page.page-500 {
+    background: url("../../images/error-500-01.png") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+@media only screen and (max-width: 601px) {
+  .error-page.page-500 {
+    background: url("../../images/error-500-movil.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+}
+
+.error-page h1 {
+    font-size: 120px;
+}
+
+.error-page span.text-white {
+    font-size: 22px;
+}
+
+.error-page span {
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.preloader-tb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255,.1);
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.statusl-tb {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*background: url(../images/reload.svg) no-repeat center;*/
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin: -20px 0 0 -20px;
+}
+
+#time,
+#date {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.title-personal-mosquitia h5 {
+    font-size: 20px;
+  font-weight: 300;
+}
+.title-personal-mosquitia p {
+  font-size: 15px;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.tabs {
+    overflow: hidden;
+}
+.modal-custom {
+    width: 400px !important;
+}
+
+.stats-counter {
+    float: left;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 0px!important;
+    display: block;
+}
+
+.stats-counter small {
+    color: rgba(0,0,0,0.55);
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+#sparkline-bar {
+    height: 40px;
+    margin-top: -30px;
+}
+
+#sparkline-line {
+    height: 42px;
+    margin-top: -32px;
+}
+
+#sparkline-line canvas {
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+#sparkline-bar canvas {
+    z-index: 1;
+}
+
+.stats-card-progress {
+    background: #E0F2F1;
+    border-bottom-left-radius: 2px!important;
+    border-bottom-right-radius: 2px!important;
+}
+
+.stats-card-progress .determinate {
+    background: #26c6da;
+    border-bottom-left-radius: 2px;
+}
+
+.stats-card .card-content {
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-card .graph-card {
+    padding: 0px;
+    background-color: #2E7D32;
+    line-height: 40px;
+    text-align: center;
+}
+.stats-card .graph-card .graph-card-title {
+    color: aliceblue;
+    font-size: 23px;
+    font-weight: lighter;
+}
+
+.stats-card .percent-info {
+    margin-top: 12px;
+}
+
+.percent-info {
+    float: right;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.percent-info i {
+    font-size: 18px;
+    vertical-align: top;
+}
+
+.stats-info {
+    margin-bottom: 22px;
+}
+
+.stats-info h5 {
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.6)
+}
+
+.stats-info ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 13px;
+}
+
+.stats-info ul li:last-child {
+    border-bottom: 0;
+}
+
+.stats-info ul {
+    margin: 0px;
+}
+
+/* Card Options */
+
+.card-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    padding: 20px;
+}
+
+.card-options > ul {
+    margin: 0;
+    overflow: hidden;
+}
+
+.card-options > ul > li {
+    display: inline-block;
+    color: rgba(0,0,0,0.54);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.card-options > ul > li > a {
+    color: #aaa;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.card-options > ul > li > a:hover {
+    color: #333;
+}
+
+.card-options > ul > li > a > i {
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.card-image .card-options > ul > li > a {
+    color: #ccc;
+}
+
+.card-image .card-options > ul > li > a:hover {
+    color: #fff;
+}
+
+.card-options > ul > li > span {
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: #EE3182;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+    color: #f48fb1;
+}

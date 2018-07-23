@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/plugins/jquery-2.2.4.min.js"></script>
+    <title>Document</title>
+    <style>
+        .boxes-wrapper {
+            width: 100%;
+        }
+        .boxes {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="boxes-wrapper">
+        <!--<div id="color-wrapper" class="boxes"></div>-->
+        <div id="color-by-percentage" class="boxes"></div>
+    </div>
+    
+    <input type="text" name="" id="input">
+    <script>
+        $(document).ready(function(){
+            
+           /**
+             * Función que calcula un color en base al porcentaje entre el verde y el rojo
+             * Se le envía el porcentaje, el canal verde, el punto de cambio entre el verde y amarillo 
+             * y el punto de cambio entre el amarillo y el rojo
+             * Retorna el color rbg ya calculado
+             **/
+
+            var asignarFondoPorPorcentaje = function(p, chanel, toYellow, toRed){
+
+                var brightness = p/2;
+                var objColor = {};
+                objColor.red = 0;
+                objColor.green = chanel;
+                objColor.blue = 40;
+                if(p <= toYellow){
+                    let auxnum = chanel*p/100*3;
+                    objColor.red = auxnum;
+                }else if(p <= toRed){
+                    let auxnum = chanel*p/100;
+                    objColor.red = chanel;
+                    objColor.green -= auxnum;
+                }else{
+                    objColor.red = chanel;
+                    let auxnum = chanel*p/100*2;
+                    objColor.green -= auxnum;
+                    objColor.blue -= brightness;
+                }
+
+                objColor.color = 'rgb('+ Math.round(objColor.red)+','+ Math.round(objColor.green)+','+ Math.round(objColor.blue)+')';
+                return objColor.color;
+
+            }
+
+            $('#input').on('input', function(){
+                $('#color-by-percentage').css('background-color', asignarFondoPorPorcentaje($(this).val(), 250, 30, 60));
+            });
+
+            /**
+              * Cambia de color el color-wrapper desde el verde hasta el rojo
+              **/
+            // window.gradient = {};
+            // window.gradient.r = 0;
+            // window.gradient.g = 200;
+            // window.gradient.b = 0;
+
+            // setInterval(function(){
+                
+            //     if(window.gradient.r < 255){
+            //         window.gradient.r += 10;
+            //     }else if(window.gradient.g > 0){
+            //         window.gradient.g -= 10;
+            //     }else{
+            //         window.gradient.r -= 10;
+            //     }
+            //     // window.gradient.g -= 1;
+            //     // window.gradient.b -= 1;
+            //     window.gradient.color = 'rgb('+window.gradient.r+','+window.gradient.g+','+window.gradient.b+')';
+            //     $('#color-wrapper').css('background-color', window.gradient.color);
+                
+            // }, 50);
+
+        });
+
+    </script>
+
+</body>
+</html>
