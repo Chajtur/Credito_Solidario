@@ -19,7 +19,7 @@ $_POST['responsable'])){
 
         $conn->beginTransaction();
 
-        $stat = $conn->prepare('call guardar_visita_cda(:identidad, :nombre, :telefono, :whatsapp, :correo, :consulta, :solucion, :responsable, :usuario, :direccion, 1);');
+        $stat = $conn->prepare('call guardar_visita_cda(:identidad, :nombre, :telefono, :whatsapp, :correo, :consulta, :solucion, :responsable, :usuario, :direccion, 2);');
         $stat->bindValue(':identidad', $_POST['identidad'], PDO::PARAM_STR);
         $stat->bindValue(':nombre', $_POST['nombre'], PDO::PARAM_STR);
         $stat->bindValue(':telefono', $_POST['telefono'], PDO::PARAM_STR);

@@ -10,7 +10,8 @@
                             </a>
                             <ul class="right hide-on-med-and-down">
                                 <li><a class="header-item" href="index.php">Inicio</a></li>
-                                <li><a class="header-item" href="acerca-de.php">Acerca de Nosotros</a></li>
+                                <li><a class="header-item" href="acerca-de.php">Historias de éxito</a></li>
+                                <li><a class="header-item" href="contacto.php">Contacto</a></li>
                                 <li><a class="header-item" href="noticias.php">Noticias</a></li>
                                 <li><a class="dropdown-button header-item" href="#" data-activates="dropdown1">Sistema<i class="material-icons right header-item-icon">arrow_drop_down</i></a></li>
                             </ul>
@@ -18,7 +19,7 @@
                         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
                     </div>
                 </div>
-                
+
             </nav>
         </div>
     </header>
