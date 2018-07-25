@@ -1,12 +1,12 @@
 <!--Header section STAR-->
     <header>
         <div class="navbar-fixed">
-            <nav class="custom-nav">
+            <nav>
                 <div class="row">
                     <div class="col l10 m8 s12 offset-l1 offset-m2">
-                        <div class="container nav-wrapper">
+                        <div class="nav-wrapper">
                             <a href="http://creditosolidario.hn" class="brand-logo main-logo">
-                                <object type="image/svg+xml" data="assets/img/svgs/logob2.svg"></object>
+                                <object type="image/svg+xml" data="assets/img/svgs/logo.svg"></object>
                             </a>
                             <ul class="right hide-on-med-and-down">
                                 <li><a class="header-item" href="index.php">Inicio</a></li>

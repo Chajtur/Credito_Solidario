@@ -14,6 +14,11 @@ body {
     margin: 0 !important;
 }
 
+.galeria .row .col  {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /*medias query to define or re difene the widhh of container*/
 
 @media only screen and (min-width: 993px)
@@ -59,7 +64,6 @@ header .brand-logo object {
 
 .section-icons {
     padding-bottom: 0px;
-    background-color: #F5F5F5;
 }
 .section-icons .header {
     color: #212121;
@@ -233,8 +237,63 @@ header .brand-logo object {
 
 /* Custom menu */
 
-.custom-nav {
+nav {
     height: 80px !important;
+    background: #FFF;
+}
+
+/*.carousel .carousel-item {
+    opacity: 1 !important;
+}*/
+
+.agencias .middle-indicator {
+    position:absolute;
+    top:50%;
+    width: 100%;
+    height: 100%;
+}
+
+.agencias .middle-indicator-text{
+    font-size: 4.2rem;
+}
+
+/*.agencias a.middle-indicator-text{
+    color:white !important;
+}*/
+
+.agencias .content-indicator{
+	width: 64px;
+	height: 64px;
+	background: none;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px; 
+}
+.agencias .indicators{
+	visibility: hidden;
+}
+
+.agencias .carousel-item span {
+    color: #000;
+}
+
+nav ul a {
+    color: #0D47A1;
+}
+
+.fondoPrincipal {
+    background-color: #0D47A1;
+}
+
+.noticias .titulo {
+    background-color: #0D47A1;
+    color: #FFF;
+}
+
+.noticias .titulo span {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    padding: 3px;    
 }
 
 .main-logo {

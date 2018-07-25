@@ -285,71 +285,151 @@ foreach($noticias as $noticia){
         </section>
         <!--BANNER REVOLUTION SLIDER END-->
 
-        <!--OWL SLIDER START-->
-        <div class="section">
+        <!-- INICIO CONTADORES -->
+        <section class="contadores center">
             <div class="row">
-                <div class="col s12">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-01.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Luis Fernando Andrade </b><br>
-                                <small>Tegucigalpa</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-02.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Maribel Guevara </b><br>
-                                <small>Tegucigalpa</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-03.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Jorge Herrera </b><br>
-                                <small>Valle de Angeles</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-04.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Fredy Romero </b><br>
-                                <small>Tegucigalpa</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-05.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Elda Flores </b><br>
-                                <small>Tegucigalpa</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-06.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Karla Díaz </b><br>
-                                <small>Nacaome, Valle</small>
-                            </span>
-                            
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-09.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Felicia Santos </b><br>
-                                <small>La Campa, Lempira</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-07.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Manuel Anibal Larios </b><br>
-                                <small>Tegucigalpa</small>
-                            </span>
-                        </div>
-                        <div class="item owl-slider-index-img with-mask-name">
-                            <img class="" src="img/carrousel/400X400-10.jpg" alt="Owl Image">
-                            <span class="name-mask"><b>Jose Walter Henriquez </b><br>
-                                <small>Lempira</small>
-                            </span>
-                        </div>
-                    </div>
+                <div class="col 12 m4">                    
+                    <h2>230</h2>
+                    <p>CRÉDITOS OTOROGADOS<p>
+                </div>
+                <div class="col 12 m4">
+                    <h2>230</h2>
+                    <p>DESEMBOLSOS<p>
+                </div>
+                <div class="col 12 m4">
+                    <h2>230</h2>
+                    <p>EMPLEOS GENERADOS<p>
                 </div>
             </div>
-        </div>
-        <!--OWL SLIDER END-->
+        </section>
+        <!-- FIN CONTADORES -->
+
+        <!-- INICIO AGENCIAS -->
+        <section class="agencias">
+            <div class="carousel center" data-indicators="true">
+                <div class="carousel-fixed-item center middle-indicator">
+                    <div class="left">
+                        <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left middle-indicator-text black-text">chevron_left</i></a>
+                    </div>
+                    
+                    <div class="right">
+                        <a href="Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>
+                    </div>                    
+                </div>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div>
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div>
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div class="card-content">
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div class="card-content">
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>       
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div>
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div>
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div class="card-content">
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#departamento-1" class="carousel-item">
+                    <div>
+                        <div>
+                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                        </div>
+                        <div class="card-content">
+                            <span>Francisco Morazan</span>
+                        </div>
+                    </div>
+                </a>         
+            </div>
+        </section>
+        <!-- FIN AGENCIAS -->
+
+        <!--INICIO GALERIA-->
+        <section class="galeria">            
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" data-caption="Nombre de la señora y el lugar" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 m6 l3">
+                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+            </div>            
+        </section>
+        <!--FIN GALERIA-->
 
         <!--ICONOS SECTION START-->
         <div class="section section-icons">
@@ -359,7 +439,7 @@ foreach($noticias as $noticia){
                 <p>Una iniciativa que fomenta la economía socialmente inclusiva mediante un programa al servicio de los emprendedores del sector micro empresarial del país, otorgándoles asistencia técnica y crédito solidario.</p>
             </div>
 
-            <div class="section grey lighten-4">
+            <div class="section">
                 <div class="container">
 
                     <!--   Icon Section   -->
@@ -431,60 +511,50 @@ foreach($noticias as $noticia){
 
         <!--ICONOS SECTION END-->
 
-        <!--NEWS SECTION START-->
-        <div class="section blue" style="padding-bottom: 0px">
-            <div class="header">
-                <h2>Últimas Noticias</h2>
-                <div class="colored-line-center"></div><br>
-            </div><br><br>
-
-            <?php $altern = true;?>
-
-            <?php foreach($noticias as $noticia):?>
-
-                <div class="section news-content <?php echo ($altern ? 'noticia-alterna' : 'noticia-normal');?>" id="">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col s12 m6 l6 <?php echo ($altern = !$altern ? 'push-l6' : '')?>">
-                                <div class="image-news">
-                                    <img class="" src="http://www.creditosolidario.hn/backend/sys/asset/img/noticias/<?php echo $noticia['imagenes']['0']['nombre'];?>" alt="">
-                                </div>
-                            </div>
-                            <div class="col s12 m6 l6 <?php echo ($altern ? 'pull-l6' : '')?> left-align">
-                                <!--TITLE-->
-                                <h3 class="title-text-news"><?php echo $noticia['titulo'];?></h3>
-                                <div class="colored-line-left"></div>
-                                <p class=""><?php echo substr($noticia['contenido'], 0, 200).'...';?></p>
-                                <a href="noticia.php?id=<?php echo $noticia['id'];?>" class="waves-effect waves-light btn-flat blue white-text right">Ver Más..</a>
-                            </div>
+        <!-- INICIO NOTICIAS -->
+        <section class="noticias">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="titulo center">
+                            <span class="white black-text">ULTIMAS NOTICIAS</span>            
                         </div>
                     </div>
-                </div>
-
-            <?php endforeach;?>
-
-            <!--NOTICIA #2
-            <div class="section news-content noticia-alterna" id="noticia2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m6 l6 push-l6">
-                            <div class="image-news">
-                                <img class="" src="assets/img/img-noticias/noti2.JPG" alt="">
+                    <div class="col s12">
+                        <div class="noticia">
+                            <h3 class="center">Nueve empresas campesinas reciben 20 millonres de lempiras de Crédito Solidario</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque sollicitudin, imperdiet erat non, aliquam lectus. Cras quis viverra augue. Aenean elementum felis ut finibus convallis. Vestibulum arcu metus, porta gravida pharetra ut, interdum vitae ligula. Aliquam sodales, massa sodales aliquet porta, felis ligula suscipit diam, vitae laoreet mi.</p>
+                            <div class="center">
+                                <a href="#" class="btn fondoPrincipal">Leer mas...</a>
                             </div>
                         </div>
-                        <div class="col s12 m6 l6 pull-l6 left-align">
-                            <h3 class="title-text-news">Taxistas, salones de belleza, barberías y pulperías reciben 100 millones de lempiras de Crédito Solidario</h3>
-                            <div class="colored-line-left"></div>
-                            <p class="">Tegucigalpa, 23 de mayo. “Banca Solidaria ha sido un programa que nos ha ayudado a repotenciar nuestras unidades de taxi.</p>
-                            <a class="waves-effect waves-light btn-flat blue white-text left">Ver Más..</a>
+                        <div class="noticia">
+                            <h3 class="center">Nueve empresas campesinas reciben 20 millonres de lempiras de Crédito Solidario</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque sollicitudin, imperdiet erat non, aliquam lectus. Cras quis viverra augue. Aenean elementum felis ut finibus convallis. Vestibulum arcu metus, porta gravida pharetra ut, interdum vitae ligula. Aliquam sodales, massa sodales aliquet porta, felis ligula suscipit diam, vitae laoreet mi.</p>
+                            <div class="center">
+                                <a href="#" class="btn fondoPrincipal">Leer mas...</a>
+                            </div>
                         </div>
+                    </div>                    
+                </div>                
+            </div>
+            
+                        
+        </section>
+        <!-- FIN NOTICIAS -->
 
+        <section class="director">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img">
+                    </div>
+                    <div class="col s12 m8">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare, sapien tempus malesuada sollicitudin, mi erat euismod ante, vel lacinia ante arcu a massa. Fusce efficitur sodales mi eu semper. Sed scelerisque lacus nisl, eget porta libero dignissim semper. Sed lacus lectus, luctus a convallis non, imperdiet vel eros. In vitae tortor ligula. Cras sollicitudin quam nec est hendrerit, at euismod massa vestibulum. Aenean placerat tellus vel elit suscipit gravida ac sed mauris. Sed vehicula vestibulum velit nec lacinia. Vestibulum non tincidunt dui, in semper mi. Praesent non diam ex. Vivamus ac pellentesque tortor. Donec tempor turpis et libero convallis.</p>
                     </div>
                 </div>
-            </div>-->
-
-        </div>
-
+            </div>
+        </section>
         
 
         <!--NEWS SECTION END-->
@@ -498,6 +568,27 @@ foreach($noticias as $noticia){
 
     <script>
         $(document).ready(function() {
+            $('.materialboxed').materialbox();
+            $('.carousel').carousel({
+                dist: 0,
+                padding: 20,
+                fullWidth: false,
+                indicators: false,
+                duration: 100
+            });
+
+            $('.moveNextCarousel').click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $('.carousel').carousel('next');
+            });
+
+            // move prev carousel
+            $('.movePrevCarousel').click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $('.carousel').carousel('prev');
+            });
 
             $('.owl-carousel').owlCarousel({
                 loop: true,
