@@ -209,6 +209,10 @@ header .brand-logo object {
     overflow: hidden;
 }
 
+.owl-nav{
+    display: none;
+}
+
 .name-mask {
     transform: translate(-100%);
     position: absolute;
@@ -285,6 +289,10 @@ nav ul a {
     background-color: #0D47A1;
 }
 
+.fondoPrincipal-text {
+    color: #0D47A1;
+}
+
 .noticias .titulo {
     background-color: #0D47A1;
     color: #FFF;
@@ -293,8 +301,26 @@ nav ul a {
 .noticias .titulo span {
     font-size: 1.6rem;
     letter-spacing: 2px;
-    padding: 3px;    
+    padding: 3px 15px;    
 }
+
+.director .card-content {
+    background-color: #2A5A9F;
+    color: #FFF;
+}
+
+/*.banner-fondo {
+    position: relative;
+}
+
+.banner-fondo .layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}*/
 
 .main-logo {
     padding: 5px !important;

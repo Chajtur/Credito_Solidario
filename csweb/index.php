@@ -288,16 +288,16 @@ foreach($noticias as $noticia){
         <!-- INICIO CONTADORES -->
         <section class="contadores center">
             <div class="row">
-                <div class="col 12 m4">                    
-                    <h2>230</h2>
+                <div class="col s12 m4">                    
+                    <h1>230</h1>
                     <p>CRÉDITOS OTOROGADOS<p>
                 </div>
-                <div class="col 12 m4">
-                    <h2>230</h2>
+                <div class="col s12 m4">
+                    <h1>230</h1>
                     <p>DESEMBOLSOS<p>
                 </div>
-                <div class="col 12 m4">
-                    <h2>230</h2>
+                <div class="col s12 m4">
+                    <h1>230</h1>
                     <p>EMPLEOS GENERADOS<p>
                 </div>
             </div>
@@ -438,88 +438,63 @@ foreach($noticias as $noticia){
                 <h2>CRÉDITO SOLIDARIO</h2>
                 <p>Una iniciativa que fomenta la economía socialmente inclusiva mediante un programa al servicio de los emprendedores del sector micro empresarial del país, otorgándoles asistencia técnica y crédito solidario.</p>
             </div>
-
-            <div class="section">
-                <div class="container">
-
-                    <!--   Icon Section   -->
-                    <div class="row">
-                        <div class="col s12 m6 l3 wow fadeInLeft">
-                            <div class="icon-block icon-services">
-                                <div class="row">
-                                    <div class="col l8 m8 s8 center offset-l2 offset-m2 offset-s2">
-                                        <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <h5 class="center">Créditos Escalonados</h5>
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <p class="light center-align">3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l3 wow fadeInRight" data-wow-delay="0.6s">
-                            <div class="icon-block icon-services">
-                                <div class="row">
-                                    <div class="col l8 m8 s8 center offset-l2 offset-m2 offset-s2">
-                                        <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <h5 class="center">Créditos Movilizadores</h5>
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <p class="light center-align">Tiene como objetivo potenciar y desarrollar la economía del país apoyando diversos rubros como ser: Taxistas, Salas de Belleza, Barberías y Pulperías.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l3 wow fadeInLeft">
-                            <div class="icon-block icon-services">
-                                <div class="row">
-                                    <div class="col l8 m8 s8 center offset-l2 offset-m2 offset-s2">
-                                        <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <h5 class="center">Bici Solidaria</h5>
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <p class="light center-align">Crédito Solidario y FUNDEIMH te traen una nueva propuesta que le brinda movilidad a tu negocio.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l3 wow fadeInLeft">
-                            <div class="icon-block icon-services">
-                                <div class="row">
-                                    <div class="col l8 m8 s8 center offset-l2 offset-m2 offset-s2">
-                                        <img src="img/icons/ICONOS-02.png" alt="" class="responsive-img">
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <h5 class="center">Crédito  Rural</h5>
-                                    </div>
-                                    <div class="col l12 m12 s12">
-                                        <p class="light center-align">La opción para beneficiar a pequeños y medianos productores, procesadores y comercializadores de maíz, frijol y otros cultivos.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="container">
+                <div class="owl-carousel owl-theme">
+                    <div class="item center">
+                        <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
+                        <h5 class="center">Créditos Escalonados</h5>
+                        <p>3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-02.png" alt="" class="responsive-img">
+                        <h5 class="center">Crédito  Rural</h5>
+                        <p class="light center-align">La opción para beneficiar a pequeños y medianos productores, procesadores y comercializadores de maíz, frijol y otros cultivos.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
+                        <h5 class="center">Créditos Movilizadores</h5>
+                        <p class="light center-align">Tiene como objetivo potenciar y desarrollar la economía del país apoyando diversos rubros como ser: Taxistas, Salas de Belleza, Barberías y Pulperías.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
+                        <h5 class="center">Bici Solidaria</h5>
+                        <p class="light center-align">Crédito Solidario y FUNDEIMH te traen una nueva propuesta que le brinda movilidad a tu negocio.</p>
+                    </div>
+                    <div class="item center">
+                        <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
+                        <h5 class="center">Créditos Escalonados</h5>
+                        <p>3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-02.png" alt="" class="responsive-img">
+                        <h5 class="center">Crédito  Rural</h5>
+                        <p class="light center-align">La opción para beneficiar a pequeños y medianos productores, procesadores y comercializadores de maíz, frijol y otros cultivos.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
+                        <h5 class="center">Créditos Movilizadores</h5>
+                        <p class="light center-align">Tiene como objetivo potenciar y desarrollar la economía del país apoyando diversos rubros como ser: Taxistas, Salas de Belleza, Barberías y Pulperías.</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
+                        <h5 class="center">Bici Solidaria</h5>
+                        <p class="light center-align">Crédito Solidario y FUNDEIMH te traen una nueva propuesta que le brinda movilidad a tu negocio.</p>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
 
         <!--ICONOS SECTION END-->
 
         <!-- INICIO NOTICIAS -->
         <section class="noticias">
+            <div class="col s12">
+                <div class="titulo center">
+                    <span class="white black-text">ULTIMAS NOTICIAS</span>            
+                </div>
+            </div>
             <div class="container">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="titulo center">
-                            <span class="white black-text">ULTIMAS NOTICIAS</span>            
-                        </div>
-                    </div>
+                <div class="row">                    
                     <div class="col s12">
                         <div class="noticia">
                             <h3 class="center">Nueve empresas campesinas reciben 20 millonres de lempiras de Crédito Solidario</h3>
@@ -543,21 +518,32 @@ foreach($noticias as $noticia){
         </section>
         <!-- FIN NOTICIAS -->
 
+        <!-- INICIO DIRECTOR -->
         <section class="director">
             <div class="container">
                 <div class="row">
-                    <div class="col s12 m4">
-                        <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img">
-                    </div>
-                    <div class="col s12 m8">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare, sapien tempus malesuada sollicitudin, mi erat euismod ante, vel lacinia ante arcu a massa. Fusce efficitur sodales mi eu semper. Sed scelerisque lacus nisl, eget porta libero dignissim semper. Sed lacus lectus, luctus a convallis non, imperdiet vel eros. In vitae tortor ligula. Cras sollicitudin quam nec est hendrerit, at euismod massa vestibulum. Aenean placerat tellus vel elit suscipit gravida ac sed mauris. Sed vehicula vestibulum velit nec lacinia. Vestibulum non tincidunt dui, in semper mi. Praesent non diam ex. Vivamus ac pellentesque tortor. Donec tempor turpis et libero convallis.</p>
+                    <div class="col s12">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare, sapien tempus malesuada sollicitudin, mi erat euismod ante, vel lacinia ante arcu a massa. Fusce efficitur sodales mi eu semper. Sed scelerisque lacus nisl, eget porta libero dignissim semper. Sed lacus lectus, luctus a convallis non, imperdiet vel eros. In vitae tortor ligula. Cras sollicitudin quam nec est hendrerit, at euismod massa vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+        <!-- FIN DIRECTOR END -->
 
-        <!--NEWS SECTION END-->
+        <section class="redes-sociales">
+            <div class="banner-fondo center">
+                <img src="img/redesSociales.jpg" class="responsive-img" alt="">
+            </div>
+        </section>
 
     </main>
     <!--main section END-->
@@ -596,6 +582,8 @@ foreach($noticias as $noticia){
                 responsiveClass: true,
                 autoplay: true,
                 autoplayTimeout: 3000,
+                nav: false,
+                navText: '',
                 responsive: {
                     0: {
                         items: 2,

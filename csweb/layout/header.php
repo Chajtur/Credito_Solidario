@@ -10,14 +10,14 @@
                             </a>
                             <ul class="right hide-on-med-and-down">
                                 <li><a class="header-item" href="index.php">Inicio</a></li>
-                                <li><a class="header-item" href="acerca-de.php">Quiénes Somos</a></li>
-                                <li><a class="header-item" href="contacto.php">Contacto</a></li>
+                                <li><a class="header-item" href="acerca-de.php">¿Quiénes Somos?</a></li>
                                 <li><a class="header-item" href="noticias.php">Noticias</a></li>
                                 <li><a class="header-item" href="videos.php">Historias de éxito</a></li>
+                                <li><a class="header-item" href="contacto.php">Contáctanos</a></li>
                                 <li><a class="dropdown-button header-item" href="#" data-activates="dropdown1">Sistema<i class="material-icons right header-item-icon">arrow_drop_down</i></a></li>
                             </ul>
                         </div>
-                        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons fondoPrincipal-text">menu</i></a>
                     </div>
                 </div>
 
@@ -38,15 +38,21 @@
                         <a href="#!"><span class="white-text email">Tu Banca Solidaria</span></a>
                     </div>
                 </li>
-                <li><a class="hide-menu" href="index.php"><i class="material-icons green-text">home</i>Inicio</a></li>
-                <li><a class="hide-menu" href="acerca-de.php"><i class="material-icons green-text">account_box</i>Acerca de Nosotros</a></li>
+                <li><a class="header-item" href="index.php">Inicio</a></li>
+                <li><a class="header-item" href="acerca-de.php">¿Quiénes Somos?</a></li>
+                <li><a class="header-item" href="noticias.php">Noticias</a></li>
+                <li><a class="header-item" href="videos.php">Historias de éxito</a></li>
+                <li><a class="header-item" href="contacto.php">Contáctanos</a></li>
+                <li><a class="dropdown-button header-item" href="#" data-activates="dropdown1">Sistema<i class="material-icons right header-item-icon">arrow_drop_down</i></a></li>
                 <!--<li><a class="hide-menu" href="#servicios"><i class="material-icons green-text">filter_vintage</i>Rubros</a></li>-->
-                <li><div class="divider"></div></li>
+                <!-- 
+                    <li><div class="divider"></div></li>
                 <li><a class="subheader">Sistema</a></li>
                 <li><a class="" target="_blank" href="http://www.creditosolidario.hn/csfrontend/consultas-nueva">Consultas</a></li>
                 <li><a class="" target="_blank" href="http://www.creditosolidario.hn/creditosolidario/asistencia.html">Reloj</a></li>
                 <li><a class="" target="_blank" href="http://mail.creditosolidario.hn/">Correo</a></li>
                 <li><a class="" target="_blank" href="http://www.creditosolidario.hn/csfrontend/login.php">Iniciar Sesión</a></li>
+                 -->
             </ul>
         </aside>
         <!--Menu lateral END-->
