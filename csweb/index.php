@@ -1,27 +1,3 @@
-<?php require 'php/config.php';?>
-
-<?php
-
-require 'php/conn.php';
-
-$stat = $conn->prepare('select * from noticias where activa = 1 order by fecha desc limit 2');
-$stat->execute();
-$noticias = $stat->fetchAll(PDO::FETCH_ASSOC);
-
-$stat_imagenes = $conn->prepare('select * from imagenes where idnoticia = :id');
-
-$i=0;
-foreach($noticias as $noticia){
-    $stat_imagenes->bindValue(':id', $noticia['id'], PDO::PARAM_STR);
-    $stat_imagenes->execute();
-    $noticias[$i]['imagenes'] = $stat_imagenes->fetchAll(PDO::FETCH_ASSOC);
-    $i++;
-}
-
-// echo json_encode($noticias);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -316,27 +292,32 @@ foreach($noticias as $noticia){
                         <a href="Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>
                     </div>                    
                 </div>
-                <a href="#departamento-1" class="carousel-item">
-                    <div>
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="agencia.php" class="carousel-item">
                         <div>
-                            <span>Francisco Morazan</span>
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#departamento-1" class="carousel-item">
-                    <div>
-                        <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                        </div>
-                        <div>
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="#departamento-1" class="carousel-item">
+                    </a>
+                </div>
+                
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -346,7 +327,7 @@ foreach($noticias as $noticia){
                         </div>
                     </div>
                 </a>
-                <a href="#departamento-1" class="carousel-item">
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -356,7 +337,7 @@ foreach($noticias as $noticia){
                         </div>
                     </div>
                 </a>       
-                <a href="#departamento-1" class="carousel-item">
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -366,7 +347,7 @@ foreach($noticias as $noticia){
                         </div>
                     </div>
                 </a>
-                <a href="#departamento-1" class="carousel-item">
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -376,7 +357,7 @@ foreach($noticias as $noticia){
                         </div>
                     </div>
                 </a>
-                <a href="#departamento-1" class="carousel-item">
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -386,7 +367,7 @@ foreach($noticias as $noticia){
                         </div>
                     </div>
                 </a>
-                <a href="#departamento-1" class="carousel-item">
+                <a href="agencia.php" class="carousel-item">
                     <div>
                         <div>
                             <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
