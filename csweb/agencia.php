@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require 'layout/head.php';?>
+<?php
+    require 'php/config.php';
+    require 'layout/head.php';
+?>
 
     <body>
         <?php require 'layout/header.php';?>

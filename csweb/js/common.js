@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-    
+    $(".dropdown-button").dropdown();
     $(".button-collapse").sideNav();
     $('.collapsible').collapsible();
     $('.hide-menu').click(function(){

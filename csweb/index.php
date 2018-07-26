@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require 'layout/head.php';?>
+<?php
+    require 'php/config.php';
+    require 'layout/head.php';
+?>
 
 <body>
 
@@ -521,8 +524,12 @@
         <!-- FIN DIRECTOR END -->
 
         <section class="redes-sociales">
-            <div class="banner-fondo center">
-                <img src="img/redesSociales.jpg" class="responsive-img" alt="">
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img src="img/redesSociales.jpg" class="responsive-img" alt="">
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -542,6 +549,10 @@
                 fullWidth: false,
                 indicators: false,
                 duration: 100
+            });
+            $('.slider').slider({
+                indicators: false,
+                height: 400
             });
 
             $('.moveNextCarousel').click(function(e){

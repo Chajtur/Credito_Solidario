@@ -309,6 +309,55 @@ nav ul a {
     color: #FFF;
 }
 
+.quienes-somos {
+    margin-top: 50px;
+}
+
+.quienes-somos .img-quienes-somos {
+    height: 300px;
+}
+
+.vision {
+    border-left: 1px solid #0D47A1;
+    border-right: 1px solid #0D47A1;
+}
+
+.familia .familia-img-container {
+    position: relative;
+    width: 100%;
+}
+
+.familia .familia-img-container .overlay {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    transition: .5s ease;
+    background-color: #0D47A1;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.familia .familia-img-container .overlay p{
+    color: #FFF;
+    margin: 0;
+    text-align: center;
+}
+
+/*.familia .familia-img-container .overlay .text {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}*/
+
+.familia .familia-img-container .overlay p.titulo {
+    font-weight: bold;
+}
+
+.familia .familia-img-container:hover .overlay {
+    opacity: 0.8;
+}
+
 /*.banner-fondo {
     position: relative;
 }

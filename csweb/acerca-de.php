@@ -9,103 +9,152 @@
 
     <?php require 'layout/header.php';?>
 
-    <section>
-        <div class="row no-margin">
-            <div class="col l6 m6 s12 no-margin no-padding">
-                <div class="icon-layer-wrapper">
-                    <img class="responsive-img" src="img/movil/MOVIL-01.jpg" alt="">
-                    <span class="icon-layer">
-                        <div class="row no-margin no-padding">
-                            <div class="col l6 m6 s6 icon-layer-img-wrapper">
-                                <img src="img/icons/ICONOS-01.png" alt="">
-                            </div>
-                            <div class="col l6 m6 s6 icon-layer-img-wrapper">
-                                <img src="img/icons/ICONOS-02.png" alt="">
-                            </div>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="col l6 m6 hide-on-small-only no-margin no-padding">
-                <div class="icon-layer-wrapper">
-                    <img class="responsive-img" src="img/movil/MOVIL-02.jpg" alt="">
-                    <span class="icon-layer">
-                        <div class="row no-margin no-padding">
-                            <div class="col l6 m6 s6 icon-layer-img-wrapper">
-                                <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
-                            </div>
-                            <div class="col l6 m6 s6 icon-layer-img-wrapper">
-                                <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
-                            </div>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <div class="section section-icons">
-
-        <div class="header container">
-            <h2>¿QUIÉNES SOMOS?</h2>
-            <p>Somos un programa creado con la visión del Presidente de la República, cuya finalidad es la de brindar asistencia técnica y dar acceso a créditos solidarios a todos los emprendedores del país que quieran o estén organizados y que tengan el deseo de constituir una microempresa. </p>
-        </div><br><br>
-    </div>
-
-    <div class="section">
+    <section class="quienes-somos">
         <div class="container">
-            <br><br>
-            <!--   Icon Section   -->
             <div class="row">
-                <div class="col s12 m6 l4 wow fadeInLeft">
-                    
-                    <div class="icon-block icon-services">
-                        <div class="row">
-                            <div class="col l6 m8 s8 center offset-l3 offset-m2 offset-s2">
-                                <i class="fa fa-handshake-o fa-5x green-text text-darken-3" aria-hidden="true"></i><br>
-                            </div>
-                            <div class="col l12 m12 s12">
-                                <h5 class="center">Rentabilidad Social</h5>
-                            </div>
-                            <div class="col l12 m12 s12">
-                                <p class="light center-align">Se alcanzara mediante la implementación de una política de democratización del crédito (accesible a todos y tasas de interés bajas), por considerarlo un derecho humano.</p>
+                <div class="col s12 m4">
+                    <img src="img/400X400-02.jpg" alt="" class="img-quienes-somos">
+                </div>
+                <div class="col s12 m8 center">
+                    <h3 class="fondoPrincipal-text">¿QUIÉNES SOMOS?</h3>
+                    <hr class="fondoPrincipal-text">
+                    <p>EL PROGRAMA CREDITO SOLIDARIO BUSCA:</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin blandit tempor. Praesent posuere lectus metus. Phasellus in vehicula erat. Fusce nisi sem, tempus in.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="estrategia">
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m4">
+                    <h3 class="fondoPrincipal-text">MISIÓN</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                </div>
+                <div class="col s12 m4 vision">
+                    <h3 class="fondoPrincipal-text">VISIÓN</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                </div>
+                <div class="col s12 m4">
+                    <h3 class="fondoPrincipal-text">VALORES</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="memoria-anual">
+        <div class="container">
+            <div class="row center">
+                <h5 class="teal-text">Memoria anual: insertlinkdememoriaanual.com</h5>
+            </div>
+        </div>
+    </section>
+
+    <section class="familia">
+        <div class="container">
+            <div class="row">
+                <h3 class="fondoPrincipal-text center">FAMILIA CRÉDITO SOLIDARIO</h3>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4 wow fadeInLeft">
-                    <div class="icon-block icon-services">
-                        <div class="row">
-                            <div class="col l6 m8 s8 center offset-l3 offset-m2 offset-s2">
-                                <i class="fa fa fa-briefcase fa-5x blue-text text-darken-3" aria-hidden="true"></i><br>
-                            </div>
-                            <div class="col l12 m12 s12">
-                                <h5 class="center">Generación de Empleo</h5>
-                            </div>
-                            <div class="col l12 m12 s12">
-                                <p class="light center-align">Al fomentar la creación de empresas, incrementara proporcionalmente la cantidad de empleos generados. Con el tiempo mas familias podrán beneficiar del programa sea de forma directa como empresarios o indirecta como empleado para las empresas</p>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4 wow fadeInRight" data-wow-delay="0.6s">
-                    <div class="icon-block icon-services">
-                        <div class="row">
-                            <div class="col l6 m8 s8 center offset-l3 offset-m2 offset-s2">
-                                <i class="fa fa-money fa-5x yellow-text text-darken-3" aria-hidden="true"></i><br>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
                             </div>
-                            <div class="col l12 m12 s12">
-                                <h5 class="center">Fomentar la economía solidaria</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
                             </div>
-                            <div class="col l12 m12 s12">
-                                <p class="light center-align">Esto permitirá influir en el sector financiero; es decir que los hogares en condiciones de extrema pobreza tengan acceso a los servicios financieros como ahorro y crédito.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="familia-img-container">
+                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
+                        <div class="overlay">
+                            <div class="text">
+                                <p>Carlos Gunter</p>
+                                <p class="titulo">Director</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="ifis">
+        <div class="container">
+            <div class="row">
+                <h3 class="fondoPrincipal-text center">INSTITUCIONES FINANCIERAS</h3>
+            </div>
+        </div>
+    </section>
 
     <?php require 'layout/footer.php';?>
 

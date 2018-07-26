@@ -2,7 +2,10 @@
 
 <html lang="en">
 
-<?php require 'layout/head.php';?>
+<?php
+    require 'php/config.php';
+    require 'layout/head.php';
+?>
 
 <body>
 <style>
@@ -13,7 +16,7 @@
 
 </style>
 
-    <?php require 'layout/header.php';?>
+<?php require 'layout/header.php'; ?>
 
     <div class="parallax-container custom">
         <div class="parallax"><img src="img/BANNERS-01-01.jpg"></div>
