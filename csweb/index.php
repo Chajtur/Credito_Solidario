@@ -268,15 +268,15 @@
         <section class="contadores center">
             <div class="row">
                 <div class="col s12 m4">                    
-                    <h1>230</h1>
+                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
                     <p>CRÉDITOS OTOROGADOS<p>
                 </div>
                 <div class="col s12 m4">
-                    <h1>230</h1>
+                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
                     <p>DESEMBOLSOS<p>
                 </div>
                 <div class="col s12 m4">
-                    <h1>230</h1>
+                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
                     <p>EMPLEOS GENERADOS<p>
                 </div>
             </div>
@@ -308,7 +308,19 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="agencia.php" class="carousel-item">
+                    <a href="agencia.php">
+                        <div>
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
                             <div>
                                 <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
@@ -319,67 +331,66 @@
                         </div>
                     </a>
                 </div>
-                
-                <a href="agencia.php" class="carousel-item">
-                    <div>
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="agencia.php" class="carousel-item">
-                    <div>
+                    </a>
+                </div>      
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>       
-                <a href="agencia.php" class="carousel-item">
-                    <div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <span>Francisco Morazan</span>
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="agencia.php" class="carousel-item">
-                    <div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="agencia.php">
                         <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            <div>
+                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
+                            </div>
+                            <div>
+                                <span>Francisco Morazan</span>
+                            </div>
                         </div>
-                        <div>
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="agencia.php" class="carousel-item">
-                    <div>
-                        <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                        </div>
-                        <div class="card-content">
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="agencia.php" class="carousel-item">
-                    <div>
-                        <div>
-                            <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                        </div>
-                        <div class="card-content">
-                            <span>Francisco Morazan</span>
-                        </div>
-                    </div>
-                </a>         
+                    </a>
+                </div>      
             </div>
         </section>
         <!-- FIN AGENCIAS -->
@@ -424,7 +435,7 @@
             </div>
             <div class="container">
                 <div class="owl-carousel owl-theme">
-                    <div class="item center">
+                    <div class="item">
                         <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
                         <h5 class="center">Créditos Escalonados</h5>
                         <p>3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
@@ -539,6 +550,7 @@
     <?php require 'layout/footer.php';?>
 
     <?php require 'layout/scripts.php';?>
+    <script src="js/numscroller-1.0.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -592,6 +604,14 @@
                     }
                 }
             });
+
+            function getCounter(startCount,  endCount, time, html) {
+                data = {
+                    startCount: starCount,
+                    endCount: endCount,
+                    time: time
+                };
+            }
         });
         
     </script>

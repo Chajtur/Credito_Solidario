@@ -1,45 +1,6 @@
 <?php require 'php/config.php';?>
 
-<?php 
-
-require 'php/conn.php';
-
-$stat = $conn->prepare('select * from noticias where activa = 1');
-$stat->execute();
-$result = $stat->fetchAll(PDO::FETCH_ASSOC);
-
-$noticias = array();
-
-$stat_img = $conn->prepare('select * from imagenes where idnoticia = :id');
-
-foreach($result as $fila){
-
-    $current_noticia = (object)array(
-        'id' => $fila['id'],
-        'titulo' => $fila['titulo'],
-        'contenido' => $fila['contenido'],
-        'lugar' => $fila['lugar'],
-        'fecha' => $fila['fecha'],
-        'ultima_actualizacion' => $fila['ultima_actualizacion'],
-        'imagenes' => array()
-    );
-
-    $stat_img->bindValue(':id', $fila['id'], PDO::PARAM_STR);
-    $stat_img->execute();
-    $aux_result = $stat_img->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach($aux_result as $row){
-        array_push($current_noticia->imagenes, $row['nombre']);
-    }
-
-    array_push($noticias, $current_noticia);
-
-}
-
-?>
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <?php require 'layout/head.php';?>
@@ -48,41 +9,167 @@ foreach($result as $fila){
 
     <?php require 'layout/header.php';?>
 
-    <div class="parallax-container custom">
-        <div class="parallax"><img src="img/BANNERS-01-01.jpg"></div>
-        <div class="container">
-            <h3 class="white-text">NOTICIAS</h3>
+    <section class="noticia-portada">
+        <div class="slider" id="noticia-destacada">
+            <ul class="slides">
+                <li>
+                    <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <?php $altern = true;?>
-
-    <?php foreach($noticias as $noticia):?>
-
-        <div class="section news-content" id="noticia1">
-            <div class="container">
+    <section class="noticias-anio">
+        <h3 class="fondoPrincipal-text">Noticias anuales</h3>
+        <div class="row">
+            <form id="formNoticia" class="col s12">
                 <div class="row">
-                    <div class="col s12 m6 l6 <?php echo ($altern = !$altern ? 'push-l6' : '')?>">
-                        <div class="image-news">
-                            <img class="" src="http://www.creditosolidario.hn/backend/sys/asset/img/noticias/<?php echo $noticia->imagenes['0'];?>" alt="">
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l6 <?php echo ($altern ? 'pull-l6' : '')?> left-align">
-                        <!--TITLE-->
-                        <h3 class="title-text-news"><?php echo $noticia->titulo;?></h3>
-                        <div class="colored-line-left"></div>
-                        <p class=""><?php echo substr($noticia->contenido, 0, 200).'...';?></p>
-                        <a href="noticia.php?id=<?php echo $noticia->id;?>" class="waves-effect waves-light btn-flat blue white-text right">Ver Más..</a>
+                    <div class="input-field col s6"></div>
+                    <div class="input-field inline col s6">
+                        <select name="anio" id="anio">
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                        <label for="anio">Año</label>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-
-    <?php endforeach;?>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="noticia.php" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>
+                </div>
+                <div class="card-action">
+                    <span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>
+                    <a href="" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>
+                </div>
+            </div>
+        </div>        
+    </section>
 
     <?php require 'layout/footer.php';?>
 
     <?php require 'layout/scripts.php';?>
+
+    <script>
+        $(document).ready(function () {
+            $('#noticia-destacada').slider({
+                indicators: false,
+                height: 400
+            });
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                nav: false,
+                navText: '',
+                responsive: {
+                    0: {
+                        items: 2,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false,
+                        loop: false
+                    }
+                }
+            });
+
+            $('select').material_select();
+        });
+    </script>
+    
 
 </body>
 

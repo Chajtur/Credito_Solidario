@@ -19,6 +19,10 @@ body {
     padding: 0 !important;
 }
 
+.contacto h3 {
+    padding-bottom: 5px;
+}
+
 /*medias query to define or re difene the widhh of container*/
 
 @media only screen and (min-width: 993px)
@@ -358,6 +362,12 @@ nav ul a {
     opacity: 0.8;
 }
 
+.noticia-fecha {
+    padding: 5px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
 /*.banner-fondo {
     position: relative;
 }
@@ -373,6 +383,10 @@ nav ul a {
 
 .main-logo {
     padding: 5px !important;
+}
+
+.main-logo img {
+    max-height: 62px !important;
 }
 
 .header-item {
@@ -505,6 +519,14 @@ nav ul a {
 .main-header {
     padding: 2% !important;
     color: #ffffff;
+}
+
+.noticia-galeria h3{
+    padding-bottom: 5px;
+}
+
+.cuerpo-noticia p {
+    text-align: justify;
 }
 
 /*TABS*/

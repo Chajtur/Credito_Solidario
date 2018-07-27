@@ -148,6 +148,7 @@
         </div>
     </section>
 
+    <!--  
     <section class="ifis">
         <div class="container">
             <div class="row">
@@ -155,6 +156,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <?php require 'layout/footer.php';?>
 
