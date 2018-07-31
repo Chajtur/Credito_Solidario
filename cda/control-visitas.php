@@ -108,7 +108,7 @@ $visitas = $stat->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="card-action">
-                    <button type="submit" class="btn-flat blue-text" id="btnagregar">Agregar</button>
+                    <button type="submit" class="btn-flat blue-text" id="btnagregar">Registrar</button>
                 </div>
 
             </div>

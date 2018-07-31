@@ -1,7 +1,7 @@
 <?php 
-    if (isset($_GET['noticiaId'])) {
-        $noticiaId = $_GET['noticiaId'];
-    }
+    /*if (isset($_GET['accion'])) {
+        $accion = 'accion';
+    }*/
 ?>
 
 <div class="row">
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title blue-text">Editar noticia</span>
+                    <span class="card-title blue-text">Nueva noticia</span>
                     <form id="formGuardarNoticia">
                         <div class="input-field">
                             <input type="text" name="titulo" id="titulo" data-length="80">
@@ -38,11 +38,11 @@
                             </select>
                             <label for="estado">Estado</label>
                         </div>
-                        <input type="hidden" name="noticiaId" id="noticiaId" value="<?php echo isset($noticiaId) ? $noticiaId : '' ?>">
                     </form>
                 </div>
                 <div class="card-action">
-                    <button type="submit" class="btn-flat blue-text" id="btnRegistrar"><i class="material-icons right">send</i> Agregar</button>
+                <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
+                    <button type="submit" class="btn-flat blue-text" id="btnRegistrar"><i class="material-icons right">send</i>Agregar</button>
                 </div>
             </div> 
         </div>
@@ -77,17 +77,37 @@
             autoclose: false,
             ampmclickable: true
         });
-    });
+        $('#btnRegistrar').click(function (evt) {
+            $('#btnRegistrar').attr('disabled', 'disabled');
+            let userDate = $('#fecha').val();
+            let phpDate = userDate.split('/').reverse().join('-');
+            let noticia = {
+                titulo: $('#titulo').val(),
+                contenido: $('#contenido').val(),
+                resumen: $('#resumen').val(),
+                fecha: phpDate,
+                estado: $('#estado').val(),
+                usuario: $('#usuario').val(),
+                accion: 'agregar'
+            };
 
-    function cargarNoticia() {
-        let idNoticia = $('#noticiaId').val();
+            $.ajax({
+                type: 'POST',
+                url: '../php/mercadeo/controlador.php',
+                data: noticia,
+                success: function (data) {
+                    $('#btnRegistrar').removeAttr('disabled');
+                    if (data.noticiaId >= 1) {
+                        swal('Correcto','Se ha registrado la visita correctamente', 'success');
+                        $('#floating-refresh').trigger('click');
+                        location.href= 'index.php?accion=editar&noticiaId=' + data.noticiaId;
+                    } else {
+                        swal('Error','Ha ocurrido un error al realizar la operación', 'error');
+                    }
+                }
+            });
 
-        $.ajax({
-            type: 'GET',
-            url: '../php/mercadeo/controlador.php?accion=mostrar&noticiaId=' + idNoticia,
-            success: function (data) {
-                $('#titulo').val(data.titulo);
-            }
+            evt.preventDefault();
         });
-    }
+    });
 </script>

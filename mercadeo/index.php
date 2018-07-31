@@ -1,4 +1,13 @@
-<?php //require '../php/auth.php'; ?>
+<?php 
+    //require '../php/auth.php';
+    if (isset($_GET['accion'])) {
+        $accion = $_GET['accion'];
+    }
+
+    if (isset($_GET['noticiaId'])) {
+        $noticiaId = $_GET['noticiaId'];
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -43,6 +52,7 @@
         <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
         <link rel="stylesheet" href="../css/plugins/select2/select2.min.css">
         <link rel="stylesheet" href="../css/plugins/select2/select2.materialize.css">
+        <link rel="stylesheet" href="../css/materialize.clockpicker.css">
         <title>Noticias - Crédito Solidario</title>
     </head>
     <body>
@@ -137,6 +147,8 @@
                         </div>
                     </div>
                     <!-- FIN DE BREADCRUMBS -->
+                    <input type="hidden" name="accion" id="accion" value="<?php echo isset($accion) ? $accion : '' ?>">
+                    <input type="hidden" name="noticiaId" id="noticiaId" value="<?php echo isset($noticiaId) ? $noticiaId : '' ?>">
 
                     <div class="container" id="main-container"></div>
 
@@ -200,19 +212,29 @@
         <script src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
         <script type="text/javascript" src="../js/materialize.js"></script>
         <script src="../js/plugins/select2/select2.min.js"></script>
+        <script src="../js/materialize.clockpicker.js"></script>
 
         <script>
             $(document).ready(function () {
+                let accion = $('#accion').val();
+                let noticiaId = $('#noticiaId').val();
+
+                if (accion == 'editar') {
+                    $('#main-container').load('edicionNoticia.php?noticiaId=' + noticiaId, function(){
+                        $('#loading').hide();
+                    });
+                } else {
+                    $('#main-container').load('listaNoticias.php', function(){
+                        $('#loading').hide();
+                    });
+                }
+
                 $('#floating-refresh').click(function(){
                     $('#'+window.idbtnmenuactivo).trigger('refresh');
                 });
-                
-                $('#main-container').load('listaNoticias.php', function(){
-                    $('#loading').hide();
-                });
 
                 $('#agregar-noticia').click(function (evt) {
-                    $('#main-container').load('edicionNoticia.php', function(){
+                    $('#main-container').load('nuevaNoticia.php', function(){
                         $('#loading').hide();
                     });
 
