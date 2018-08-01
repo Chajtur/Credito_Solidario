@@ -41,11 +41,32 @@
                     </form>
                 </div>
                 <div class="card-action">
-                <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
-                    <button type="submit" class="btn-flat blue-text" id="btnRegistrar"><i class="material-icons right">send</i>Agregar</button>
+                    <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
+                    <input type="hidden" name="noticiaId" id="noticiaId">
+                    <button type="submit" class="btn-flat blue-text" id="btnRegistrar"><i class="material-icons right">send</i>Guardar</button>
+                    <button class="waves-effect waves-light btn blue" id="btnNuevaImagen"><i class="material-icons right">add</i>imagen</button>
                 </div>
             </div> 
         </div>
+    </div>
+</div>
+<div id="contenedorImagenes" class="row">
+
+</div>
+
+<div class="modal" id="modalImagen">
+    <div class="modal-content">
+        <h4>Imagen de la noticia</h4>
+        <form id="formImagen">
+            <div class="input-field">
+                <input type="text" name="titulo" id="titulo" data-length="80">
+                <label for="titulo">Título</label>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button id="btnRegistrarImagen" class="waves-effect waves-light btn green lighten-2" type="submit">Registrar</button>
+        <button id="btnCancelarImagen" class="waves-effect waves-light btn red lighten-2" type="submit">Cancelar</button>
     </div>
 </div>
 
@@ -77,6 +98,22 @@
             autoclose: false,
             ampmclickable: true
         });
+        $('.modal').modal({
+            dismissible: true,
+            inDuration: 300,
+            outDuration: 200
+        });
+
+        $('#btnNuevaImagen').click(function (evt) {
+            $('#modalImagen').modal('open');
+            evt.preventDefault();
+        });
+
+        $('#btnCancelarImagen').click(function (evt) {
+            $('#modalImagen').modal('close');
+            evt.preventDefault();
+        });
+
         $('#btnRegistrar').click(function (evt) {
             $('#btnRegistrar').attr('disabled', 'disabled');
             let userDate = $('#fecha').val();
@@ -96,11 +133,13 @@
                 url: '../php/mercadeo/controlador.php',
                 data: noticia,
                 success: function (data) {
+                    let noticiaData = JSON.parse(data);
                     $('#btnRegistrar').removeAttr('disabled');
-                    if (data.noticiaId >= 1) {
+                    if (noticiaData.noticiaId >= 1) {
+                        $('#noticiaId').val(noticiaData.noticiaId);
                         swal('Correcto','Se ha registrado la visita correctamente', 'success');
                         $('#floating-refresh').trigger('click');
-                        location.href= 'index.php?accion=editar&noticiaId=' + data.noticiaId;
+                        //location.href= 'index.php?accion=editar&noticiaId=' + data.noticiaId;
                     } else {
                         swal('Error','Ha ocurrido un error al realizar la operación', 'error');
                     }

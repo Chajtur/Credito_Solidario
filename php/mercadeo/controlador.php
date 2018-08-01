@@ -34,19 +34,19 @@
                         }
 
                        // $conn->beginTransaction();
-                        $stat = $conn->prepare('call guardar_noticia(:titulo, :contenido, :resumen, :fecha, :estado, :usuario);');
-                        $stat->bindValue(':titulo', $titulo, PDO::PARAM_STR);
-                        $stat->bindValue(':contenido', $contenido, PDO::PARAM_STR);
-                        $stat->bindValue(':resumen', $resumen, PDO::PARAM_STR);
-                        $stat->bindValue(':fecha', $fecha, PDO::PARAM_STR);
-                        $stat->bindValue(':estado', $estado, PDO::PARAM_STR);
-                        $stat->bindValue(':usuario', $usuario, PDO::PARAM_STR);
-                        $stat->query();                        
+                        $stat = $conn->prepare('call guardar_noticia(?, ?, ?, ?, ?, ?, @noticiaId);');
+                        $stat->bindParam(1, $titulo, PDO::PARAM_STR);
+                        $stat->bindParam(2, $contenido, PDO::PARAM_STR);
+                        $stat->bindParam(3, $resumen, PDO::PARAM_STR);
+                        $stat->bindParam(4, $fecha, PDO::PARAM_STR);
+                        $stat->bindParam(5, $estado, PDO::PARAM_STR);
+                        $stat->bindParam(6, $usuario, PDO::PARAM_STR);
+                        //$stat->bindParam(7, $noticiaId, PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT);
+                        $stat->execute();
+                        $stat->closeCursor();
 
-                        $noticiaId = $conn->lastInsertId();
-                       // $conn->commit();
-                        echo $noticiaId;
-                        die();
+                        $noticia = $conn->query('select @noticiaId as noticiaId;')->fetch();
+                        $noticiaId = $noticia['noticiaId'];
 
                         $noticia = array(
                             'noticiaId' => $noticiaId,
