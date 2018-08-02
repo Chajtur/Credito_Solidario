@@ -50,17 +50,29 @@
         </div>
     </div>
 </div>
-<div id="contenedorImagenes" class="row">
-
+<div class="row">
+    <div id="tarjetaImagenes" class="card">
+        <div class="card-content">
+            <span class="card-title blue-text">Imágenes</span>
+            <div id="contenedorImagenes" class="row">    
+                
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="modal" id="modalImagen">
     <div class="modal-content">
         <h4>Imagen de la noticia</h4>
         <form id="formImagen">
-            <div class="input-field">
-                <input type="text" name="titulo" id="titulo" data-length="80">
-                <label for="titulo">Título</label>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Imagen</span>
+                    <input type="file" id="imagen" name="imagen">
+                </div>
+                <div class="file-path-wrapper">
+                    <input type="text" name="imagenPath" id="imagenPath" placeholder="Seleccione una imagen JPG/PNG" class="file-path validate">
+                </div>
             </div>
         </form>
     </div>
@@ -86,7 +98,11 @@
             weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
             weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
             weekdaysLetter: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-            format: 'dd/mm/yyyy'
+            format: 'dd/mm/yyyy',
+            onStart: function () {
+                let date = new Date();
+                this.set('select', [date.getFullYear(), date.getMonth() + 1, date.getDate()]);
+            }
         });
         $('.timepicker').pickatime({
             default: 'now',
@@ -137,7 +153,7 @@
                     $('#btnRegistrar').removeAttr('disabled');
                     if (noticiaData.noticiaId >= 1) {
                         $('#noticiaId').val(noticiaData.noticiaId);
-                        swal('Correcto','Se ha registrado la visita correctamente', 'success');
+                        swal('Correcto','Se ha registrado la noticia correctamente', 'success');
                         $('#floating-refresh').trigger('click');
                         //location.href= 'index.php?accion=editar&noticiaId=' + data.noticiaId;
                     } else {
@@ -148,5 +164,101 @@
 
             evt.preventDefault();
         });
+
+        $('#btnRegistrarImagen').click(function (evt) {
+            let usuario = $('#usuario').val();
+            let noticiaId = $('#noticiaId').val();
+            let imagenNoticia = document.getElementById('imagen').files[0];
+
+            //let form = $('#formImagen');
+            let data = new FormData();
+            data.append('usuario', usuario);
+            data.append('accion', 'agregar');
+            data.append('etiquetas', 'noticia');
+            data.append('modulo', 'noticia');
+            data.append('archivo', imagenNoticia);
+
+            $.ajax({
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: data,
+                url: 'http://localhost/fileServer/controlador/archivoControlador.php',
+                success: function (data) {
+                    archivoData = JSON.parse(data);
+
+                    if (archivoData.error == 0) {
+                        // Llama a una funcion para que guarde la ruta de la imagen en la base de datos
+                        guardarImagen(archivoData.url, noticiaId);
+                    } else {
+                        console.log('Archivo no enviado');
+                    }
+                },
+                error: function () {
+
+                }
+            });
+            evt.preventDefault();
+        });
+
+        function guardarImagen(url, noticiaId) {
+            let objeto = {
+                url: url,
+                noticiaId: noticiaId,
+                accion: 'agregar-archivo'
+            };
+
+            $.ajax({
+                type: 'POST',
+                data: objeto,
+                url: '../php/mercadeo/controlador.php',
+                success: function (data) {
+                    respuestaData = JSON.parse(data);
+                    console.log(data);
+
+                    if (respuestaData.error == 0) {
+                        swal('Correcto','Se ha registrado la imagen correctamente', 'success');
+                        recuperarImagenes(noticiaId);
+                        $('#modalImagen').modal('close');
+                    } else {
+                        swal('Error','Ha ocurrido un error al realizar la operación', 'error');
+                    }
+                }
+            });
+        }
+
+        function recuperarImagenes(noticiaId) {
+            let grillaImagenes = $('#contenedorImagenes');
+            grillaImagenes.text('');
+            let imagenesTxt = '';
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/controlador.php?accion=listar-imagenes&noticiaId=' + noticiaId,
+                success: function (data) {
+                    let imagenes = JSON.parse(data);
+                    console.log(imagenes);
+                    $.each(imagenes, function (i, imagen) {
+                        imagenesTxt += '<div class="col s12 m6 l4">';
+                        imagenesTxt += '<div class="card">';
+                        imagenesTxt += '<div class="card-image">';
+                        imagenesTxt += '<img src="' + imagen.url + '" alt="">';
+                        imagenesTxt += '</div>';
+                        imagenesTxt += '<div class="card-action right">';
+                        imagenesTxt += '<a href="#!" class="btn red" click="' + eliminarImagen(imagen.noticiaId, imagen.imagenNoticiaId) + '"><i class="material-icons red">clear</i></a>';
+                        imagenesTxt += '</div>';
+                        imagenesTxt += '</div>';
+                        imagenesTxt += '</div>';
+                    });
+
+                    grillaImagenes.html(imagenesTxt);
+                }
+            });
+        }
+
+        function eliminarImagen(noticiaId, imagenId) {
+            
+        }
     });
 </script>

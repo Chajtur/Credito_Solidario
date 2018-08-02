@@ -60,6 +60,52 @@
 
                         echo json_encode($noticia, 16);                    
                         break;
+
+                    case 'agregar-archivo':
+                        if (isset($_POST['noticiaId'])) {
+                            $noticiaId = $_POST['noticiaId'];
+                        }
+
+                        if (isset($_POST['url'])) {
+                            $url = $_POST['url'];
+                        }
+
+                        $stat = $conn->prepare('call guardar_imagen_noticia(?, ?);');
+                        $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
+                        $stat->bindParam(2, $url, PDO::PARAM_STR);
+                        if ($stat->execute()) {
+                            $respuesta = array('error' => 0);
+
+                            echo json_encode($respuesta, 16);
+                        } else {
+                            $respuesta = array('error' => 1);
+
+                            echo json_encode($respuesta, 16);
+                        }
+                        break;
+
+                    case 'eliminar-imagen':
+                        if (isset($_POST['noticiaId'])) {
+                            $noticiaId = $_POST['noticiaId'];
+                        }
+
+                        if (isset($_POST['imagenId'])) {
+                            $imagenId = $_POST['imagenId'];
+                        }
+
+                        $stat = $conn->prepare('call eliminar_imagen_noticia(?, ?);');
+                        $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
+                        $stat->bindParam(2, $imagenId, PDO::PARAM_INT);
+                        if ($stat->execute()) {
+                            $respuesta = array('error' => 0);
+
+                            echo json_encode($respuesta, 16);
+                        } else {
+                            $respuesta = array('error' => 1);
+
+                            echo json_encode($respuesta, 16);
+                        }
+                        break;
                     
                     default:
                         # code...
@@ -95,6 +141,20 @@
 
                             echo json_encode($noticia, 16);
                         }                        
+                        break;
+
+                    case 'listar-imagenes':
+                        if (isset($_GET['noticiaId'])) {
+                            $noticiaId = $_GET['noticiaId'];
+
+                            $stat = $conn->prepare('call obtener_imagenes_noticia(?);');
+                            $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
+                            $stat->execute();
+
+                            $imagenes = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                            echo json_encode($imagenes, 64);
+                        }
                         break;
                     
                     default:

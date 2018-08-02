@@ -48,6 +48,7 @@
                                 <input type="checkbox" id="input_whatsapp" />
                                 <label for="input_whatsapp" class="custom-top">¿Tiene Whatsapp?</label>
                             </div>
+                            <br>
                             <div class="input-field ">
                                 <i class="material-icons prefix indigo-text">email</i>
                                 <input id="input_email" type="email" class="validate" placeholder="correo@correo.com">
