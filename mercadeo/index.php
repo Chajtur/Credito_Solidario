@@ -139,7 +139,7 @@
                             <div class="row">
                                 <div class="col s12 m12 l12">
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Mercadeo</a></li>
+                                        <li><a href="index.php">Mercadeo</a></li>
                                         <li  class="active" id="breadcrum-title">Noticias</li>
                                     </ol>
                                 </div>
@@ -181,7 +181,7 @@
             </a>
             <ul>
                 <li><a href="" id="agregar-noticia" class="btn-floating teal lighten-2"><i class="material-icons">add</i></a></li>
-                <li><a href="" id="refrescar-noticias" class="btn-floating green lighten-2"><i class="material-icons">refresh</i></a></li>
+                <li><a href="index.php" id="refrescar-noticias" class="btn-floating green lighten-2"><i class="material-icons">refresh</i></a></li>
             </ul>
         </div>
 
@@ -241,45 +241,14 @@
                     evt.preventDefault();
                 });
 
-                $('#refrescar-noticias').click(function (evt) {
+                /*$('#refrescar-noticias').click(function (evt) {
                     $('#main-container').load('listaNoticias.php', function(){
                         $('#loading').hide();
                     });
 
                     evt.preventDefault();
-                });
-            });
-
-            function obtenerNoticias() {
-                var noticiasContainer = $('#grilla-noticias');
-                
-                /*$.ajax({
-                    type: 'GET',
-                    url: '../mercadeo/index.php?accion=listar',
-                    dataType: 'JSON',
-                    success: function (data) {
-                        $.each(data, function (i, noticia) {
-                            noticiasContainer.append(
-                                '<div class="col s12 m4">',
-                                    '<div class="card">',
-                                        '<div class="card-image">',
-                                            '<img src="" alt="">',
-                                            '<span class="card-title">'+ noticia.titulo +'</span>',
-                                        '</div>',
-                                        '<div class="card-content">'+ noticia.resumen +'</div>',
-                                        '<div class="card-action">',
-                                            '<a href="#"><i class="material-icons">create</i></a>',
-                                        '</div>',
-                                    '</div>',
-                                '</div>'
-                            );
-                        });
-                    },
-                    error: function(xhr, status, error) {
-
-                    }
                 });*/
-            }
+            });
         </script>
 
     </body>

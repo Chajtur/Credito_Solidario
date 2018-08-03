@@ -106,6 +106,55 @@
                             echo json_encode($respuesta, 16);
                         }
                         break;
+
+                    case 'actualizar':
+                        if (isset($_POST['noticiaId'])) {
+                            $noticiaId = $_POST['noticiaId'];
+                        }
+
+                        if (isset($_POST['titulo'])) {
+                            $titulo = $_POST['titulo'];
+                        }
+
+                        if (isset($_POST['contenido'])) {
+                            $contenido = $_POST['contenido'];
+                        }
+
+                        if (isset($_POST['resumen'])) {
+                            $resumen = $_POST['resumen'];
+                        }
+
+                        if (isset($_POST['fecha'])) {
+                            $fecha = $_POST['fecha'];
+                        }
+                        
+                        if (isset($_POST['estado'])) {
+                            $estado = $_POST['estado'];
+                        }
+
+                        if (isset($_POST['usuario'])) {
+                            $usuario = $_POST['usuario'];
+                        }
+
+                        $stat = $conn->prepare('call actualizar_noticia(?,?,?,?,?,?,?);');
+                        $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
+                        $stat->bindParam(2, $titulo, PDO::PARAM_STR);
+                        $stat->bindParam(3, $contenido, PDO::PARAM_STR);
+                        $stat->bindParam(4, $resumen, PDO::PARAM_STR);
+                        $stat->bindParam(5, $fecha, PDO::PARAM_STR);
+                        $stat->bindParam(6, $estado, PDO::PARAM_INT);
+                        $stat->bindParam(7, $usuario, PDO::PARAM_STR);
+
+                        if ($stat->execute()) {
+                            $respuesta = array('error' => 0);
+
+                            echo json_encode($respuesta, 16);
+                        } else {
+                            $respuesta = array('error' => 1);
+
+                            echo json_encode($respuesta, 16);
+                        }
+                        break;
                     
                     default:
                         # code...
@@ -117,50 +166,49 @@
         case 'GET':
             if (isset($_GET['accion'])) {
                 $accion = $_GET['accion'];
-                switch ($accion) {
-                    case 'listar':
-                        $estado = $_GET['estado'];
-                        $stat = $conn->prepare('call obtener_noticias(:estado);');
-                        $stat->bindValue(':estado', $estado, PDO::PARAM_STR);
+            }
+
+            switch ($accion) {
+                case 'listar':
+                    $stat = $conn->prepare('call obtener_noticias();');
+                    $stat->execute();
+
+                    $noticias = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo json_encode($noticias, 64);
+                    break;
+
+                case 'mostrar':
+                    if (isset($_GET['noticiaId'])) {
+                        $noticiaId = $_GET['noticiaId'];
+                    }                        
+
+                    $stat = $conn->prepare('call obtener_noticia(?);');
+                    $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
+                    $stat->execute();
+
+                    $noticia = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo json_encode($noticia, 16);
+                    break;
+
+                case 'listar-imagenes':
+                    if (isset($_GET['noticiaId'])) {
+                        $noticiaId = $_GET['noticiaId'];
+
+                        $stat = $conn->prepare('call obtener_imagenes_noticia(?);');
+                        $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
                         $stat->execute();
 
-                        $noticias = $stat->fetchAll(PDO::FETCH_ASSOC);
+                        $imagenes = $stat->fetchAll(PDO::FETCH_ASSOC);
 
-                        echo json_encode($noticias, 16);
-                        break;
-
-                    case 'mostrar':
-                        if (isset($_GET['noticiaId'])) {
-                            $noticiaId = $_GET['noticiaId'];
-
-                            $stat = $conn->prepare('call obtener_noticia(:noticiaId)');
-                            $stat->bindValue(':noticiaId', $noticiaId);
-                            $stat->execute();
-
-                            $noticia = $stat->fetchAll(PDO::FETCH_ASSOC);
-
-                            echo json_encode($noticia, 16);
-                        }                        
-                        break;
-
-                    case 'listar-imagenes':
-                        if (isset($_GET['noticiaId'])) {
-                            $noticiaId = $_GET['noticiaId'];
-
-                            $stat = $conn->prepare('call obtener_imagenes_noticia(?);');
-                            $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
-                            $stat->execute();
-
-                            $imagenes = $stat->fetchAll(PDO::FETCH_ASSOC);
-
-                            echo json_encode($imagenes, 64);
-                        }
-                        break;
-                    
-                    default:
-                        # code...
-                        break;
-                }
+                        echo json_encode($imagenes, 64);
+                    }
+                    break;
+                
+                default:
+                    # code...
+                    break;
             }
             break;
         
