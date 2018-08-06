@@ -11,10 +11,8 @@
 
     <section class="noticia-portada">
         <div class="slider" id="noticia-destacada">
-            <ul class="slides">
-                <li>
-                    <img src="img/noticiaPortada.jpg" alt="" class="responsive-img">
-                </li>
+            <ul id="noticias-portada" class="slides">
+                
             </ul>
         </div>
     </section>
@@ -45,12 +43,7 @@
 
     <script>
         $(document).ready(function () {
-            //obtenerNoticias();
-
-            $('#noticia-destacada').slider({
-                indicators: false,
-                height: 400
-            });
+            obtenerNoticias();
 
             $('.owl-carousel').owlCarousel({
                 loop: true,
@@ -78,46 +71,82 @@
             });
 
             $('select').material_select();
+            $('#anio').on('change', function (evt) {
+                let optionSelected = $('option:selected', this);
+                let valueSelected = this.value;
 
-            obtenerNoticias();
+                obtenerNoticias(valueSelected);
+            });
+
+            obtenerNoticiasPortada();
         });
 
-        function obtenerNoticias() {
-            let carouselNoticias = $('#noticias-carousel');
-            carouselNoticias.text('');
+        function obtenerNoticiasPortada() {
+            let noticiasPortada = $('#noticias-portada');
+            let noticiasTxt = '';
+            let date = new Date();
 
             $.ajax({
                 type: 'GET',
-                url: '../php/mercadeo/controlador.php?accion=listar',
+                url: '../php/mercadeo/controlador.php?accion=listar-pagina&tipo=2&anio='+date.getFullYear(),
                 success: function (data) {
-                    //console.log(data);
+                    let noticias = JSON.parse(data);
+                    
+                    $.each(noticias, function (i, noticia) {
+                        noticiasTxt += '<li><img src="'+ noticia.url +'" class="responsive-img"></li>';
+                    });
+
+                    noticiasPortada.html(noticiasTxt);
+
+                    if (noticias.length > 1) {
+                        $('#noticia-destacada').slider({
+                            indicators: true,
+                            height: 400
+                        });
+                    } else {
+                        $('#noticia-destacada').slider({
+                            indicators: false,
+                            height: 400
+                        });
+                    }                    
+                }
+            });
+        }
+
+        function obtenerNoticias(anio) {
+            let carouselNoticias = $('#noticias-carousel');
+            let date = new Date();
+            let anioElegido = date.getFullYear();
+            let noticiasTxt = '';     
+
+            if (anio) {
+                anioElegido = anio;
+            }
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/controlador.php?accion=listar-pagina&tipo=1&anio='+anioElegido,
+                success: function (data) {
                     let noticias = JSON.parse(data);
                     $.each(noticias, function (i, noticia) {
-                        let noticiasTxt = '';
                         noticiasTxt += '<div class="item">';
                         noticiasTxt += '<div class="card">';
                         noticiasTxt += '<div class="card-image">';
-                        noticiasTxt += '<img src="img/noticiaPortada.jpg" alt="" class="responsive-img">';
-                        noticiasTxt += '<span class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet eros metus.</span>';
+                        noticiasTxt += '<img src="'+ noticia.url +'" alt="" class="responsive-img">';
+                        noticiasTxt += '<span class="card-title">'+ noticia.titulo +'</span>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '<div class="card-content">';
-                        noticiasTxt += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies massa ligula, vitae venenatis massa imperdiet aliquam. Integer finibus nullam.</p>';
+                        noticiasTxt += '<p>'+ noticia.resumen +'</p>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '<div class="card-action">';
-                        noticiasTxt += '<span class="noticia-fecha grey lighten-3 black-text tiny">27 julio 2018</span>';
-                        noticiasTxt += '<a href="noticia.php" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>';
+                        noticiasTxt += '<span class="noticia-fecha grey lighten-3 black-text tiny">'+ noticia.fecha +'</span>';
+                        noticiasTxt += '<a href="noticia.php?noticiaId='+ noticia.noticiaId +'" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '</div>';
-
-                        //console.log(noticiasTxt);
-
-                       //$('.owl-carousel').owlCarousel('add', noticiasTxt).owlCarousel('update');
-                       console.log($('.owl-carousel'));
-                       $('.owl-carousel').trigger('add.owl.carousel', [$('<div>bar</div>'), 0]).trigger('refresh.owl.carousel');
                     });
-
-                    //carouselNoticias.html(noticiasTxt);
+                    carouselNoticias.trigger('replace.owl.carousel', [jQuery(noticiasTxt)]);
+                    carouselNoticias.trigger('refresh.owl.carousel');
                 }
             });
         }

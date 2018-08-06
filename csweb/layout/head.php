@@ -26,8 +26,12 @@
 
     <link rel="icon" href="../favicon.png">
     <!-- Important Owl stylesheet -->
-    <link rel="stylesheet" href="pluging/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="pluging/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+    <!-- 
+        <link rel="stylesheet" href="pluging/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="pluging/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+     -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">    
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">

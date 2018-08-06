@@ -33,14 +33,19 @@
                             $usuario = $_POST['usuario'];
                         }
 
+                        if (isset($_POST['tipo'])) {
+                            $tipo = $_POST['tipo'];
+                        }
+
                        // $conn->beginTransaction();
-                        $stat = $conn->prepare('call guardar_noticia(?, ?, ?, ?, ?, ?, @noticiaId);');
+                        $stat = $conn->prepare('call guardar_noticia(?, ?, ?, ?, ?, ?, ?, @noticiaId);');
                         $stat->bindParam(1, $titulo, PDO::PARAM_STR);
                         $stat->bindParam(2, $contenido, PDO::PARAM_STR);
                         $stat->bindParam(3, $resumen, PDO::PARAM_STR);
                         $stat->bindParam(4, $fecha, PDO::PARAM_STR);
                         $stat->bindParam(5, $estado, PDO::PARAM_STR);
-                        $stat->bindParam(6, $usuario, PDO::PARAM_STR);
+                        $stat->bindParam(6, $tipo, PDO::PARAM_INT);
+                        $stat->bindParam(7, $usuario, PDO::PARAM_STR);
                         //$stat->bindParam(7, $noticiaId, PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT);
                         $stat->execute();
                         $stat->closeCursor();
@@ -136,14 +141,19 @@
                             $usuario = $_POST['usuario'];
                         }
 
-                        $stat = $conn->prepare('call actualizar_noticia(?,?,?,?,?,?,?);');
+                        if (isset($_POST['tipo'])) {
+                            $tipo = $_POST['tipo'];
+                        }
+
+                        $stat = $conn->prepare('call actualizar_noticia(?,?,?,?,?,?,?,?);');
                         $stat->bindParam(1, $noticiaId, PDO::PARAM_INT);
                         $stat->bindParam(2, $titulo, PDO::PARAM_STR);
                         $stat->bindParam(3, $contenido, PDO::PARAM_STR);
                         $stat->bindParam(4, $resumen, PDO::PARAM_STR);
                         $stat->bindParam(5, $fecha, PDO::PARAM_STR);
                         $stat->bindParam(6, $estado, PDO::PARAM_INT);
-                        $stat->bindParam(7, $usuario, PDO::PARAM_STR);
+                        $stat->bindParam(7, $tipo, PDO::PARAM_INT);
+                        $stat->bindParam(8, $usuario, PDO::PARAM_STR);
 
                         if ($stat->execute()) {
                             $respuesta = array('error' => 0);
@@ -171,6 +181,25 @@
             switch ($accion) {
                 case 'listar':
                     $stat = $conn->prepare('call obtener_noticias();');
+                    $stat->execute();
+
+                    $noticias = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo json_encode($noticias, 64);
+                    break;
+
+                case 'listar-pagina':
+                    if (isset($_GET['tipo'])) {
+                        $tipo = $_GET['tipo'];
+                    }
+
+                    if (isset($_GET['anio'])) {
+                        $anio = $_GET['anio'];
+                    }
+
+                    $stat = $conn->prepare('call obtener_noticias_pagina(?, ?);');
+                    $stat->bindParam(1, $tipo, PDO::PARAM_INT);
+                    $stat->bindParam(2, $anio, PDO::PARAM_INT);
                     $stat->execute();
 
                     $noticias = $stat->fetchAll(PDO::FETCH_ASSOC);

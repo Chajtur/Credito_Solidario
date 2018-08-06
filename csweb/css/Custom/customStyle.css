@@ -285,6 +285,11 @@ nav {
     color: #000;
 }
 
+#map {
+    height: 400px;
+    width: 100%;
+}
+
 nav ul a {
     color: #0D47A1;
 }

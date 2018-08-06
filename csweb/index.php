@@ -285,112 +285,8 @@
 
         <!-- INICIO AGENCIAS -->
         <section class="agencias">
-            <div class="carousel center" data-indicators="true">
-                <div class="carousel-fixed-item center middle-indicator">
-                    <div class="left">
-                        <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left middle-indicator-text black-text">chevron_left</i></a>
-                    </div>
+            <div id="carousel-departamentos" class="carousel center" data-indicators="true">
                     
-                    <div class="right">
-                        <a href="Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>
-                    </div>                    
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>      
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="agencia.php">
-                        <div>
-                            <div>
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">
-                            </div>
-                            <div>
-                                <span>Francisco Morazan</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>      
             </div>
         </section>
         <!-- FIN AGENCIAS -->
@@ -555,13 +451,7 @@
     <script>
         $(document).ready(function() {
             $('.materialboxed').materialbox();
-            $('.carousel').carousel({
-                dist: 0,
-                padding: 20,
-                fullWidth: false,
-                indicators: false,
-                duration: 100
-            });
+            
             $('.slider').slider({
                 indicators: false,
                 height: 400
@@ -612,7 +502,54 @@
                     time: time
                 };
             }
+
+            obtenerDepartamentos();
         });
+
+        function obtenerDepartamentos() {
+            let departamentosTxt = '';
+            let carouselDepartamentos = $('#carousel-departamentos');
+
+            departamentosTxt += '<div class="carousel-fixed-item center middle-indicator">';
+            departamentosTxt += '<div class="left">';
+            departamentosTxt += '<a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left middle-indicator-text black-text">chevron_left</i></a>';
+            departamentosTxt += '</div>';
+            departamentosTxt += '<div class="right">';
+            departamentosTxt += '<a href="Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>';
+            departamentosTxt += '</div>';
+            departamentosTxt += '</div>';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mantenimientos/departamentos.php?accion=listar',
+                success: function (data) {
+                    let departamentos = JSON.parse(data);
+                    console.log(departamentos);
+                    $.each(departamentos, function (i, departamento) {
+                        departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.iddepartamento +'">';
+                        departamentosTxt += '<div>';
+                        departamentosTxt += '<div>';
+                        departamentosTxt += '<img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">';
+                        departamentosTxt += '</div>';
+                        departamentosTxt += '<div>';
+                        departamentosTxt += '<span>'+ departamento.nombre +'</span>';
+                        departamentosTxt += '</div>';
+                        departamentosTxt += '</div>';
+                        departamentosTxt += '</a>';
+                    });
+
+                    carouselDepartamentos.html(departamentosTxt);
+
+                    carouselDepartamentos.carousel({
+                        dist: 0,
+                        padding: 20,
+                        fullWidth: false,
+                        indicators: false,
+                        duration: 100
+                    });
+                }
+            });
+        }
         
     </script>
 </body>
