@@ -3,7 +3,6 @@
         $departamentoId = $_GET['departamentoId'];
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,16 +35,7 @@
                         
                     </ul>
                     <div id="contenido-agencia"></div>
-                    <!-- 
-<div class="col s12 grey lighten-4 center grey-text text-darken-1" id="agencia-1">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere nisi eu augue ultrices viverra ac sagittis mauris. Donec accumsan.</p>
-                        <p><i class="material-icons">phone</i>Teléfono: 2220-1471</p>
-                    </div>
-                    <div class="col s12 center grey-text text-darken-1" id="agencia-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere nisi eu augue ultrices viverra ac sagittis mauris. Donec accumsan.</p>
-                        <p><i class="material-icons left-align">phone</i>Teléfono: 2220-1471</p>
-                    </div>
-                     -->
+                    <div id="map"></div>
                     
                 </div>
             </div>
@@ -73,7 +63,6 @@
                     success: function (data) {
                         let departamentos = JSON.parse(data);                        
                         let departamento = departamentos[0];
-                        console.log(departamento);
 
                         tituloDepartamento.text(departamento.nombre.toUpperCase());
                     }
@@ -86,6 +75,8 @@
                 let informacionAgenciaTxt = '';
                 let even = true;
                 let contenidoAgencia = $('#contenido-agencia');
+                let mapa = $('#map');
+                let ubicacionAgencias = [];
 
                 $.ajax({
                     type: 'GET',
@@ -93,6 +84,13 @@
                     success: function (data) {
                         let agencias = JSON.parse(data);
                         $.each(agencias, function (i, agencia) {
+                            let ubicacionAgencia = {
+                                lat: parseFloat(agencia.latitud),
+                                lng: parseFloat(agencia.longitud)
+                            };
+
+                            ubicacionAgencias.push(ubicacionAgencia);
+
                             agenciasTxt += '<li class="tab"><a href="#agencia-'+ agencia.idAgencia +'">'+ agencia.nombre +'</a></li>';
                             
                             if (even) {
@@ -102,15 +100,7 @@
                             }
                             informacionAgenciaTxt += '<p>'+ agencia.direccion +'</p>';
                             informacionAgenciaTxt += '<p><i class="material-icons">phone</i>'+ agencia.telefono +'</p>';
-                            informacionAgenciaTxt += '<div id="map"></div>';
                             informacionAgenciaTxt += '</div>';
-
-                            let posicionAgencia = {
-                                lat: parseFloat(agencia.latitud),
-                                lng: parseFloat(agencia.longitud)
-                            };
-
-                            initMap(posicionAgencia);
 
                             even = !even;
                         });
@@ -119,24 +109,36 @@
                         agenciasTabs.tabs({
                             swipeable: true
                         });
+
+                        mostrarMapaAgencias(ubicacionAgencias);
                     }
                 });
             }
 
-            // Initialize and add the map
-            function initMap(posicionAgencia) {
-                console.log(posicionAgencia);
-                // The location of Uluru
-                var uluru = {lat: -25.344, lng: 131.036};
-                // The map, centered at Uluru
-                var map = new google.maps.Map(
-                    document.getElementById('map'), {zoom: 4, center: uluru});
-                // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({position: uluru, map: map});
+            function mostrarMapaAgencias(ubicaciones) {
+                let ubicacion = ubicaciones[0];
+                let map = new google.maps.Map(
+                    document.getElementById('map'), {
+                        zoom: 11.7, 
+                        center: new google.maps.LatLng(ubicacion.lat, ubicacion.lng)//,
+                        //mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                );
+
+                let infowindow = new google.maps.InfoWindow();
+
+                let marker, i;
+
+                for (i = 0; i < ubicaciones.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(ubicaciones[i].lat, ubicaciones[i].lng),
+                        map: map
+                    });
+                }
             }
         </script>
         <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcNsMB5091ztV6GeSmJaUrt93D9aiNRLI&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcNsMB5091ztV6GeSmJaUrt93D9aiNRLI">
         </script>
 
     </body>

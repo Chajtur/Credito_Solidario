@@ -29,13 +29,13 @@ try{
                                     <h6>Datos Generales</h6>
                                 </div>
                                 <div class="input-field col s12 m6 l6">
-                                    <input id="nombre_grupo" name="nombre_grupo" type="text" class="validate" required>
+                                    <input id="nombre_grupo" name="nombre_grupo" type="text" class="" >
                                     <label for="nombre_grupo">Nombre del Grupo</label>
                                 </div>
 
                                 <div class="input-field col s12 m6 l6">
 
-                                    <input id="asesor" name="asesor" type="text" class="validate" required>
+                                    <input id="asesor" name="asesor" type="text" class="" >
                                     <label for="asesor">Asesor Técnico</label>
 
                                 </div>
@@ -46,7 +46,7 @@ try{
                                 
                                 <div class="input-field col s12 m6 l6">
 
-                                    <select name="ciclo" id="ciclo" class="required browser-default" required>
+                                    <select name="ciclo" id="ciclo" class=" browser-default" >
                                         <option value="" disabled selected>Ciclo</option>
                                         <option value="1">Ciclo 1</option>
                                         <option value="2">Ciclo 2</option>
@@ -88,7 +88,7 @@ try{
                         <div id="divbeneficiarios">
                             <div class="row">
                                 <div class="input-field col s4">
-                                    <input id="programa" name="beneficiarios[]" type="text" class="validate buscardatos" maxlength="13" required>
+                                    <input id="programa" name="beneficiarios[]" type="text" class=" buscardatos" maxlength="13" >
                                     <label for="programa">Identidad</label>
                                 </div>
                                 <div class="input-field col s4">
@@ -103,7 +103,7 @@ try{
 
                             <div class="row">
                                 <div class="input-field col s4">
-                                    <input id="programa" name="beneficiarios[]" type="text" class="validate buscardatos" maxlength="13" required>
+                                    <input id="programa" name="beneficiarios[]" type="text" class=" buscardatos" maxlength="13" >
                                     <label for="programa">Identidad</label>
                                 </div>
                                 <div class="input-field col s4">
@@ -151,7 +151,7 @@ try{
 <!--DIV CLON-->
 <div class="row clon" id="clon">
     <div class="input-field col s4">
-        <input id="programa" name="beneficiarios[]" type="text" class="validate buscardatos" maxlength="13" required>
+        <input id="programa" name="beneficiarios[]" type="text" class=" buscardatos" maxlength="13" >
         <label for="programa">Identidad</label>
     </div>
     <div class="input-field col s4">
@@ -224,10 +224,10 @@ try{
 
             if($('#select-producto').val() != 'P01'){
 
-                $('.buscardatos').removeClass('validate');
-                $('.buscardatos').removeAttr('required');
-                $('.buscardatos').first().attr('required','');
-                $('.buscardatos').first().addClass('validate');
+                $('.buscardatos').removeClass('');
+                $('.buscardatos').removeAttr('');
+                $('.buscardatos').first().attr('','');
+                $('.buscardatos').first().addClass('');
                 $('.buscardatos').removeAttr('name');
                 $('.namefield').removeAttr('name');
                 $('.ciclofield').removeAttr('name');
@@ -253,8 +253,8 @@ try{
             }
             if($('#select-producto').val() == 'P01'){
 
-                $('.buscardatos').attr('required','');
-                $('.buscardatos').addClass('validate');
+                $('.buscardatos').attr('','');
+                $('.buscardatos').addClass('');
                 $('.buscardatos').attr('name','beneficiarios[]');
                 $('.namefield').attr('name','nombre[]');
                 $('.ciclofield').attr('name','ciclo[]');
@@ -267,12 +267,12 @@ try{
 
             e.preventDefault();
 
-            var thisform = $(this);
+            //var thisform = $(this);
 
-            $('#btnsave').attr('disabled', 'disabled');
+            //$('#btnsave').attr('disabled', 'disabled');
 
-            var da = new Date($('#fecha').val());
-            var obj = {
+            var da = new Date();
+            /*var obj = {
                 grupo_solidario: $('#nombre_grupo').val().replace('&','and'),
                 asesor: $('#asesor').val(),
                 ciclo: $('#ciclo').val(),
@@ -280,6 +280,16 @@ try{
                 departamento: $('#departamento').find("option:selected").text(),
                 municipio: $('#municipio').find("option:selected").text(),
                 beneficiarios: $('input[name="beneficiarios[]"]').map(function(){return $(this).val();}).get()
+            }*/
+
+            var obj = {
+                grupo_solidario: 'LA BENDICION',
+                asesor: 'FRANCISCO',
+                ciclo: '1',
+                fecha: da.getFullYear() + '-' + da.getMonth() + '-' + da.getDate(),
+                departamento: 'depto',
+                municipio: 'muni',
+                beneficiarios: ['988098897', '19803']
             }
 
             $.ajax({
