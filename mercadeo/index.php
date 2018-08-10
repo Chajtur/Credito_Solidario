@@ -139,6 +139,18 @@
                                         <li><a class="waves-effect menu-button sidenav-button" id="btn-lista-banco-imagenes" href="#!">Listar</a></li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Carrusel</a>                                    
+                                    <ul id="menu-carrusel" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-carrusel" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Programas</a>                                    
+                                    <ul id="menu-programa" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-programa" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -282,6 +294,22 @@
                 $('#btn-lista-banco-imagenes').click(function (evt) {
                     $('#loading').show();
                     $('#main-container').load('bancoImagenes.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
+
+                $('#btn-carrusel').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('carrusel.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
+
+                $('#btn-programa').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('programas.php', function () {
                         $('#loading').hide();
                     });
                     evt.preventDefault();

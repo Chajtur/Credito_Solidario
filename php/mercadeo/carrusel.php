@@ -26,16 +26,21 @@
                             $estado = $_POST['estado'];
                         }
 
+                        if (isset($_POST['url'])) {
+                            $url = $_POST['url'];
+                        }
+
                         if (isset($_POST['usuario'])) {
                             $usuario = $_POST['usuario'];
                         }
 
-                        $stat = $conn->prepare('call guardar_imagen_carrusel(?,?,?,?,?)');
+                        $stat = $conn->prepare('call guardar_imagen_carrusel(?,?,?,?,?,?)');
                         $stat->bindParam(1, $etiquetaPrincipal, PDO::PARAM_STR);
                         $stat->bindParam(2, $etiquetaSecundaria, PDO::PARAM_STR);
                         $stat->bindParam(3, $alineacion, PDO::PARAM_INT);
                         $stat->bindParam(4, $estado, PDO::PARAM_INT);
-                        $stat->bindParam(4, $usuario, PDO::PARAM_STR);
+                        $stat->bindParam(5, $url, PDO::PARAM_STR);
+                        $stat->bindParam(6, $usuario, PDO::PARAM_STR);
 
                         if ($stat->execute()) {
                             $respuesta = array('error' => 0);
@@ -63,21 +68,33 @@
                             $alineacion = $_POST['alineacion'];
                         }
 
-                        if (isset($_POST['estado'])) {
-                            $estado = $_POST['estado'];
-                        }
-
                         if (isset($_POST['usuario'])) {
                             $usuario = $_POST['usuario'];
                         }
 
-                        $stat = $conn->prepare('call actualizar_imagen_carrusel(?,?,?,?,?,?)');
+                        $stat = $conn->prepare('call actualizar_imagen_carrusel(?,?,?,?,?);');
                         $stat->bindParam(1, $carruselId, PDO::PARAM_INT);
                         $stat->bindParam(2, $etiquetaPrincipal, PDO::PARAM_STR);
                         $stat->bindParam(3, $etiquetaSecundaria, PDO::PARAM_STR);
                         $stat->bindParam(4, $alineacion, PDO::PARAM_INT);
-                        $stat->bindParam(5, $estado, PDO::PARAM_INT);
-                        $stat->bindParam(6, $usuario, PDO::PARAM_STR);
+                        $stat->bindParam(5, $usuario, PDO::PARAM_STR);
+
+                        if ($stat->execute()) {
+                            $respuesta = array('error' => 0);
+                        } else {
+                            $respuesta = array('error' => 1);
+                        }
+
+                        echo json_encode($respuesta, 16);
+                        break;
+
+                    case 'eliminar':
+                        if (isset($_POST['carruselId'])) {
+                            $carruselId = $_POST['carruselId'];
+                        }
+
+                        $stat = $conn->prepare('call eliminar_imagen_carrusel(?);');
+                        $stat->bindParam(1, $carruselId, PDO::PARAM_INT);
 
                         if ($stat->execute()) {
                             $respuesta = array('error' => 0);

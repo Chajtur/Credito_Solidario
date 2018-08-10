@@ -14,253 +14,10 @@
     <main>
     
         <!--BANNER REVOLUTION SLIDER START-->
-        <section class="rev_slider_wrapper" id="inicio">
-            <div class="rev_slider matrox-slider">
-                <ul>
-
-                    <!-- slide 1 start -->
-                    <li data-transition="zoomin" 
-                    data-slotamount="7" 
-                    data-easein="Power4.easeInOut" 
-                    data-easeout="Power4.easeInOut" 
-                    data-masterspeed="2000" 
-                    data-thumb="assets/img/banner/presi2.jpg" 
-                    data-rotate="0" 
-                    data-saveperformance="off" 
-                    data-title="Crédito Solidario" 
-                    data-description="">
-
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/img/banner/presi2.jpg" 
-                        alt="" data-bgposition="center center" 
-                        data-kenburns="on" 
-                        data-duration="10000" 
-                        data-ease="Linear.easeNone" 
-                        data-scalestart="100" 
-                        data-scaleend="120" 
-                        data-rotatestart="0" 
-                        data-rotateend="0" 
-                        data-offsetstart="0 -500" 
-                        data-offsetend="0 500" 
-                        data-bgparallax="10" 
-                        class="rev-slidebg" 
-                        data-no-retina>
-                        <!-- LAYERS -->
-
-                        <div class="tp-overlay"></div>
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['70','70','70','45']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap;padding:10px 20px 10px 20px;">Crédito Solidario
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption rev-subheading white-text tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">Tu Banca Solidaria
-                        </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption NotGeneric-Icon  tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-120,'-120,'-120,'-120]" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-style_hover="cursor:default;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;padding:10px 10px 10px 10px;"><img src="img/logo_cs.png" alt="">
-                        </div>
-                    </li>
-                    <!-- slide 1 end -->
-
-                    <!-- slide 2 start -->
-                    <li data-transition="zoomin" 
-                    data-slotamount="7" 
-                    data-easein="Power4.easeInOut" 
-                    data-easeout="Power4.easeInOut" 
-                    data-masterspeed="2000" 
-                    data-thumb="assets/img/banner/presi.JPG" 
-                    data-rotate="0" 
-                    data-saveperformance="off" 
-                    data-title="Créditos Otorgados" 
-                    data-description="">
-
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/img/banner/presi.JPG" 
-                        alt="" 
-                        data-bgposition="center center" 
-                        data-kenburns="on" 
-                        data-duration="10000" 
-                        data-ease="Linear.easeNone" 
-                        data-scalestart="100" 
-                        data-scaleend="120" 
-                        data-rotatestart="0"
-                        data-rotateend="0" 
-                        data-offsetstart="0 -500" 
-                        data-offsetend="0 500" 
-                        data-bgparallax="10" 
-                        class="rev-slidebg" 
-                        data-no-retina>
-                        <!-- LAYERS -->
-
-                        <div class="tp-overlay"></div>
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['70','70','70','45']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap;padding:10px 20px 10px 20px;">
-                            100,000<br class="show-on-small-only"> Créditos Otorgados
-                            <!--TEXTO EN GRANDE (TITULO)-->
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <!--<div class="tp-caption rev-subheading white-text tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">MÁS DE 100,000 CRÉDITOS OTORGADOS
-                            
-                        </div>-->
-
-                        <!-- LAYER NR. 3 -->
-                        <!--<div class="tp-caption NotGeneric-Icon  tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-style_hover="cursor:default;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;padding:10px 10px 10px 10px;"><i class="material-icons">menu</i>
-                        </div>-->
-                    </li>
-                    <!-- slide 2 end -->
-
-                    <!-- slide 3 start -->
-                    <li data-transition="zoomin" 
-                    data-slotamount="7" 
-                    data-easein="Power4.easeInOut" 
-                    data-easeout="Power4.easeInOut" 
-                    data-masterspeed="2000" 
-                    data-thumb="assets/img/banner/EVENTOINFOP.jpg" 
-                    data-rotate="0" 
-                    data-saveperformance="off" 
-                    data-title="Agencias" 
-                    data-description="">
-
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/img/banner/MAPA-01.jpg" 
-                        alt="" 
-                        data-bgposition="center center" 
-                        data-kenburns="on" 
-                        data-duration="10000" 
-                        data-ease="Linear.easeNone" 
-                        data-scalestart="100"
-                        data-scaleend="120" 
-                        data-rotatestart="0"
-                        data-rotateend="0" 
-                        data-offsetstart="0 0" 
-                        data-offsetend="0 0" 
-                        data-bgparallax="10" 
-                        class="rev-slidebg" 
-                        data-no-retina>
-                        <!-- LAYERS -->
-
-                        <div class="tp-overlay"></div>
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" data-fontsize="['70','70','70','45']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap;padding:10px 20px 10px 20px;">
-                            Cobertura en los 18 Departamentos
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <!--<div class="tp-caption rev-subheading white-text tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">
-                            
-                        </div>-->
-
-                        <!-- LAYER NR. 3 -->
-                        <!--<div class="tp-caption NotGeneric-Icon  tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-style_hover="cursor:default;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;padding:10px 10px 10px 10px;"><i class="material-icons">menu</i>
-                        </div>-->
-                    </li>
-                    <!-- slide 3 end -->
-
-                    <!-- slide 4 start -->
-                    <li data-transition="zoomin" 
-                    data-slotamount="7" 
-                    data-easein="Power4.easeInOut" 
-                    data-easeout="Power4.easeInOut" 
-                    data-masterspeed="2000" 
-                    data-thumb="assets/img/banner/CHEQUE.jpg" 
-                    data-rotate="0" 
-                    data-saveperformance="off" 
-                    data-title="Cobertura" 
-                    data-description="">
-
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/img/banner/CHEQUE.jpg" 
-                        alt="" 
-                        data-bgposition="center center" 
-                        data-kenburns="on" 
-                        data-duration="10000" 
-                        data-ease="Linear.easeNone" 
-                        data-scalestart="100" 
-                        data-scaleend="120" 
-                        data-rotatestart="0" 
-                        data-rotateend="0" 
-                        data-offsetstart="0 -500" 
-                        data-offsetend="0 500" 
-                        data-bgparallax="10" 
-                        class="rev-slidebg" 
-                        data-no-retina>
-                        <!-- LAYERS -->
-
-                        <div class="tp-overlay"></div>
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['70','70','70','45']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap;padding:10px 20px 10px 20px;">
-                            45 Agencias a nivel Nacional
-                            <!--TEXTO EN GRANDE (TITULO)-->
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <!--<div class="tp-caption rev-subheading white-text tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">MÁS DE 100,000 CRÉDITOS ENTREADOS
-                            
-                        </div>-->
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption NotGeneric-Icon  tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-style_hover="cursor:default;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;padding:10px 10px 10px 10px;"><i class="material-icons">menu</i>
-                        </div>
-                    </li>
-                    <!-- slide 4 end -->
-
-                    <!-- slide 5 start -->
-                    <li data-transition="zoomin" 
-                    data-slotamount="7" 
-                    data-easein="Power4.easeInOut" 
-                    data-easeout="Power4.easeInOut" 
-                    data-masterspeed="2000" 
-                    data-thumb="assets/img/banner/cheque2.JPG" 
-                    data-rotate="0" 
-                    data-saveperformance="off" 
-                    data-title="Empleos" 
-                    data-description="">
-
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/img/banner/cheque2.JPG" 
-                        alt="" 
-                        data-bgposition="center center" 
-                        data-kenburns="on" 
-                        data-duration="10000" 
-                        data-ease="Linear.easeNone" 
-                        data-scalestart="100" 
-                        data-scaleend="120" 
-                        data-rotatestart="0" 
-                        data-rotateend="0" 
-                        data-offsetstart="0 -500" 
-                        data-offsetend="0 500" 
-                        data-bgparallax="10" 
-                        class="rev-slidebg" 
-                        data-no-retina>
-                        <!-- LAYERS -->
-
-                        <div class="tp-overlay"></div>
-
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['70','70','70','45']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap;padding:10px 20px 10px 20px;">
-                            63,095 Empleos <br class="show-on-small-only">directos generados <br>a través de los <br class="show-on-small-only">créditos otorgados
-                            <!--TEXTO EN GRANDE (TITULO)-->
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <!--<div class="tp-caption rev-subheading white-text tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">MÁS DE 100,000 CRÉDITOS ENTREADOS
-                            
-                        </div>-->
-
-                        <!-- LAYER NR. 3 -->
-                        <!--<div class="tp-caption NotGeneric-Icon  tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-style_hover="cursor:default;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;padding:10px 10px 10px 10px;"><i class="material-icons">menu</i>
-                        </div>-->
-                    </li>
-                    <!-- slide 5 end -->
-
-                </ul>
+        <section class="" id="inicio">
+            <div id="slider-principal" class="slider">
+                <ul id="main-slider" class="slides"></ul>
             </div>
-            <!-- end revolution slider -->
         </section>
         <!--BANNER REVOLUTION SLIDER END-->
 
@@ -408,7 +165,7 @@
         <!-- FIN DIRECTOR END -->
 
         <section class="redes-sociales">
-            <div class="slider">
+            <div id="slider-redes-sociales" class="slider">
                 <ul class="slides">
                     <li>
                         <img src="img/redesSociales.jpg" class="responsive-img" alt="">
@@ -427,7 +184,7 @@
 
     <script>
         $(document).ready(function() {            
-            $('.slider').slider({
+            $('#slider-redes-sociales').slider({
                 indicators: false,
                 height: 400
             });
@@ -478,9 +235,40 @@
                 };
             }
 
+            obtenerCarrusel();
             obtenerDepartamentos();
             obtenerGaleria();
         });
+
+        function obtenerCarrusel() {
+            let carruselPrincipal = $('#main-slider');
+            let imagenesTxt = '';
+            let alineaciones = ['center', 'left', 'right'];
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/carrusel.php?accion=listar&estado=1',
+                success: function (data) {
+                    let imagenes = JSON.parse(data);
+                    $.each(imagenes, function (i, imagen) {
+                        imagenesTxt += '<li>';
+                        imagenesTxt += '<img src="'+ imagen.url +'">';
+                        imagenesTxt += '<div class="caption '+ alineaciones[imagen.alineacion - 1] +'-align">';
+                        imagenesTxt += '<h3>'+ imagen.etiquetaPrincipal +'</h3>';
+                        imagenesTxt += '<h5 class="light grey-text text-lighten-3">'+ imagen.etiquetaSecundaria +'</h5>';
+                        imagenesTxt += '</div>';
+                        imagenesTxt += '</li>';
+                    });
+                    carruselPrincipal.html(imagenesTxt);
+                    $('#slider-principal').slider({
+                        height: 600
+                    });
+                },
+                error: function (xhr, status, error) {
+
+                }
+            });
+        }
 
         function obtenerDepartamentos() {
             let departamentosTxt = '';
