@@ -2,16 +2,19 @@
     <div class="card col s12">
         <div class="card-content">
             <span class="card-title blue-text">Gestión de noticias</span>
-            <form class="">
+            <form>
                 <div class="row">
-                    <div class="input-field">
+                    <div class="input-field col s11">
                         <i class="material-icons prefix">search</i>
                         <input type="text" name="busqueda" id="busqueda">
                         <label for="busqueda">Búsqueda</label>
                     </div>
+                    <div class="col s1">
+                        <button class="waves-effect waves-light btn green lighten-2" id="btn-buscar" name="btn-buscar"><i class="material-icons">refresh</i></button>
+                    </div>
                 </div>
             </form>
-            <div id="grilla-noticias"></div>
+            <div id="grilla-noticias" class="row"></div>
         </div>
     </div>
 </div>

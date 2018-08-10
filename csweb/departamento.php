@@ -16,10 +16,8 @@
         
         <section class="foto-agencia">
             <div class="slider">
-                <ul class="slides">
-                    <li>
-                        <img src="img/agencia.jpg" alt="" class="responsive-img">
-                    </li>
+                <ul id="slide-imagenes" class="slides">
+                    
                 </ul>
             </div>
         </section>
@@ -45,10 +43,6 @@
         <?php require 'layout/scripts.php';?>
         <script>
             $(document).ready(function () {
-                $('.slider').slider({
-                    indicators: false,
-                    height: 500
-                });
                 let departamentoId = $('#departamentoId').val();
                 obtenerDepartamento(departamentoId);
                 obtenerAgencias(departamentoId);
@@ -56,6 +50,9 @@
 
             function obtenerDepartamento(departamentoId) {
                 let tituloDepartamento = $('#titulo-agencia');
+                let slideImagen = $('#slide-imagenes');
+                let imagenesTxt = '';
+                let counter = 0;
 
                 $.ajax({
                     type: 'GET',
@@ -65,6 +62,33 @@
                         let departamento = departamentos[0];
 
                         tituloDepartamento.text(departamento.nombre.toUpperCase());
+                    }
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    url: '../php/mercadeo/departamentoImagen.php?accion=listar&departamentoId=' + departamentoId,
+                    success: function (data) {
+                        let imagenes = JSON.parse(data);
+
+                        $.each(imagenes, function(i, imagen) {
+                            imagenesTxt += '<li><img src="'+ imagen.url +'" alt="" class="responsive-img"></li>';
+                            counter++;
+                        });
+
+                        slideImagen.html(imagenesTxt);
+
+                        if (counter > 1) {
+                            $('.slider').slider({
+                                indicators: true,
+                                height: 500
+                            });
+                        } else {
+                            $('.slider').slider({
+                                indicators: false,
+                                height: 500
+                            });
+                        }
                     }
                 });
             }

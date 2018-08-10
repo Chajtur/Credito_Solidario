@@ -117,10 +117,29 @@
                 <aside id="left-sidebar-nav">
                     <ul class="side-nav fixed leftside-navigation">
                         <?php require "../common/left-side-menu.php";?>
-                        <li class="menu-btn menu-btn-active">
-                            <a href="#" class="waves-effect waves-light">
-                                <i class="material-icons">add_box</i>Noticias
-                            </a>
+                        <li><a href="#">Inicio</a></li>
+                        <li class="no-padding">
+                            <ul class="collapsible" data-collapsible="accordion">
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Noticias</a>                                    
+                                    <ul id="menu-noticias" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-nueva-noticia" href="#!">Nueva</a></li>
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-lista-noticia" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Departamentos</a>                                    
+                                    <ul id="menu-departamentos" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-lista-departamento" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Banco de imagenes</a>                                    
+                                    <ul id="menu-banco-imagenes" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-lista-banco-imagenes" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </aside>
@@ -175,7 +194,8 @@
         </div>
         <!-- FIN DE MAIN -->
 
-        <div class="fixed-action-btn">
+        <!-- 
+<div class="fixed-action-btn">
             <a class="btn-floating btn-large indigo darken-3" id="floating-refresh">
                 <i class="large material-icons">build</i>
             </a>
@@ -184,6 +204,8 @@
                 <li><a href="index.php" id="refrescar-noticias" class="btn-floating green lighten-2"><i class="material-icons">refresh</i></a></li>
             </ul>
         </div>
+         -->
+        
 
         <?php require "../common/footer.php";?>
 
@@ -233,7 +255,7 @@
                     $('#'+window.idbtnmenuactivo).trigger('refresh');
                 });
 
-                $('#agregar-noticia').click(function (evt) {
+                $('#btn-nueva-noticia').click(function (evt) {
                     $('#main-container').load('nuevaNoticia.php', function(){
                         $('#loading').hide();
                     });
@@ -241,13 +263,29 @@
                     evt.preventDefault();
                 });
 
-                /*$('#refrescar-noticias').click(function (evt) {
-                    $('#main-container').load('listaNoticias.php', function(){
+                $('#btn-lista-noticia').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('listaNoticias.php', function () {
                         $('#loading').hide();
                     });
-
                     evt.preventDefault();
-                });*/
+                });
+
+                $('#btn-lista-departamento').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('listaImagenesDepartamentos.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
+
+                $('#btn-lista-banco-imagenes').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('bancoImagenes.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
             });
         </script>
 

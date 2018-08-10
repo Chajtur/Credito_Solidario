@@ -1,15 +1,9 @@
 <div class="row">
     <div class="card col s12">
         <div class="card-content">
-            <span class="card-title blue-text">Gestión de departamentos</span>
-            
+            <span class="card-title blue-text">Gestión del banco de imágenes</span>            
                 <div class="row">
-                    <div class="input-field col s11">
-                        <select name="departamentos" id="departamentos">
-                            
-                        </select>
-                        <label for="departamentos"></label>
-                    </div>
+                    <div class="col s11"></div>                    
                     <div class="col s1">
                         <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
                         <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
@@ -24,7 +18,7 @@
 
 <div class="modal" id="modalImagen">
     <div class="modal-content">
-        <h4>Imagen del departamento</h4>
+        <h4>Imagen de la galería</h4>
         <form id="formImagen">
             <div class="file-field input-field">
                 <div class="btn">
@@ -45,11 +39,7 @@
 
 <script>
     $(document).ready(function () {
-        obtenerDepartamentos();
-        let optionSelected;
-        let valueSelected;
-
-        $('.tooltipped').tooltip({delay: 50});
+        obtenerBancoImagenes();
 
         $('.modal').modal({
             dismissible: true,
@@ -57,102 +47,68 @@
             outDuration: 200
         });
 
-        $('#departamentos').on('change', function (evt) {
-            optionSelected = $('option:selected', this);
-            valueSelected = this.value;
-            $('#departamentoId').val(valueSelected);
-
-            obtenerImagenesDepartamentos(valueSelected);
-        });
-
         $('#btn-nuevo').click(function (evt) {
-            abrirModalImagen(valueSelected);
+            abrirModalImagen();
         });
-        $('#btnCancelarImagen').click(cerrarModalImagen);
+        $('#btnCancelarImagen').click(function (evt) {
+            cerrarModalImagen();
+        });
         $('#btnRegistrarImagen').click(function (evt) {
-            let departamentoId = $('#departamentoId').val();
-            registrarImagen(departamentoId);
+            registrarImagen();
         });
     });
 
-    function obtenerDepartamentos() {
-        let selectDepartamentos = $('#departamentos');
-        selectDepartamentos.text('');
-        let departamentosTxt = '<option value="">Seleccione un departamento</option>';
-
-        $.ajax({
-            type: 'GET',
-            url: '../php/mantenimientos/departamentos.php?accion=listar',
-            success: function (data) {
-                let departamentos = JSON.parse(data);
-                $.each(departamentos, function (i, departamento) {
-                    departamentosTxt += '<option value="'+ departamento.iddepartamento +'">'+ departamento.nombre +'</option>';
-                });
-
-                selectDepartamentos.html(departamentosTxt);
-
-                $('select').material_select();
-            },
-            error: function (xhr, status, error) {
-                
-            }
-        });
-    }
-
-    function obtenerImagenesDepartamentos(departamentoId) {
+    function obtenerBancoImagenes() {
         let grillaImagenes = $('#grilla-imagenes');
-        grillaImagenes.text('');
         let imagenesTxt = '';
 
         $.ajax({
             type: 'GET',
-            url: '../php/mercadeo/departamentoImagen.php?accion=listar&departamentoId=' + departamentoId,
+            url: '../php/mercadeo/bancoImagenes.php?accion=listar&estado=1',
             success: function (data) {
                 let imagenes = JSON.parse(data);
+                console.log(imagenes);
                 $.each(imagenes, function (i, imagen) {
                     imagenesTxt += '<div class="col s12 m4">';
                     imagenesTxt += '<div class="card">';
                     imagenesTxt += '<div class="card-image">';
                     imagenesTxt += '<img src="'+ imagen.url +'" alt="">';
-                    imagenesTxt += '<span class="card-title"></span>';
                     imagenesTxt += '</div>';
-                    imagenesTxt += '<div class="card-action">';
-                    imagenesTxt += '<a href="#!" onclick="eliminarImagen(\''+ departamentoId + '\',' + imagen.idImagenDepartamento +')"><i class="material-icons red-text right">clear</i></a>';
+                    imagenesTxt += '<div class="card-action">'
+                    imagenesTxt += '<a href="#!" onclick="eliminarImagen('+ imagen.bancoImagenId +')"><i class="material-icons red-text right">clear</i></a>';
                     imagenesTxt += '</div>';
                     imagenesTxt += '</div>';
                     imagenesTxt += '</div>';
                 });
 
                 grillaImagenes.html(imagenesTxt);
+            },
+            error: function (xhr, status, error) {
+
             }
         });
     }
 
-    function abrirModalImagen(departamentoId) {
-        if (departamentoId) {
-            $('#modalImagen').modal('open');
-        } else {
-            Materialize.toast('Debe seleccionar un departamento.', 2000);
-        }
+    function abrirModalImagen() {
+        $('#modalImagen').modal('open');
     }
 
     function cerrarModalImagen() {
         $('#modalImagen').modal('close');
     }
 
-    function registrarImagen(departamentoId) {
+    function registrarImagen() {
         let usuario = $('#usuario').val();
-        let imagenDepartamento = document.getElementById('imagen').files[0];
+        let imagenBanco = document.getElementById('imagen').files[0];
 
-        if (imagenDepartamento) {
+        if (imagenBanco) {
             let data = new FormData();
             data.append('usuario', usuario);
             data.append('accion', 'agregar');
-            data.append('etiquetas', 'departamento');
-            data.append('modulo', 'departamento');
-            data.append('archivo', imagenDepartamento);
+            data.append('etiquetas', 'galeria,banco,beneficiario');
+            data.append('modulo', 'galeria');
+            data.append('archivo', imagenBanco);
 
-            // Primero hace el guardado de la imagen en el servidor de imagenes.
             $.ajax({
                 type: 'POST',
                 enctype: 'multipart/form-data',
@@ -162,16 +118,15 @@
                 data: data,
                 url: 'http://localhost/fileServer/controlador/archivoControlador.php',
                 success: function (data) {
-                    // Despues hace el guardado de la url dentro del sistema.
                     let archivoData = JSON.parse(data);
 
                     if (archivoData.error == 0) {
-                        guardarImagen(archivoData.url, departamentoId);
+                        guardarImagen(archivoData.url);
                     } else {
                         console.log('Archivo no enviado.');
                     }
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     console.log(error);
                 }
             });
@@ -180,24 +135,23 @@
         }
     }
 
-    function guardarImagen(url, departamentoId) {
+    function guardarImagen(url) {
         let objeto = {
             url: url,
-            departamentoId: departamentoId,
-            accion: 'agregar-archivo',
+            accion: 'agregar',
             estado: 1
         };
 
         $.ajax({
             type: 'POST',
             data: objeto,
-            url: '../php/mercadeo/departamentoImagen.php',
+            url: '../php/mercadeo/bancoImagenes.php',
             success: function (data) {
                 let respuestaData = JSON.parse(data);
                 if (respuestaData.error == 0) {
                     swal('Correcto','Se ha registrado la imagen correctamente', 'success');
                     $('#modalImagen').modal('close');
-                    obtenerImagenesDepartamentos(departamentoId);
+                    obtenerBancoImagenes();
                 } else {
                     swal('Error','Ha ocurrido un error al realizar la operación', 'error');
                 }
@@ -205,22 +159,21 @@
         });
     }
 
-    function eliminarImagen(departamentoId, imagenDepartamentoId) {
+    function eliminarImagen(bancoImagenId) {
         let imagen = {
-            departamentoId: departamentoId,
-            imagenDepartamentoId: imagenDepartamentoId,
+            bancoImagenId: bancoImagenId,
             accion: 'eliminar'
         };
 
         $.ajax({
             type: 'POST',
+            url: '../php/mercadeo/bancoImagenes.php',
             data: imagen,
-            url: '../php/mercadeo/departamentoImagen.php',
             success: function (data) {
                 let respuestaData = JSON.parse(data);
                 if (respuestaData.error == 0) {
                     swal('Correcto','Se ha eliminado la imagen correctamente', 'success');
-                    obtenerImagenesDepartamentos(departamentoId);
+                    obtenerBancoImagenes();
                 } else {
                     swal('Error','Ha ocurrido un error al realizar la operación', 'error');
                 }

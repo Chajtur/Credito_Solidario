@@ -273,7 +273,7 @@
             data: objeto,
             url: '../php/mercadeo/controlador.php',
             success: function (data) {
-                respuestaData = JSON.parse(data);
+                let respuestaData = JSON.parse(data);
                 if (respuestaData.error == 0) {
                     swal('Correcto','Se ha registrado la imagen correctamente', 'success');
                     recuperarImagenes(noticiaId);

@@ -293,31 +293,8 @@
 
         <!--INICIO GALERIA-->
         <section class="galeria">            
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" data-caption="Nombre de la señora y el lugar" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
-                <div class="col s12 m6 l3">
-                    <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img materialboxed">
-                </div>
+            <div id="banco-imagenes" class="row">
+                
             </div>            
         </section>
         <!--FIN GALERIA-->
@@ -449,9 +426,7 @@
     <script src="js/numscroller-1.0.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('.materialboxed').materialbox();
-            
+        $(document).ready(function() {            
             $('.slider').slider({
                 indicators: false,
                 height: 400
@@ -504,6 +479,7 @@
             }
 
             obtenerDepartamentos();
+            obtenerGaleria();
         });
 
         function obtenerDepartamentos() {
@@ -521,7 +497,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '../php/mantenimientos/departamentos.php?accion=listar',
+                url: '../php/mercadeo/departamentoImagen.php?accion=listar-todos',
                 success: function (data) {
                     let departamentos = JSON.parse(data);
                     console.log(departamentos);
@@ -529,7 +505,7 @@
                         departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.iddepartamento +'">';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<div>';
-                        departamentosTxt += '<img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img circle">';
+                        departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="responsive-img circle">';
                         departamentosTxt += '</div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<span>'+ departamento.nombre +'</span>';
@@ -547,6 +523,29 @@
                         indicators: false,
                         duration: 100
                     });
+                }
+            });
+        }
+
+        function obtenerGaleria() {
+            let bancoImagenes = $('#banco-imagenes');
+            let imagenesTxt = '';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/bancoImagenes.php?accion=listar&estado=1',
+                success: function (data) {
+                    let imagenes = JSON.parse(data);
+                    $.each(imagenes, function (i, imagen) {
+                        imagenesTxt += '<div class="col s12 m6 l3">';
+                        imagenesTxt += '<img src="'+ imagen.url +'" alt="" class="responsive-img materialboxed">';
+                        imagenesTxt += '</div>';
+                    });
+                    bancoImagenes.html(imagenesTxt);
+                    $('.materialboxed').materialbox();
+                },
+                error: function (xhr, status, error) {
+
                 }
             });
         }
