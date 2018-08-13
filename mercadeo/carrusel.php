@@ -18,7 +18,7 @@
 
 <div class="modal" id="modalImagen">
     <div class="modal-content">
-        <h4>Imagen de la galería</h4>
+        <h4>Imagen del carrusel</h4>
         <form id="formImagen">
             <div class="input-field">
                 <input type="text" name="etiqueta-principal" placeholder="Etiqueta principal" id="etiqueta-principal" data-length="25" class="validate">
@@ -136,7 +136,6 @@
             success: function (data) {
                 let imagenes = JSON.parse(data);
                 let imagen = imagenes[0];
-                console.log(imagen.alineacion);
                 $('#etiqueta-principal').val(imagen.etiquetaPrincipal);
                 $('#etiqueta-secundaria').val(imagen.etiquetaSecundaria);
                 $('#alineacion').val(imagen.alineacion).trigger('change');
@@ -159,7 +158,7 @@
             data.append('usuario', usuario);
             data.append('accion', 'agregar');
             data.append('etiquetas', 'galeria,banco,beneficiario');
-            data.append('modulo', 'galeria');
+            data.append('modulo', 'carrusel');
             data.append('archivo', imagenCarrusel);
 
             if (carruselId) {
@@ -216,7 +215,7 @@
             success: function (data) {
                 let respuestaData = JSON.parse(data);
                 if (respuestaData.error == 0) {
-                    swal('Correcto','Se ha registrado la imagen correctamente', 'success');
+                    swal('Correcto','Se han registrado los datos correctamente', 'success');
                     $('#modalImagen').modal('close');
                     obtenerImagenes();
                 } else {

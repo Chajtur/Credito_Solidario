@@ -58,53 +58,13 @@
 
         <!--ICONOS SECTION START-->
         <div class="section section-icons">
-
             <div class="header">
                 <h2>CRÉDITO SOLIDARIO</h2>
                 <p>Una iniciativa que fomenta la economía socialmente inclusiva mediante un programa al servicio de los emprendedores del sector micro empresarial del país, otorgándoles asistencia técnica y crédito solidario.</p>
             </div>
             <div class="container">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
-                        <h5 class="center">Créditos Escalonados</h5>
-                        <p>3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-02.png" alt="" class="responsive-img">
-                        <h5 class="center">Crédito  Rural</h5>
-                        <p class="light center-align">La opción para beneficiar a pequeños y medianos productores, procesadores y comercializadores de maíz, frijol y otros cultivos.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
-                        <h5 class="center">Créditos Movilizadores</h5>
-                        <p class="light center-align">Tiene como objetivo potenciar y desarrollar la economía del país apoyando diversos rubros como ser: Taxistas, Salas de Belleza, Barberías y Pulperías.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
-                        <h5 class="center">Bici Solidaria</h5>
-                        <p class="light center-align">Crédito Solidario y FUNDEIMH te traen una nueva propuesta que le brinda movilidad a tu negocio.</p>
-                    </div>
-                    <div class="item center">
-                        <img src="img/icons/ICONOS-01.png" alt="" class="responsive-img">
-                        <h5 class="center">Créditos Escalonados</h5>
-                        <p>3 ciclos de Créditos escalonados que te ayudan a generar un historial crediticio.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-02.png" alt="" class="responsive-img">
-                        <h5 class="center">Crédito  Rural</h5>
-                        <p class="light center-align">La opción para beneficiar a pequeños y medianos productores, procesadores y comercializadores de maíz, frijol y otros cultivos.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-03.png" alt="" class="responsive-img">
-                        <h5 class="center">Créditos Movilizadores</h5>
-                        <p class="light center-align">Tiene como objetivo potenciar y desarrollar la economía del país apoyando diversos rubros como ser: Taxistas, Salas de Belleza, Barberías y Pulperías.</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/icons/ICONOS-04.png" alt="" class="responsive-img">
-                        <h5 class="center">Bici Solidaria</h5>
-                        <p class="light center-align">Crédito Solidario y FUNDEIMH te traen una nueva propuesta que le brinda movilidad a tu negocio.</p>
-                    </div>
+                <div id="carousel-programas" class="owl-carousel owl-theme">
+                    
                 </div>
             </div>            
         </div>
@@ -202,31 +162,6 @@
                 $('.carousel').carousel('prev');
             });
 
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                responsiveClass: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                nav: false,
-                navText: '',
-                responsive: {
-                    0: {
-                        items: 2,
-                        nav: true
-                    },
-                    600: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 5,
-                        nav: false,
-                        loop: false
-                    }
-                }
-            });
-
             function getCounter(startCount,  endCount, time, html) {
                 data = {
                     startCount: starCount,
@@ -238,6 +173,7 @@
             obtenerCarrusel();
             obtenerDepartamentos();
             obtenerGaleria();
+            obtenerProgramas();
         });
 
         function obtenerCarrusel() {
@@ -334,6 +270,52 @@
                 },
                 error: function (xhr, status, error) {
 
+                }
+            });
+        }
+
+        function obtenerProgramas() {
+            let carouselProgramas = $('#carousel-programas');
+            let programasTxt = '';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mantenimientos/programa.php?estado=1&accion=listar',
+                success: function (data) {
+                    let programas = JSON.parse(data);
+                    $.each(programas, function (i, programa) {
+                        programasTxt += '<div class="item">';
+                        programasTxt += '<img src="'+ programa.url_imagen +'" alt="" class="responsive-img">';
+                        programasTxt += '<h5 class="center">'+ programa.subprograma +'</h5>';
+                        programasTxt += '<p>'+ programa.descripcion +'</p>';
+                        programasTxt += '</div>';
+                    });
+                    carouselProgramas.html(programasTxt);
+
+                    carouselProgramas.owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        responsiveClass: true,
+                        autoplay: true,
+                        autoplayTimeout: 3000,
+                        nav: false,
+                        navText: '',
+                        responsive: {
+                            0: {
+                                items: 2,
+                                nav: true
+                            },
+                            600: {
+                                items: 3,
+                                nav: false
+                            },
+                            1000: {
+                                items: 5,
+                                nav: false,
+                                loop: false
+                            }
+                        }
+                    });
                 }
             });
         }
