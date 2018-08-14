@@ -110,11 +110,11 @@
                     <div class="col s12">
                         <div class="card horizontal">
                             <div class="card-image">
-                                <img src="img/carrousel/400X400-05.jpg" alt="" class="responsive-img">
+                                <img id="imagen-director" src="" alt="" class="responsive-img">
                             </div>
                             <div class="card-stacked">
-                                <div class="card-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare, sapien tempus malesuada sollicitudin, mi erat euismod ante, vel lacinia ante arcu a massa. Fusce efficitur sodales mi eu semper. Sed scelerisque lacus nisl, eget porta libero dignissim semper. Sed lacus lectus, luctus a convallis non, imperdiet vel eros. In vitae tortor ligula. Cras sollicitudin quam nec est hendrerit, at euismod massa vestibulum.</p>
+                                <div id="contenido-director" class="card-content">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -132,6 +132,10 @@
                     </li>
                 </ul>
             </div>
+        </section>
+
+        <section class="mapa">
+            <div id="map"></div>
         </section>
 
     </main>
@@ -174,7 +178,56 @@
             obtenerDepartamentos();
             obtenerGaleria();
             obtenerProgramas();
+            obtenerDirector();
+            obtenerAgencias();
         });
+
+        //mostrarMapaAgencias(ubicacionAgencias);
+
+        function obtenerAgencias() {
+            let mapa = $('#map');
+            let ubicacionAgencias = [];
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mantenimientos/agencias.php?accion=listar-todos',
+                success: function (data) {
+                    let agencias = JSON.parse(data);
+                    
+                    $.each(agencias, function(i, agencia) {
+                        let ubicacionAgencia = {
+                            lat: parseFloat(agencia.latitud),
+                            lng: parseFloat(agencia.longitud)
+                        };
+
+                        ubicacionAgencias.push(ubicacionAgencia);
+                        mostrarMapaAgencias(ubicacionAgencias);
+                    });
+                }
+            });
+        }
+
+        function mostrarMapaAgencias(ubicaciones) {
+            let ubicacion = ubicaciones[0];
+            let map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 5//, 
+                    //center: new google.maps.LatLng(ubicacion.lat, ubicacion.lng)//,
+                    //mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+            );
+
+            let infowindow = new google.maps.InfoWindow();
+
+            let marker, i;
+
+            for (i = 0; i < ubicaciones.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(ubicaciones[i].lat, ubicaciones[i].lng),
+                    map: map
+                });
+            }
+        }
 
         function obtenerCarrusel() {
             let carruselPrincipal = $('#main-slider');
@@ -224,7 +277,7 @@
                 url: '../php/mercadeo/departamentoImagen.php?accion=listar-todos',
                 success: function (data) {
                     let departamentos = JSON.parse(data);
-                    console.log(departamentos);
+                    
                     $.each(departamentos, function (i, departamento) {
                         departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.iddepartamento +'">';
                         departamentosTxt += '<div>';
@@ -319,7 +372,35 @@
                 }
             });
         }
+
+        function obtenerDirector() {
+            let imagen = $('#imagen-director');
+            let imagenUrl = '../images/user.png';
+            let contenidoDirector = $('#contenido-director');
+            let frase = '<p>';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/director.php?accion=mostrar&directorId=1',
+                success: function (data) {
+                    let directores = JSON.parse(data);
+                    let director = directores[0];
+
+                    if (director.url_imagen) {
+                        imagenUrl = director.url_imagen;
+                    }
+
+                    imagen.attr('src', imagenUrl);
+                    frase += director.frase + '</p>';
+
+                    contenidoDirector.html(frase);
+                }
+            });
+        }
         
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcNsMB5091ztV6GeSmJaUrt93D9aiNRLI">
     </script>
 </body>
 

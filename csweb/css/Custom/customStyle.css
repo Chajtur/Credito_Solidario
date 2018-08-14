@@ -399,6 +399,11 @@ nav ul a {
     text-transform: uppercase;
 }
 
+#modal-video {
+    width: 90% !important;
+    height: 90% !important;
+}
+
 @media screen and (max-width: 600px){
 
     .custom-nav {

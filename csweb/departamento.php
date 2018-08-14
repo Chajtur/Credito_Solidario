@@ -33,7 +33,6 @@
                         
                     </ul>
                     <div id="contenido-agencia"></div>
-                    <div id="map"></div>
                     
                 </div>
             </div>
@@ -100,7 +99,6 @@
                 let even = true;
                 let contenidoAgencia = $('#contenido-agencia');
                 let mapa = $('#map');
-                let ubicacionAgencias = [];
 
                 $.ajax({
                     type: 'GET',
@@ -108,13 +106,6 @@
                     success: function (data) {
                         let agencias = JSON.parse(data);
                         $.each(agencias, function (i, agencia) {
-                            let ubicacionAgencia = {
-                                lat: parseFloat(agencia.latitud),
-                                lng: parseFloat(agencia.longitud)
-                            };
-
-                            ubicacionAgencias.push(ubicacionAgencia);
-
                             agenciasTxt += '<li class="tab"><a href="#agencia-'+ agencia.idAgencia +'">'+ agencia.nombre +'</a></li>';
                             
                             if (even) {
@@ -134,35 +125,12 @@
                             swipeable: true
                         });
 
-                        mostrarMapaAgencias(ubicacionAgencias);
+                        
                     }
                 });
             }
 
-            function mostrarMapaAgencias(ubicaciones) {
-                let ubicacion = ubicaciones[0];
-                let map = new google.maps.Map(
-                    document.getElementById('map'), {
-                        zoom: 11.7, 
-                        center: new google.maps.LatLng(ubicacion.lat, ubicacion.lng)//,
-                        //mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }
-                );
-
-                let infowindow = new google.maps.InfoWindow();
-
-                let marker, i;
-
-                for (i = 0; i < ubicaciones.length; i++) {
-                    marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(ubicaciones[i].lat, ubicaciones[i].lng),
-                        map: map
-                    });
-                }
-            }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcNsMB5091ztV6GeSmJaUrt93D9aiNRLI">
+            
         </script>
 
     </body>

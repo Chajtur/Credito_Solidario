@@ -23,6 +23,16 @@
 
                     echo json_encode($agencias, 16);
                     break;
+
+                case 'listar-todos':
+                    $stat = $conn->prepare('call obtener_agencias();');
+                    $stat->bindParam(1, $departamentoId, PDO::PARAM_STR);
+                    $stat->execute();
+
+                    $agencias = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo json_encode($agencias, 16);
+                    break;
                 
                 default:
                     # code...

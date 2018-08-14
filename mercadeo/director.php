@@ -1,14 +1,14 @@
 <div class="row">
     <div class="card horizontal">
         <div class="card-image">
-            <img id="imagen-director" name="imagen-director" src="../images/user.png">
+            <img id="imagen-director" name="imagen-director" src="">
         </div>
-    </div>
-    <div class="card-stacked">
-        <div class="card-content" id="contenido-director"></div>
-        <div class="card-action">
-            <a href="#!" id="btn-cambiar-imagen"><i class="material-icons teal-text">image</i></a>
-            <a href="#!" id="btn-cambiar-frase"><i class="material-icons blue-text">create</i></a>
+        <div class="card-stacked">
+            <div class="card-content" id="contenido-director"></div>
+            <div class="card-action">
+                <a href="#!" id="btn-cambiar-imagen"><i class="material-icons teal-text">image</i></a>
+                <a href="#!" id="btn-cambiar-frase"><i class="material-icons blue-text">create</i></a>
+            </div>
         </div>
     </div>
 </div>
@@ -65,9 +65,28 @@
             evt.preventDefault();
         });
 
+        $('#btn-registrar-imagen').click(function (evt) {
+            guardarImagen();
+            evt.preventDefault();
+        });
+
+        $('#btn-cancelar-imagen').click(function (evt) {
+            cerrarModalImagen();
+        });
+
         $('#btn-cambiar-frase').click(function (evt) {
             abrirModalFrase();
             evt.preventDefault();
+        });
+
+        $('#btn-cancelar-frase').click(function (evt) {
+            cerrarModalFrase();
+            evt.preventDefault();
+        });
+
+        $('#btn-registrar-frase').click(function (evt) {
+            console.log('asd');
+            guardarFrase();
         });
 
         obtenerDatos();
@@ -97,19 +116,108 @@
 
         $.ajax({
             type: 'GET',
-            url: '../',
+            url: '../php/mercadeo/director.php?accion=mostrar&directorId=1',
             success: function (data) {
                 let directores = JSON.parse(data);
                 let director = directores[0];
 
-                if (director.url) {
-                    imagenUrl = director.url;
+                if (director.url_imagen) {
+                    imagenUrl = director.url_imagen;
                 }
 
                 imagen.attr('src', imagenUrl);
                 frase += director.frase + '</p>';
 
                 contenidoDirector.html(frase);
+            }
+        });
+    }
+
+    function guardarFrase() {
+        let directorId = 1
+        let frase = $('#frase');
+
+        $.ajax({
+            type: 'POST',
+            url: '../php/mercadeo/director.php',
+            data: {
+                directorId: directorId,
+                frase: frase.val(),
+                accion: 'actualizar'
+            },
+            success: function (data) {
+                let respuestaData = JSON.parse(data);
+                if (respuestaData.error == 0) {
+                    swal('Correcto','Se han registrado los datos correctamente', 'success');
+                    frase.val('');
+                    cerrarModalFrase();
+                    obtenerDatos();
+                } else {
+                    swal('Error','Ha ocurrido un error al realizar la operación', 'error');
+                }
+            }
+        });
+    }
+
+    function guardarImagen() {
+        let directorId = 1;
+        let imagenDirector = document.getElementById('imagen').files[0];
+        let usuario = $('#usuario').val();
+
+        if (imagenDirector) {
+            let data = new FormData();
+            data.append('usuario', usuario);
+            data.append('accion', 'agregar');
+            data.append('etiquetas', 'director,web,inicio,index');
+            data.append('modulo', 'director');
+            data.append('archivo', imagenDirector);
+
+            $.ajax({
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: data,
+                url: 'http://localhost/fileServer/controlador/archivoControlador.php',
+                success: function (data) {
+                    let archivoData = JSON.parse(data);
+                    if (archivoData.error == 0) {
+                        registrarDatosImagen(directorId, archivoData.url);
+                    } else {
+                        console.log('Archivo no enviado.');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        } else {
+            swal('Error','Debe seleccionar una imagen para guardar.', 'error');
+        }
+    }
+
+    function registrarDatosImagen(directorId, url) {
+        $.ajax({
+            type: 'POST',
+            url: '../php/mercadeo/director.php',
+            data: {
+                directorId: directorId,
+                url: url,
+                accion: 'actualizar-imagen'
+            },
+            success: function (data) {
+                let respuestaData = JSON.parse(data);
+                if (respuestaData.error == 0) {
+                    swal('Correcto','Se han registrado los datos correctamente', 'success');
+                    cerrarModalImagen();
+                    obtenerDatos();
+                } else {
+                    swal('Error','Ha ocurrido un error al realizar la operación', 'error');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(error);
             }
         });
     }

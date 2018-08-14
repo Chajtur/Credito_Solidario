@@ -157,6 +157,12 @@
                                         <li><a class="waves-effect menu-button sidenav-button" id="btn-director" href="#!">Editar</a></li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Videos</a>                                    
+                                    <ul id="menu-videos" class="collapsible-body">
+                                        <li><a class="waves-effect menu-button sidenav-button" id="btn-videos" href="#!">Listar</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -324,6 +330,14 @@
                 $('#btn-director').click(function (evt) {
                     $('#loading').show();
                     $('#main-container').load('director.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
+
+                $('#btn-videos').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('videos.php', function () {
                         $('#loading').hide();
                     });
                     evt.preventDefault();
