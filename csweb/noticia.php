@@ -60,7 +60,8 @@
                 success: function (data) {
                     let noticias = JSON.parse(data);
                     let noticia = noticias[0];
-                    contenidoNoticiaTxt += '<p><i>'+ noticia.fecha +'</i></p>';
+                    let fechaUsr = new Date(noticia.fecha);
+                    contenidoNoticiaTxt += '<p><i>'+ fechaUsr.getDate() + '/' + fechaUsr.getMonth() + '/' + fechaUsr.getFullYear() +'</i></p>';
                     contenidoNoticiaTxt += '<p>'+ noticia.contenido +'</p>'
                     tituloNoticia.text(noticia.titulo.toUpperCase());
                     contenidoNoticia.html(contenidoNoticiaTxt);

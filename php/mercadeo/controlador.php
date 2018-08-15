@@ -234,6 +234,19 @@
                         echo json_encode($imagenes, 64);
                     }
                     break;
+
+                case 'ultimas-noticias':
+                    if (isset($_GET['limite'])) {
+                        $limite = $_GET['limite'];
+                    }
+
+                    $stat = $conn->prepare('call obtener_ultimas_noticias(?);');
+                    $stat->bindParam(1, $limite, PDO::PARAM_INT);
+                    $stat->execute();
+
+                    $noticia = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo json_encode($noticia, 16);
                 
                 default:
                     # code...

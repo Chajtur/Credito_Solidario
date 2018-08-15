@@ -24,7 +24,8 @@
         <script src="pluging/OwlCarousel2-2.2.1/dist/owl.carousel.min.js"></script>
      -->
     <script src="pluging/wow-animation/wow.js"></script>
-    <script src="js/map.js"></script>
+    <!-- <script src="js/map.js"></script> -->
+    
     <script src="js/common.js"></script>
     <script type="text/javascript" src="../js/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
     

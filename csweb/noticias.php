@@ -117,7 +117,7 @@
             let carouselNoticias = $('#noticias-carousel');
             let date = new Date();
             let anioElegido = date.getFullYear();
-            let noticiasTxt = '';     
+            let noticiasTxt = '';
 
             if (anio) {
                 anioElegido = anio;
@@ -129,8 +129,10 @@
                 success: function (data) {
                     let noticias = JSON.parse(data);
                     $.each(noticias, function (i, noticia) {
+                        let fechaUsr = new Date(noticia.fecha);
+
                         noticiasTxt += '<div class="item">';
-                        noticiasTxt += '<div class="card">';
+                        noticiasTxt += '<div class="card small">';
                         noticiasTxt += '<div class="card-image">';
                         noticiasTxt += '<img src="'+ noticia.url +'" alt="" class="responsive-img">';
                         noticiasTxt += '<span class="card-title">'+ noticia.titulo +'</span>';
@@ -139,7 +141,7 @@
                         noticiasTxt += '<p>'+ noticia.resumen +'</p>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '<div class="card-action">';
-                        noticiasTxt += '<span class="noticia-fecha grey lighten-3 black-text tiny">'+ noticia.fecha +'</span>';
+                        noticiasTxt += '<span class="noticia-fecha grey lighten-3 black-text tiny">'+ fechaUsr.getDate() + '/' + fechaUsr.getMonth() + '/' + fechaUsr.getFullYear() +'</span>';
                         noticiasTxt += '<a href="noticia.php?noticiaId='+ noticia.noticiaId +'" class="right"><i class="material-icons grey-text text-darken-2 small">add</i></a>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '</div>';

@@ -80,21 +80,8 @@
             </div>
             <div class="container">
                 <div class="row">                    
-                    <div class="col s12">
-                        <div class="noticia">
-                            <h3 class="center">Nueve empresas campesinas reciben 20 millonres de lempiras de Crédito Solidario</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque sollicitudin, imperdiet erat non, aliquam lectus. Cras quis viverra augue. Aenean elementum felis ut finibus convallis. Vestibulum arcu metus, porta gravida pharetra ut, interdum vitae ligula. Aliquam sodales, massa sodales aliquet porta, felis ligula suscipit diam, vitae laoreet mi.</p>
-                            <div class="center">
-                                <a href="#" class="btn fondoPrincipal">Leer mas...</a>
-                            </div>
-                        </div>
-                        <div class="noticia">
-                            <h3 class="center">Nueve empresas campesinas reciben 20 millonres de lempiras de Crédito Solidario</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque sollicitudin, imperdiet erat non, aliquam lectus. Cras quis viverra augue. Aenean elementum felis ut finibus convallis. Vestibulum arcu metus, porta gravida pharetra ut, interdum vitae ligula. Aliquam sodales, massa sodales aliquet porta, felis ligula suscipit diam, vitae laoreet mi.</p>
-                            <div class="center">
-                                <a href="#" class="btn fondoPrincipal">Leer mas...</a>
-                            </div>
-                        </div>
+                    <div id="ultimas-noticias" class="col s12">
+                        
                     </div>                    
                 </div>                
             </div>
@@ -178,6 +165,7 @@
             obtenerDepartamentos();
             obtenerGaleria();
             obtenerProgramas();
+            obtenerUltimasNoticias();
             obtenerDirector();
             obtenerAgencias();
         });
@@ -195,14 +183,17 @@
                     let agencias = JSON.parse(data);
                     
                     $.each(agencias, function(i, agencia) {
-                        let ubicacionAgencia = {
-                            lat: parseFloat(agencia.latitud),
-                            lng: parseFloat(agencia.longitud)
-                        };
+                        if (agencia.latitud && agencia.longitud)
+                        {
+                            let ubicacionAgencia = {
+                                lat: parseFloat(agencia.latitud),
+                                lng: parseFloat(agencia.longitud)
+                            };
 
-                        ubicacionAgencias.push(ubicacionAgencia);
-                        mostrarMapaAgencias(ubicacionAgencias);
+                            ubicacionAgencias.push(ubicacionAgencia);
+                        }
                     });
+                    mostrarMapaAgencias(ubicacionAgencias);
                 }
             });
         }
@@ -211,8 +202,8 @@
             let ubicacion = ubicaciones[0];
             let map = new google.maps.Map(
                 document.getElementById('map'), {
-                    zoom: 5//, 
-                    //center: new google.maps.LatLng(ubicacion.lat, ubicacion.lng)//,
+                    zoom: 7.5, 
+                    center: new google.maps.LatLng(14.932456, -86.908908)//,
                     //mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
             );
@@ -263,14 +254,14 @@
             let departamentosTxt = '';
             let carouselDepartamentos = $('#carousel-departamentos');
 
-            departamentosTxt += '<div class="carousel-fixed-item center middle-indicator">';
+            /*departamentosTxt += '<div class="carousel-fixed-item center middle-indicator">';
             departamentosTxt += '<div class="left">';
-            departamentosTxt += '<a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left middle-indicator-text black-text">chevron_left</i></a>';
+            departamentosTxt += '<a href="#Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left middle-indicator-text black-text">chevron_left</i></a>';
             departamentosTxt += '</div>';
             departamentosTxt += '<div class="right">';
-            departamentosTxt += '<a href="Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>';
+            departamentosTxt += '<a href="#Siguiente" class="moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text black-text">chevron_right</i></a>';
             departamentosTxt += '</div>';
-            departamentosTxt += '</div>';
+            departamentosTxt += '</div>';*/
 
             $.ajax({
                 type: 'GET',
@@ -280,14 +271,14 @@
                     
                     $.each(departamentos, function (i, departamento) {
                         departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.iddepartamento +'">';
-                        departamentosTxt += '<div>';
+                        //departamentosTxt += '<div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="responsive-img circle">';
                         departamentosTxt += '</div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<span>'+ departamento.nombre +'</span>';
                         departamentosTxt += '</div>';
-                        departamentosTxt += '</div>';
+                        //departamentosTxt += '</div>';
                         departamentosTxt += '</a>';
                     });
 
@@ -369,6 +360,30 @@
                             }
                         }
                     });
+                }
+            });
+        }
+
+        function obtenerUltimasNoticias() {
+            let ultimasNoticias = $('#ultimas-noticias');
+            let noticiasTxt = '';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/controlador.php?accion=ultimas-noticias&limite=3',
+                success: function (data) {
+                    let noticiasDB = JSON.parse(data);
+                    console.log(noticiasDB);
+                    $.each(noticiasDB, function (i, noticia) {
+                        noticiasTxt += '<div class="noticia">';
+                        noticiasTxt += '<h3 class="center">'+ noticia.titulo +'</h3>';
+                        noticiasTxt += '<p>'+ noticia.resumen +'</p>';
+                        noticiasTxt += '<div class="center">';
+                        noticiasTxt += '<a href="#noticia.php?noticiaId="'+ noticia.noticiaId +' class="btn fondoPrincipal">Leer mas...</a>';
+                        noticiasTxt += '</div>';
+                        noticiasTxt += '</div>';
+                    });
+                    ultimasNoticias.html(noticiasTxt);
                 }
             });
         }

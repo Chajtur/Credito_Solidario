@@ -201,11 +201,14 @@
         $('#btnRegistrar').addClass('disabled');
         let userDate = $('#fecha').val();
         let phpDate = userDate.split('/').reverse().join('-');
+        let hora = $('#hora');
+        phpDate = phpDate + ' ' + hora.val() + ':00';
+
         let noticia = {
             titulo: $('#titulo').val(),
             contenido: $('#contenido').val(),
             resumen: $('#resumen').val(),
-            fecha: phpDate,
+            fecha: phpDate, 
             estado: $('#estado').val(),
             usuario: $('#usuario').val(),
             accion: 'agregar'

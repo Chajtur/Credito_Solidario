@@ -116,7 +116,7 @@
             cleartext: 'Cancelar',
             container: undefined,
             autoclose: false,
-            ampmclickable: true
+            ampmclickable: false
         });
         $('.modal').modal({
             dismissible: true,
@@ -192,6 +192,9 @@
         $('#btnRegistrar').addClass('disabled');
         let userDate = $('#fecha').val();
         let phpDate = userDate.split('/').reverse().join('-');
+        let hora = $('#hora');
+        phpDate = phpDate + ' ' + hora.val() + ':00';
+        
         let noticia = {
             noticiaId: noticiaId,
             titulo: $('#titulo').val(),
@@ -233,8 +236,11 @@
                         this.set('select', [date.getFullYear(), date.getMonth() + 1, date.getDate()]);
                     }
                 });
-                //$('#fecha').val(noticia.fecha);
-                //$('#hora').val(noticia.fecha);
+                let fechaPhp = new Date(noticia.fecha);
+                let fechaUsr = fechaPhp.getDate() + '/' + fechaPhp.getMonth() + '/' + fechaPhp.getFullYear();
+                let horaUsr = fechaPhp.getHours() + ':' + fechaPhp.getMinutes();
+                $('#fecha').val(fechaUsr);
+                $('#hora').val(horaUsr);
                 $('#resumen').val(noticia.resumen);
                 $('#contenido').val(noticia.contenido);
                 $('#estado').val(noticia.estado).change();
