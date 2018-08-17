@@ -18,8 +18,8 @@
                 <div class="col s12 m8 center">
                     <h3 class="fondoPrincipal-text">¿QUIÉNES SOMOS?</h3>
                     <hr class="fondoPrincipal-text">
-                    <p>EL PROGRAMA CREDITO SOLIDARIO BUSCA:</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin blandit tempor. Praesent posuere lectus metus. Phasellus in vehicula erat. Fusce nisi sem, tempus in.</p>
+                    <p>EL PROGRAMA CRÉDITO SOLIDARIO BUSCA:</p>
+                    <p>Somos un programa creado con la visión del Presidente de la República, cuya finalidad es la de brindar asistencia técnica y dar acceso a créditos solidarios a todos los emprededores del país que quieran o estén organizados y que tengan el deseo de construir una microempresa.</p>
                 </div>
             </div>
         </div>
@@ -30,15 +30,24 @@
             <div class="row center">
                 <div class="col s12 m4">
                     <h3 class="fondoPrincipal-text">MISIÓN</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                    <p>Somos un Programa Presidencial al servicio de los emprendedores del sector micro empresarial del país, otorgándoles asistencia técnica y crédito solidario con responsabilidad haciendo énfasis en la recuperación de los recursos con el fin de reutilizar esos fondos en nuevos emprendimientos.</p>
                 </div>
                 <div class="col s12 m4 vision">
                     <h3 class="fondoPrincipal-text">VISIÓN</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                    <p>Ser, al 2020, el Programa Modelo en Latinoamérica de asistencia técnica y créditos solidarios al servicio del sector micro empresarial del país, operando en forma independiente y con personal altamente motivado y comprometido con la excelencia.</p>
                 </div>
                 <div class="col s12 m4">
                     <h3 class="fondoPrincipal-text">VALORES</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus odio vel tortor pretium pulvinar. Phasellus non consectetur felis. Cras condimentum ut lectus eget lacinia. Donec leo ante, pellentesque sed.</p>
+                    <p>
+                        Solidarios e incluyentes<br>
+                        Proactivo<br>
+                        Creativos<br>
+                        Amables<br>
+                        Excelencia en operar y servir<br>
+                        Responsables e íntegros<br>
+                        Transparentes<br>
+                        Comprometidos con el trabajo<br>
+                    </p>
                 </div>
             </div>
         </div>

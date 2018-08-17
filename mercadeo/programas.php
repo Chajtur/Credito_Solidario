@@ -14,7 +14,9 @@
                         <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
                     </div>
                     <div class="col s1">
-                    <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
+                     <!-- 
+                         <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
+                      -->
                     </div>
                 </div>
             </form>                  
@@ -28,11 +30,11 @@
         <h4>Infomacion del producto</h4>
         <form id="form-datos">
             <div class="input-field">
-                <input type="text" name="id-programa" placeholder="Id" id="id-programa" data-length="6" class="validate">
+                <input type="text" name="id-programa" placeholder="Id" id="id-programa" data-length="6" class="validate" disabled>
                 <label for="id-programa"></label>
             </div>            
             <div class="input-field">
-                <input type="text" name="subprograma" placeholder="Subprograma" id="subprograma" data-length="50" class="validate">
+                <input type="text" name="subprograma" placeholder="Subprograma" id="subprograma" data-length="50" class="validate" disabled>
                 <label for="subprograma"></label>
             </div>
             <div class="input-field">
@@ -172,7 +174,7 @@
                     programasTxt += '<div class="card-action">';
                     programasTxt += '<a href="#!" onclick="abrirModalImagen(\''+ programa.id +'\')"><i class="material-icons teal-text">image</i></a>';
                     programasTxt += '<a href="#!" onclick="abrirModalInformacion(\''+ programa.id +'\')"><i class="material-icons blue-text">create</i></a>';
-                    programasTxt += '<a href="#!" onclick="eliminarProducto(\''+ programa.id +'\')"><i class="material-icons red-text">clear</i></a>';
+                   // programasTxt += '<a href="#!" onclick="eliminarProducto(\''+ programa.id +'\')"><i class="material-icons red-text">clear</i></a>';
                     programasTxt += '</div>';
                     programasTxt += '</div>';
                     programasTxt += '</div>';

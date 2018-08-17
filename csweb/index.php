@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col s12 m4">                    
                     <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
-                    <p>CRÉDITOS OTOROGADOS<p>
+                    <p>CRÉDITOS OTORGADOS<p>
                 </div>
                 <div class="col s12 m4">
                     <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
@@ -270,7 +270,7 @@
                     let departamentos = JSON.parse(data);
                     
                     $.each(departamentos, function (i, departamento) {
-                        departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.iddepartamento +'">';
+                        departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.idDepartamento +'">';
                         //departamentosTxt += '<div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="responsive-img circle">';
@@ -373,13 +373,12 @@
                 url: '../php/mercadeo/controlador.php?accion=ultimas-noticias&limite=3',
                 success: function (data) {
                     let noticiasDB = JSON.parse(data);
-                    console.log(noticiasDB);
                     $.each(noticiasDB, function (i, noticia) {
                         noticiasTxt += '<div class="noticia">';
                         noticiasTxt += '<h3 class="center">'+ noticia.titulo +'</h3>';
                         noticiasTxt += '<p>'+ noticia.resumen +'</p>';
                         noticiasTxt += '<div class="center">';
-                        noticiasTxt += '<a href="#noticia.php?noticiaId="'+ noticia.noticiaId +' class="btn fondoPrincipal">Leer mas...</a>';
+                        noticiasTxt += '<a href="noticia.php?noticiaId='+ noticia.noticiaId.trim() +'" class="btn fondoPrincipal">Leer mas...</a>';
                         noticiasTxt += '</div>';
                         noticiasTxt += '</div>';
                     });
