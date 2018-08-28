@@ -179,7 +179,7 @@
                 contentType: false,
                 cache: false,
                 data: data,
-                url: 'http://localhost/fileServer/controlador/archivoControlador.php',
+                url: 'http://fs.creditosolidario.hn/controlador/archivoControlador.php',
                 success: function (data) {
                     let archivoData = JSON.parse(data);
                     if (archivoData.error == 0) {

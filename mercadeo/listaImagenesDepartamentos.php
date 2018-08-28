@@ -164,7 +164,7 @@
                 contentType: false,
                 cache: false,
                 data: data,
-                url: 'http://localhost/fileServer/controlador/archivoControlador.php',
+                url: 'http://fs.creditosolidario.hn/controlador/archivoControlador.php',
                 success: function (data) {
                     // Despues hace el guardado de la url dentro del sistema.
                     let archivoData = JSON.parse(data);
