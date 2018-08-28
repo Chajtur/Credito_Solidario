@@ -125,6 +125,10 @@
             <div id="map"></div>
         </section>
 
+        <!-- <div>
+         <input type = "button" onclick = "getLocation();" value = "ubicacion"/>
+        </div> -->
+
     </main>
     <!--main section END-->
 
@@ -168,6 +172,7 @@
             obtenerUltimasNoticias();
             obtenerDirector();
             obtenerAgencias();
+            //getLocation();
         });
 
         //mostrarMapaAgencias(ubicacionAgencias);
@@ -217,9 +222,46 @@
                     position: new google.maps.LatLng(ubicaciones[i].lat, ubicaciones[i].lng),
                     map: map
                 });
-            }
-        }
 
+                (function (marker) {
+                    google.maps.event.addListener(marker, 'click', function () {
+                        let directionsService = new google.maps.DirectionsService();
+                        let directionsDisplay = new google.maps.DirectionsRenderer();
+                        
+                        let options = {timeout:60000};
+
+                        navigator.geolocation.getCurrentPosition(
+                            function (location) {
+                                let origin = {
+                                    lat: location.coords.latitude,
+                                    lng: location.coords.longitude
+                                };
+                                
+                                let request = {
+                                    origin: origin,
+                                    destination: marker.getPosition(),
+                                    travelMode: 'DRIVING'
+                                };
+                                
+                                directionsDisplay.setMap(map);
+                                directionsService.route(request, function(result, status) {
+                                    if (status == 'OK') {
+                                        directionsDisplay.setDirections(result);
+                                    }
+                                });
+                            },
+                            function (error) {
+                                if(err.code == 1) {
+                                    alert("Error: Access is denied!");
+                                } else if( err.code == 2) {
+                                    alert("Error: Position is unavailable!");
+                                }
+                            }, options);
+                    });
+                })(marker);
+            }
+            
+        }
         function obtenerCarrusel() {
             let carruselPrincipal = $('#main-slider');
             let imagenesTxt = '';

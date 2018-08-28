@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <div class="row">
     <div class="card col s12">
         <div class="card-content">
@@ -19,7 +23,7 @@
                         
                     </div> 
                     <div class="col s1">
-                        <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
+                        <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
                         <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
                     </div>
                 </div>

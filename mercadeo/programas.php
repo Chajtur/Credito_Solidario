@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <div class="row">
     <div class="card col s12">
         <div class="card-content">
@@ -11,7 +15,7 @@
                     </div>                  
                     <div class="col s1">
                         <button class="waves-effect waves-light btn green lighten-2" id="btn-buscar" name="btn-buscar"><i class="material-icons">refresh</i></button>
-                        <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
+                        <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
                     </div>
                     <div class="col s1">
                      <!-- 

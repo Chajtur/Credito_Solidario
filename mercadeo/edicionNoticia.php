@@ -1,4 +1,6 @@
 <?php 
+    session_start();
+
     if (isset($_GET['accion'])) {
         $accion = 'accion';
     }
@@ -45,7 +47,7 @@
                     </form>
                 </div>
                 <div class="card-action">
-                    <input type="hidden" name="usuario" id="usuario" value="ADRIAN">
+                    <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
                     <input type="hidden" name="noticiaId" id="noticiaId" value="<?php echo isset($noticiaId) ? $noticiaId : ''; ?>">
                     <button type="submit" class="btn-flat blue-text" id="btnRegistrar"><i class="material-icons right">send</i>Registrar</button>
                     <button class="waves-effect waves-light btn blue" id="btnNuevaImagen"><i class="material-icons right">add</i>imagen</button>
