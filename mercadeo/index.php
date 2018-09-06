@@ -30,34 +30,34 @@
         <meta name="theme-color" content="#3F51B5" />
         <!-- For Windows Phone -->
 
-
-        <!-- CORE CSS-->
         <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <!-- Custome CSS-->
         <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <!--Sweet Alert-->
+        <link href="../fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">
         <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
-        <link rel="stylesheet" href="../css/custom/nuevo.css">
+        
         <link rel="stylesheet" href="../css/custom/tema-indigo.css">
         <link rel="stylesheet" href="../css/custom/search.css">
-        <!-- Material-icons-->
-        <link href="../fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-        <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
         <link href="../js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-        <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
         <link rel="stylesheet" href="../css/plugins/select2/select2.min.css">
         <link rel="stylesheet" href="../css/plugins/select2/select2.materialize.css">
         <link rel="stylesheet" href="../css/materialize.clockpicker.css">
+
+        <style>
+            .button-collapse {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        </style>
+
         <title>Noticias - Crédito Solidario</title>
     </head>
     <body>
         <!-- INICIO INDICADOR PÁGINA CARGANDO -->
-        
         <!-- FIN INDICADOR PÁGINA CARGANDO -->
 
         <!-- INICIO HEADER -->
@@ -66,6 +66,7 @@
                 <nav class="navbar-color">
                     <div class="nav-wrapper row">
                         <ul class="left col s2">
+                            <li><a href="#" data-activates="mobile-demo" id="btn-menu-usuario" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
                             <li>
                                 <h1 class="logo-wrapper">
                                     <a href="#" class="brand-logo darken-1">
@@ -110,12 +111,12 @@
         <!-- FIN HEADER -->
 
         <!-- INICIO DE MAIN -->
-        <div id="main">
+        <div>
             <!-- INICIO WRAPPER -->
-            <div class="wrapper">
+            
                 <!-- INICIO SIDEBAR -->
-                <aside id="left-sidebar-nav">
-                    <ul class="side-nav fixed leftside-navigation">
+                
+                    <ul id="mobile-demo" class="side-nav">
                         <?php require "../common/left-side-menu.php";?>
                         <li><a href="#">Inicio</a></li>
                         <li class="no-padding">
@@ -146,7 +147,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Programas</a>                                    
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Productos</a>                                    
                                     <ul id="menu-programa" class="collapsible-body">
                                         <li><a class="waves-effect menu-button sidenav-button" id="btn-programa" href="#!">Listar</a></li>
                                     </ul>
@@ -166,7 +167,6 @@
                             </ul>
                         </li>
                     </ul>
-                </aside>
                 <!-- FIN SIDEBAR -->
             <!-- FIN WRAPPER -->
 
@@ -214,21 +214,9 @@
                     
                 </section>
                 <!-- FIN CONTENT -->
-            </div>
+            
         </div>
         <!-- FIN DE MAIN -->
-
-        <!-- 
-<div class="fixed-action-btn">
-            <a class="btn-floating btn-large indigo darken-3" id="floating-refresh">
-                <i class="large material-icons">build</i>
-            </a>
-            <ul>
-                <li><a href="" id="agregar-noticia" class="btn-floating teal lighten-2"><i class="material-icons">add</i></a></li>
-                <li><a href="index.php" id="refrescar-noticias" class="btn-floating green lighten-2"><i class="material-icons">refresh</i></a></li>
-            </ul>
-        </div>
-         -->
         
 
         <?php require "../common/footer.php";?>
@@ -256,12 +244,19 @@
         <script src="../js/plugins/data-change/data-change.js"></script>
         <script src="../js/plugins/cookie-manager/cookie-manager.js"></script>
         <script src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="../js/materialize.js"></script>
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
         <script src="../js/plugins/select2/select2.min.js"></script>
         <script src="../js/materialize.clockpicker.js"></script>
 
         <script>
             $(document).ready(function () {
+                $('#btn-menu-usuario').sideNav({
+                    menuWidth: 300,
+                    edge: 'left',
+                    closeOnClick: false,
+                    draggable: true
+                });
+
                 let accion = $('#accion').val();
                 let noticiaId = $('#noticiaId').val();
 

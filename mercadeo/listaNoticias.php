@@ -43,7 +43,7 @@
                     noticiasTxt += '</div>';
                     noticiasTxt += '<div class="card-content">'+ noticia.resumen +'</div>';
                     noticiasTxt += '<div class="card-action">';
-                    noticiasTxt += '<a href="index.php?accion=editar&noticiaId=1"><i class="material-icons">create</i></a>';
+                    noticiasTxt += '<a href="index.php?accion=editar&noticiaId='+ noticia.noticiaId +'"><i class="material-icons">create</i></a>';
                     noticiasTxt += '</div>';
                     noticiasTxt += '</div>';
                     noticiasTxt += '</div>';

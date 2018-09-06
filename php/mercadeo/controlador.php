@@ -180,7 +180,9 @@
 
             switch ($accion) {
                 case 'listar':
-                    $stat = $conn->prepare('call obtener_noticias();');
+                    $algo = '';
+                    $stat = $conn->prepare('call obtener_noticias(?);');
+                    $stat->bindParam(1, $algo, PDO::PARAM_STR);
                     $stat->execute();
 
                     $noticias = $stat->fetchAll(PDO::FETCH_ASSOC);

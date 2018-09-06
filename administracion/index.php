@@ -1,5 +1,5 @@
 <?php
-require '../php/auth.php';
+    require '../php/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,7 +33,7 @@ require '../php/auth.php';
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
     <!-- Custome CSS-->
     <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link rel="stylesheet" href="../css/custom/nuevo.css">
+    
     <link rel="stylesheet" href="../css/custom/tema-indigo.css">
     <link rel="stylesheet" href="../css/custom/search.css">
     <!-- Material-icons-->
@@ -43,6 +43,14 @@ require '../php/auth.php';
     <link href="../js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="../js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <!--<link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">-->
+    <style>
+        .button-collapse {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,6 +84,7 @@ require '../php/auth.php';
                 <div class="nav-wrapper row">
 
                     <ul class="left col s2">
+                    <li><a href="#" data-activates="mobile-demo" id="btn-menu-usuario" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
                         <li>
                             <h1 class="logo-wrapper">
                       <a href="#" class="brand-logo darken-1">
@@ -139,13 +148,13 @@ require '../php/auth.php';
 
 
     <!-- START MAIN -->
-    <div id="main">
+    <div>
         <!-- START WRAPPER -->
-        <div class="wrapper">
+        <div>
 
             <!-- START LEFT SIDEBAR NAV-->
-            <aside id="left-sidebar-nav">
-                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+            
+                <ul id="mobile-demo" class="side-nav">
                     <?php require "../common/left-side-menu.php";?>
                     <li id="menu-btn-recepcion" class="menu-btn menu-btn-active" data-change="dashboard.php"><a class="waves-effect waves-light"><i class="material-icons">dashboard</i>Dashboard</a></li>
                     
@@ -164,11 +173,6 @@ require '../php/auth.php';
                     <li><a class="subheader">Subheader</a></li>
                     <li><a class="waves-effect waves-light" href="#!">Consultas</a></li>-->
                 </ul>
-                <a href="#" data-activates="slide-out" class="sidebar-collapse  waves-effect waves-light hide-on-large-only">
-                    <i class="material-icons white600 md-36">menu</i>
-                </a>
-
-            </aside>
             <!-- END LEFT SIDEBAR NAV-->
 
 
@@ -298,10 +302,16 @@ require '../php/auth.php';
     <script src="../js/plugins/cookie-manager/cookie-manager.js"></script>
     <script src="../js/plugins/jquery.redirect.js/jquery.redirect.js"></script>
     <script src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script>
     
     $(document).ready(function(){
+        $('#btn-menu-usuario').sideNav({
+            menuWidth: 300,
+            edge: 'left',
+            closeOnClick: false,
+            draggable: true
+        });
         
         /////////////////////////
         

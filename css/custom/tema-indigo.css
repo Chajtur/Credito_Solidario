@@ -32,10 +32,10 @@ nav {
     cursor: default;
 }
 
-.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
+/*.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
   background-color: #0d47a1;
-}
+}*/
 
 /*BUTTONS*/
 .btn, btn-large {
@@ -92,9 +92,9 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 
-ul.side-nav.leftside-navigation li.active {
+/*ul.side-nav.leftside-navigation li.active {
     background-color: #42a5f5;
-}
+}*/
 
 
 [type="checkbox"].filled-in:checked + label:after {
