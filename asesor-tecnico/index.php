@@ -1,5 +1,5 @@
 <?php 
-    require '../php/auth.php';
+    //require '../php/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -170,12 +170,12 @@
                     <!--<li><a id="menu-btn-credito-devuelto" class="waves-effect waves-light"><i class="material-icons">edit</i>Créditos Devueltos</a></li>-->
                     <li class="no-padding">
                         <ul class="collapsible collapsible-accordion">
-                        <li id="menu-btn-dashboard" onclick=" hideMenuOnClick()" class="menu-btn menu-btn-active" data-change="dashboard.php"><a class="waves-effect waves-light collapsible-header sin-icon"><i class="material-icons">dashboard</i>Dashboard</a></li>      
+                        <li class="menu-btn menu-btn-active" data-change="dashboard.php"><a id="menu-btn-dashboard" class="waves-effect waves-light collapsible-header sin-icon"><i class="material-icons">dashboard</i>Dashboard</a></li>      
                         <li>
                             <a class="collapsible-header">Recuperación<i class="material-icons">monetization_on</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li id="menu-btn-pagos-dia" onclick=" hideMenuOnClick()" class="menu-btn" data-change="cuotas-cobrar.php"><a class="waves-effect waves-ligh no-margin"><i class="material-icons">keyboard_arrow_right</i>Cuotas por cobrar</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-pagos-dia" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Cuotas por cobrar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -183,10 +183,19 @@
                             <a class="collapsible-header">Carteras<i class="material-icons">add</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li id="menu-btn-cartera" onclick=" hideMenuOnClick()" class="menu-btn" data-change="cartera-total.php"><a class="waves-effect waves-ligh no-margin"><i class="material-icons">list</i>Cartera total</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-cartera" class="waves-effect waves-light no-margin"><i class="material-icons">list</i>Cartera total</a></li>
                                 </ul>
                             </div>
                         </li>
+                        <li>
+                            <a class="collapsible-header">Agenda<i class="material-icons">assignment</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li class="menu-btn"><a id="menu-btn-agenda" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Visualizar</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
                         </ul>
                     </li>
                     <li>
@@ -333,6 +342,35 @@
                 edge: 'left',
                 closeOnClick: false,
                 draggable: true
+            });
+
+            $('#menu-btn-dashboard').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('dashboard.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-pagos-dia').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('cuotas-cobrar.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-cartera').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('cartera-total.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-agenda').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('agenda.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
             });
         });
     </script>
