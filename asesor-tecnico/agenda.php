@@ -17,15 +17,7 @@
 </div>
 
 <div id="tareas" class="row">
-    <div class="col s12 m6">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">Calendario</span>
-                <div class="calendar"></div>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6">
+    <div class="col s12">
         <div class="card">
             <div class="card-content">
                 <div class="card-title">Tareas</div>
@@ -35,7 +27,7 @@
     </div>
 </div>
 
-<div id="tarea-modal" class="modal">
+<div id="tarea-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
         <h4>Tarea</h4>
         <form id="tarea-form">
@@ -54,7 +46,7 @@
             </div>
             <div class="input-field">
                 <select class="select" name="tipo-visita" id="tipo-visita">
-                    <option value="1">Asistencia ténica</option>
+                    <option value="1">Asistencia técnica</option>
                     <option value="2">Visita de cobro</option>
                 </select>
             </div>
@@ -76,14 +68,6 @@
     $(document).ready(function () {
         $('.collapsible').collapsible();
         $('.select').material_select();
-        $('.calendar').pignoseCalendar({
-            lang: 'es',
-            select: function (dates, context) {
-                console.log('fecha', dates[0]._i);
-                $('#fecha').val(dates[0]._i);
-                obtenerTareasLista(dates[0]._i, 'USR');
-            }
-        });
 
         $('.modal').modal();
         var fechaHoy = obtenerFechaHoy();
@@ -154,8 +138,8 @@
 
     function guardarTarea() {
         var url;
+        var beneficiario = $('#beneficiario').val();
         var metodoRegistro = $('#accion').val();
-        var titulo = $('#titulo').val();
         var detalle = $('#detalle').val();
         var fecha = $('#fecha').val();
         var accion = $('#accion').val();
@@ -168,22 +152,16 @@
         var validado = true;
         var mensajes = '';
 
-        if (titulo.trim().length <= 0) {
+        if (beneficiario.trim().length <= 0) {
         validado = false;
 
-        mensajes += '- El título esta vacío.<br />';
+        mensajes += '- El beneficiario esta vacío.<br />';
         }
 
         if (detalle.trim().length <=0) {
         validado = false;
 
         mensajes += '- El detalle esta vacío.<br />';
-        }
-
-        if (titulo.trim().length > 100) {
-        validado = false;
-
-        mensajes += '- El título no puede ser mayor a 100 caracteres.<br />';
         }
 
         if (detalle.trim().length > 2000) {
@@ -198,7 +176,7 @@
             var data = {
                 'tareaId': tareaId,
                 'accion': accion,
-                'titulo': titulo,
+                'beneficiarioId': beneficiario,
                 'detalle': detalle,
                 'fecha': fecha,
                 'usuario': usuario,
@@ -208,11 +186,7 @@
                 'domicilio': domicilio
             };
 
-            if (metodoRegistro == 'agregar') {
-                url = '../php/asesor-tecnico/agenda.php';
-            } else {
-                url = '../php/asesor-tecnico/agenda.php';
-            }
+            url = '../php/asesor-tecnico/agenda.php';
 
             $('#registrar_tarea').addClass('disabled');
             $('#cancelar_tarea').addClass('disabled');
@@ -250,17 +224,55 @@
                 tareasTxt += '<thead>';
                 tareasTxt += '<tr>';
                 tareasTxt += '<th>#</th>';
-                tareasTxt += '<th>Título</th>';
-                tareasTxt += '<th></th>';
+                tareasTxt += '<th>Identidad</th>';
+                tareasTxt += '<th>Nombre</th>';
+                tareasTxt += '<th>Tipo de visita</th>';
+                tareasTxt += '<th>Domicilio</th>';
+                tareasTxt += '<th></th>'; 
                 tareasTxt += '</tr>';
                 tareasTxt += '</thead>';
                 var i = 0;
                 tareasTxt += '<tbody>';
                 $.each(tareas, function (i, tarea) {
                     i++;
+                    var descripcionTipoVisita = '';
+                    var tipoVisita = parseInt(tarea.tipo_visita);
+                    switch (tipoVisita) {
+                        case 1:
+                            descripcionTipoVisita = 'Asistenica técnica';                            
+                            break;
+                        
+                        case 2:
+                            descripcionTipoVisita = 'Visita de cobro';
+                            break;
+                    
+                        default:
+                            descripcionTipoVisita = '';
+                            break;
+                    }
+
+                    var descripcionDomicilio = '';
+                    var domicilioId = parseInt(tarea.domicilio);
+                    switch (domicilioId) {
+                        case 1:
+                            descripcionDomicilio = 'Casa';
+                            break;
+
+                        case 2:
+                            descripcionDomicilio = 'Negocio';
+                            break;
+                    
+                        default:
+                            descripcionDomicilio = '';
+                            break;
+                    }
+
                     tareasTxt += '<tr>';
                     tareasTxt += '<td>'+ i +'</td>';
-                    tareasTxt += '<td>'+ tarea.titulo +'</td>';
+                    tareasTxt += '<td>'+ tarea.beneficiarioId +'</td>';
+                    tareasTxt += '<td>'+ tarea.nombre +'</td>';
+                    tareasTxt += '<td>'+ descripcionTipoVisita +'</td>';
+                    tareasTxt += '<td>'+ descripcionDomicilio +'</td>';
                     tareasTxt += '<td>';
                     tareasTxt += '<a href="#" onclick="mostrarModalEditar('+ tarea.tareaId +')"><i class="material-icons blue-text">edit</i></a>';
                     tareasTxt += '<a href="#"><i class="material-icons red-text">clear</i></a>';
@@ -303,13 +315,15 @@
                 var tarea = tareas[0];
                 console.log(tarea);
                 $('#tareaId').val(tarea.tareaId);
-                $('#beneficiario').val(tarea.beneficiario);
+                $('#beneficiario').val(tarea.beneficiarioId);
                 $('#detalle').val(tarea.detalle);
                 $('#fecha').val(tarea.fecha);
                 $('#longitud').val(tarea.longitud);
                 $('#latitud').val(tarea.latitud);
                 $('#tipo-visita').val(tarea.tipo_visita).change();
                 $('#tipo-visita').material_select();
+                $('#domicilio').val(tarea.domicilio).change();
+                $('#domicilio').material_select();
             },
             error: function (xhr, status, error) {
               alert('Error al obtener datos.');

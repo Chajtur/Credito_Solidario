@@ -66,8 +66,8 @@
                         $tareaId = $_POST['tareaId'];
                     }
 
-                    if (isset($_POST['titulo'])) {
-                        $titulo = $_POST['titulo'];
+                    if (isset($_POST['beneficiarioId'])) {
+                        $beneficiarioId = $_POST['beneficiarioId'];
                     }
 
                     if (isset($_POST['detalle'])) {
@@ -82,17 +82,30 @@
                         $usuario = $_POST['usuario'];
                     }
 
+                    if (isset($_POST['longitud'])) {
+                        $longitud = $_POST['longitud'];
+                    }
+
+                    if (isset($_POST['latitud'])) {
+                        $latitud = $_POST['latitud'];
+                    }
+
                     if (isset($_POST['tipo-visita'])) {
                         $tipoVisita = $_POST['tipo-visita'];
                     }
 
-                    $stat = $conn->prepare('call editar_tarea(?,?,?,?,?,?);');
-                    $stat->bindParam(1, $titulo, PDO::PARAM_STR);
+                    if (isset($_POST['domicilio'])) {
+                        $domicilio = $_POST['domicilio'];
+                    }
+
+                    $stat = $conn->prepare('call editar_tarea(?,?,?,?,?,?,?);');
+                    $stat->bindParam(1, $beneficiarioId, PDO::PARAM_STR);
                     $stat->bindParam(2, $detalle, PDO::PARAM_STR);
                     $stat->bindParam(3, $usuario, PDO::PARAM_STR);
                     $stat->bindParam(4, $fecha, PDO::PARAM_STR);
-                    $stat->bindParam(5, $tareaId, PDO::PARAM_INT);
-                    $stat->bindParam(6, $tipoVisita, PDO::PARAM_INT);
+                    $stat->bindParam(5, $tipoVisita, PDO::PARAM_INT);
+                    $stat->bindParam(6, $domicilio, PDO::PARAM_INT);
+                    $stat->bindParam(7, $tareaId, PDO::PARAM_INT);
 
                     if ($stat->execute()) {
                         $respuesta = array('error' => 0);
