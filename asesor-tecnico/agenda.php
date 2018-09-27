@@ -295,6 +295,7 @@
     }
 
     function obtenerUbicacion() {
+        console.log('obtenerUbicacion');
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(mostrarPosicion);
         } else {
@@ -303,6 +304,7 @@
     }
 
     function mostrarPosicion(position) {
+        console.log('lat', position.coords.latitude);
         $('#latitud').val(position.coords.latitude);
         $('#longitud').val(position.coords.longitude);
     }
