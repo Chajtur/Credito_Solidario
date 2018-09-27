@@ -50,12 +50,14 @@
                     <option value="1">Asistencia técnica</option>
                     <option value="2">Visita de cobro</option>
                 </select>
+                <label for="tipo-visita">Tipo de visita</label>
             </div>
             <div class="input-field">
                 <select class="select" name="domicilio" id="domicilio">
                     <option value="1">Casa</option>
                     <option value="2">Negocio</option>
                 </select>
+                <label for="domicilio">Domicilio</label>
             </div>
         </form>
     </div>
