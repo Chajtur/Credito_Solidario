@@ -43,6 +43,7 @@
                 <input type="hidden" name="fecha" id="fecha">
                 <input type="hidden" name="latitud" id="latitud">
                 <input type="hidden" name="longitud" id="longitud">
+                <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
             </div>
             <div class="input-field">
                 <select class="select" name="tipo-visita" id="tipo-visita">
@@ -71,7 +72,8 @@
 
         $('.modal').modal();
         var fechaHoy = obtenerFechaHoy();
-        obtenerTareasLista(fechaHoy, 'USR');
+        var usuarioActual = $('usuario').val();
+        obtenerTareasLista(fechaHoy, usuarioActual);
         $('#fecha').val(fechaHoy);
 
         $('#btn-nueva-noticia').click(function (evt) {
@@ -143,7 +145,7 @@
         var detalle = $('#detalle').val();
         var fecha = $('#fecha').val();
         var accion = $('#accion').val();
-        var usuario = 'USR';
+        var usuario = $('#usuario').val();
         var tareaId = $('#tareaId').val();
         var latitud = $('#latitud').val();
         var longitud = $('#longitud').val();
@@ -200,7 +202,8 @@
                     $('#cancelar_tarea').removeClass('disabled');
                     $('#tarea-modal').modal('close');
                     fecha = fecha.substring(0, 10);
-                    obtenerTareasLista(fecha, 'USR');
+                    var usuarioVal = $('#usuario').val();
+                    obtenerTareasLista(fecha, usuarioVal);
                 },
                 error: function (xhr, status, error) {
                     alert('Error al guardar datos');
