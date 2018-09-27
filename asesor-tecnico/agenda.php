@@ -43,7 +43,7 @@
                 <input type="hidden" name="fecha" id="fecha">
                 <input type="hidden" name="latitud" id="latitud">
                 <input type="hidden" name="longitud" id="longitud">
-                <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
+                <input type="hidden" name="usuario" id="usuario" value="<?php echo $_SESSION['user'] ?>">
             </div>
             <div class="input-field">
                 <select class="select" name="tipo-visita" id="tipo-visita">
@@ -72,7 +72,7 @@
 
         $('.modal').modal();
         var fechaHoy = obtenerFechaHoy();
-        var usuarioActual = $('usuario').val();
+        var usuarioActual = $('#usuario').val();
         obtenerTareasLista(fechaHoy, usuarioActual);
         $('#fecha').val(fechaHoy);
 
