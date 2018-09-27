@@ -84,7 +84,7 @@
             guardarTarea();
         });
 
-        revisarSiGeolocacionActivado();
+        //revisarSiGeolocacionActivado();
     });
 
     function revisarSiGeolocacionActivado() {
