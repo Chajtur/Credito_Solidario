@@ -28,4 +28,5 @@
     
     <script src="js/common.js"></script>
     <script type="text/javascript" src="../js/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+    <script type="text/javascript" src="js/odometer.min.js"></script>
     

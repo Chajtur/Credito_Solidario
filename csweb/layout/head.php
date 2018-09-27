@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">    
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/themes/google/google.css">
+    <link rel="stylesheet" href="css/odometer-theme-default.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
