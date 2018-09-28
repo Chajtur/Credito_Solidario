@@ -322,7 +322,7 @@
                         el: mt,
                         animation: 'count',
                         value: 0,
-                        format: '(,ddd)',
+                        format: '(,ddd).dd',
                         theme: 'default'
                     });
                     od2.update(informacion.Monto);
