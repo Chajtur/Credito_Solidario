@@ -159,7 +159,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#!" class="collapsible-header"><i class="material-icons">user</i>Familia</a>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Familia</a>
                                     <ul id="menu-familia" class="collapsible-body">
                                     <li><a class="waves-effect menu-button sidenav-button" id="btn-familia" href="#!">Gestionar</a></li>
                                     </ul>
