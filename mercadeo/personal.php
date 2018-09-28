@@ -4,31 +4,32 @@
 
 <div class="row">
     <div class="card col s12">
-        <form id="formPersonal">
-            <div class="card-content">
-                <span class="card-title blue-text">Gestión del personal</span>            
-                    <div class="row">                        
-                        <div class="input-field col s11">
-                            <input type="text" name="busqueda" placeholder="Búsqueda" id="busqueda" data-length="25" class="validate">
-                            <label for="busqueda"></label>
-                        </div>
-                        
-                        <div class="input-field col s1">
-                            <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
-                            <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
-                        </div>
+        <div class="card-content">
+            <span class="card-title blue-text">Gestión del personal</span>            
+                <div class="row">                        
+                    <div class="input-field col s10">
+                        <input type="text" name="busqueda" placeholder="Búsqueda" id="busqueda" data-length="25" class="validate">
+                        <label for="busqueda"></label>
+                    </div>
+                    <div class="input-field col s1">
+                        <button data-position="top" data-delay="50" data-tooltip="Refrescar" class="waves-effect waves-light btn green lighten-2 tooltipped" id="btn-refrescar" name="btn-refrescar"><i class="material-icons">refresh</i></button>
+                    </div>
+                    
+                    <div class="input-field col s1">
+                        <button data-position="top" data-delay="50" data-tooltip="Agregar imagen" class="waves-effect waves-light btn teal lighten-2 tooltipped" id="btn-nuevo" name="btn-nuevo"><i class="material-icons">add</i></button>
+                        <input type="hidden" name="usuario" id="usuario" value="<?php //echo $_SESSION['user'] ?>">
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
-<div class="row" id="grilla-imagenes"><div>
+<div class="row" id="grilla-imagenes"></div>
 
 <div class="modal" id="modal-datos">
     <div class="modal-content">
         <h4>Información del empleado</h4>
-        <form id="formImagen">
+        <form id="formDatos">
             <div class="input-field">
                 <input type="text" name="nombre" placeholder="Nombre" id="nombre" class="validate">
                 <label for="nombre">Nombre</label>
@@ -83,28 +84,44 @@
             outDuracion: 200
         });
 
+        $('#btn-refrescar').click(function (evt) {
+            obtenerImagenes();
+        });
+
         $('#btn-nuevo').click(function (evt) {
             abrirModalInformacion();
         });
+
+        $('#btnRegistrarDatos').click(function (evt) {
+            guardarDatos();
+        });
+
+        $('#btnCancelarDatos').click(function (evt) {
+            $('#modal-datos').modal('close');
+        });
+
+        $('#btnCancelarImagen').click(function (evt) {
+            $('#modal-imagen').modal('close');
+        });
     });
 
-    function abrirModalInformacion(usuarioId) {
-        if (usuarioId) {
-            $('#usuarioId').val(usuarioId);
+    function abrirModalInformacion(personalId) {
+        if (personalId) {
+            $('#personal-id').val(personalId);
         } else {
-            $('#usuarioId').val(undefined);
+            $('#personal-id').val(undefined);
         }
         $('#modal-datos').modal('open');
     }
 
-    function abrirModalImagen(usuarioId) {
-        if (usuarioId) {
-            $('#usuarioId').val(usuarioId);
+    function abrirModalImagen(personalId) {
+        if (personalId) {
+            $('#personal-id').val(personalId);
             $('#imagen').attr('disabled', true);
             $('#imagenPath').attr('disabled', true);
-            mostrarImagen(usuarioId);            
+            //mostrarImagen(usuarioId);            
         } else {
-            $('#usuarioId').val(undefined);
+            $('#personal-id').val(undefined);
             /*$('#imagenPath').attr('disabled', false);
             $('#imagen').attr('disabled', false);*/
         }
@@ -113,10 +130,10 @@
 
     function guardarDatos() {
         let personal = {
-            accion: 'agregar',
+            accion: 'agregar-datos',
             nombre: $('#nombre').val(),
             cargo: $('#cargo').val(),
-            url: '',
+            url: 'http://fs.creditosolidario.hn/uploads/pruebas/2018/09/5bae8cf39f86d8.28113653.png',
             estado: $('#estado').val()
         };
 
@@ -210,17 +227,27 @@
                     imagenesTxt += '<div class="card">';
                     imagenesTxt += '<div class="card-image">';
                     imagenesTxt += '<img src="'+ imagen.url +'" alt="">';
-                    imagenesTxt += '<span class="card-title">'+ imagen.nombre +'</span>';
+                    imagenesTxt += '<span class="card-title black-text">'+ imagen.nombre +'</span>';
                     imagenesTxt += '</div>';
                     imagenesTxt += '<div class="card-content">'+ imagen.cargo +'</div>';
                     imagenesTxt += '<div class="card-action">';
-                    //imagenesTxt += '<a href="#!" onclick="eliminarImagen('+ imagen.carruselId +')"><i class="material-icons red-text right">clear</i></a>';
-                    imagenesTxt += '<a href="#!" onclick="abrirModalImagen('+ imagen.id +')"><i class="material-icons blue-text right">create</i></a>';
+                    //imagenesTxt += '<a href="#!" onclick="eliminarImagen('+ imagen.carruselId +')"><i class="material-icons green-text right">image</i></a>';
+                    imagenesTxt += '<a href="#!" onclick="abrirModalInformacion('+ imagen.id +')"><i class="material-icons blue-text right">create</i></a>';
                     imagenesTxt += '</div>';
                     imagenesTxt += '</div>';
                     imagenesTxt += '</div>';
                 });
                 grillaImagenes.html(imagenesTxt);
+            }
+        });
+    }
+
+    function mostrarInformacion(personalId) {
+        $.ajax({
+            type: 'GET',
+            url: '../php/mercadeo/personalCtrl?accion=mostrar&id='+personalId,
+            success: function (data) {
+                
             }
         });
     }

@@ -26,7 +26,7 @@
                             $estado = $_POST['estado'];
                         }
                         
-                        $stat = $conn->stat('call guardar_usuarios_pagina(?,?,?,?);');
+                        $stat = $conn->prepare('call guardar_usuarios_pagina(?,?,?,?);');
                         $stat->bindParam(1, $nombre, PDO::PARAM_STR);
                         $stat->bindParam(2, $cargo, PDO::PARAM_STR);
                         $stat->bindParam(3, $url, PDO::PARAM_STR);
@@ -54,7 +54,7 @@
                             $cargo = $_POST['cargo'];
                         }
 
-                        $stat = $conn->stat('call actualizar_usuario_pagina(?,?,?,?);');
+                        $stat = $conn->prepare('call actualizar_usuario_pagina(?,?,?,?);');
                         $stat->bindParam(1, $id, PDO::PARAM_INT);
                         $stat->bindParam(2, $nombre, PDO::PARAM_STR);
                         $stat->bindParam(3, $cargo, PDO::PARAM_STR);
@@ -78,7 +78,7 @@
                             $url = $_POST['url'];
                         }
 
-                        $stat = $conn->stat('call actualizar_imagen_usuario_pagina(?,?,?);');
+                        $stat = $conn->prepare('call actualizar_imagen_usuario_pagina(?,?,?);');
                         $stat->bindParam(1, $id, PDO::PARAM_INT);
                         $stat->bindParam(2, $url, PDO::PARAM_STR);
 
@@ -99,13 +99,13 @@
             break;
 
         case 'GET':
-            if (isset($_POST['accion'])) {
-                $accion = $_POST['accion'];
+            if (isset($_GET['accion'])) {
+                $accion = $_GET['accion'];
                 
                 switch ($accion) {
                     case 'listar':
-                        if (isset($_POST['estado'])) {
-                            $estado = $_POST['estado'];
+                        if (isset($_GET['estado'])) {
+                            $estado = $_GET['estado'];
                         }
 
                         $stat = $conn->prepare('call listar_usuarios_pagina(?);');
@@ -119,8 +119,8 @@
                         break;
 
                     case 'mostrar':
-                        if (isset($_POST['id'])) {
-                            $estado = $_POST['id'];
+                        if (isset($_GET['id'])) {
+                            $estado = $_GET['id'];
                         }
 
                         $stat = $conn->prepare('call mostrar_usuario_pagina(?);');
