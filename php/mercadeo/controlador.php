@@ -249,6 +249,15 @@
                     $noticia = $stat->fetchAll(PDO::FETCH_ASSOC);
 
                     echo json_encode($noticia, 16);
+                    break;
+
+                case 'datos_generales':
+                    $stat = $conn->prepare('call obtener_datos_generales_pagina();');
+                    $stat->execute();
+
+                    $respuesta = $stat->fetchAll(PDO::FETCH_ASSOC);
+                    echo json_encode($respuesta, 16);
+                    break;
                 
                 default:
                     # code...

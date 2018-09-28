@@ -25,15 +25,15 @@
         <section class="contadores center">
             <div class="row">
                 <div class="col s12 m4">                    
-                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
+                    <h1 id="creditos_otorgados"></h1>
                     <p>CRÉDITOS OTORGADOS<p>
                 </div>
                 <div class="col s12 m4">
-                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
-                    <p>DESEMBOLSOS<p>
+                    <h1 id="monto_desembolsado"></h1>
+                    <p>LPS. DESEMBOLSADOS<p>
                 </div>
                 <div class="col s12 m4">
-                    <h1 class='numscroller' data-min='1' data-max='230' data-delay='5' data-increment='10'>230</h1>
+                    <h1 id="empleos_generados"></h1>
                     <p>EMPLEOS GENERADOS<p>
                 </div>
             </div>
@@ -165,6 +165,7 @@
                 };
             }
 
+            cargarDatos();
             obtenerCarrusel();
             obtenerDepartamentos();
             obtenerGaleria();
@@ -288,6 +289,61 @@
                 },
                 error: function (xhr, status, error) {
 
+                }
+            });
+        }
+
+        function cargarDatos() {
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/controlador.php?accion=datos_generales',
+                success: function (data) {
+                    let informaciones = JSON.parse(data);
+                    let informacion = informaciones[0];
+                    /*$('#creditos_otorgados').text(informacion.Creditos);
+                    $('#creditos_otorgados').attr('data-min', 1);
+                    $('#creditos_otorgados').attr('data-max', informacion.Creditos);
+                    $('#creditos_otorgados').attr('data-increment', 100);    
+                    $('#creditos_otorgados').attr('data-delay', 5); 
+                    $('#creditos_otorgados').addClass('numscroller');*/
+                    let cr = document.querySelector('#creditos_otorgados');
+                    od1 = new Odometer({
+                        el: cr,
+                        animation: 'count',
+                        value: 0,
+                        duration: 500,
+                        format: '(,ddd)',
+                        theme: 'default'
+                    });
+                    od1.update(informacion.Creditos);
+                    
+                    let mt = document.querySelector('#monto_desembolsado');
+                    od2 = new Odometer({
+                        el: mt,
+                        animation: 'count',
+                        value: 0,
+                        format: '(,ddd)',
+                        theme: 'default'
+                    });
+                    od2.update(informacion.Monto);
+                    
+                    let eg = document.querySelector('#empleos_generados');
+                    od3 = new Odometer({
+                        el: eg,
+                        animation: 'count',
+                        format: '(,ddd)',
+                        value: 0,
+                        theme: 'default'
+                    });
+                    od3.update(informacion.Empleos);
+                    
+                    
+                    //$('#monto_desembolsado').text(informacion.Monto);
+                    //$('#empleos_generados').text(informacion.Empleos);
+                    
+                    /*let creditos = '<h1 class="numscroller" data-delay="5" data-min="1" data-increment = "'+ informacion.Creditos/20 +' data-max="'+ informacion.Creditos +'">'+ 10000 +'</h1>' + '<p>CRÉDITOS OTORGADOS<p>';
+                    $('#creditos_otorgados').html(creditos);
+                    console.log(creditos);*/
                 }
             });
         }

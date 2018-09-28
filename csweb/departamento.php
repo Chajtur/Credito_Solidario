@@ -69,7 +69,6 @@
                     url: '../php/mercadeo/departamentoImagen.php?accion=listar&departamentoId=' + departamentoId,
                     success: function (data) {
                         let imagenes = JSON.parse(data);
-                        console.log(imagenes);
 
                         $.each(imagenes, function(i, imagen) {
                             imagenesTxt += '<li><img src="'+ imagen.url +'" alt="" class="responsive-img"></li>';
