@@ -15,7 +15,7 @@
         <?php require 'layout/header.php';?>
         
         <section class="foto-agencia">
-            <div class="slider">
+            <div id="slider-imagenes" class="slider">
                 <ul id="slide-imagenes" class="slides">
                     
                 </ul>
@@ -42,6 +42,7 @@
         <?php require 'layout/scripts.php';?>
         <script>
             $(document).ready(function () {
+                $('.slider').slider();
                 let departamentoId = $('#departamentoId').val();
                 obtenerDepartamento(departamentoId);
                 obtenerAgencias(departamentoId);
@@ -49,6 +50,7 @@
 
             function obtenerDepartamento(departamentoId) {
                 let tituloDepartamento = $('#titulo-agencia');
+                let sliderImagen = $('#slider-imagenes');
                 let slideImagen = $('#slide-imagenes');
                 let imagenesTxt = '';
                 let counter = 0;
@@ -76,6 +78,10 @@
                         });
 
                         slideImagen.html(imagenesTxt);
+
+                        if (sliderImagen.hasClass('initialized')) {
+                            sliderImagen.removeClass('initialized');
+                        }
 
                         if (counter > 1) {
                             $('.slider').slider({
