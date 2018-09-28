@@ -159,6 +159,12 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="#!" class="collapsible-header"><i class="material-icons">user</i>Familia</a>
+                                    <ul id="menu-familia" class="collapsible-body">
+                                    <li><a class="waves-effect menu-button sidenav-button" id="btn-familia" href="#!">Gestionar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="#!" class="collapsible-header"><i class="material-icons">add_box</i>Videos</a>                                    
                                     <ul id="menu-videos" class="collapsible-body">
                                         <li><a class="waves-effect menu-button sidenav-button" id="btn-videos" href="#!">Listar</a></li>
@@ -325,6 +331,14 @@
                 $('#btn-director').click(function (evt) {
                     $('#loading').show();
                     $('#main-container').load('director.php', function () {
+                        $('#loading').hide();
+                    });
+                    evt.preventDefault();
+                });
+
+                $('#btn-familia').click(function (evt) {
+                    $('#loading').show();
+                    $('#main-container').load('personal.php', function () {
                         $('#loading').hide();
                     });
                     evt.preventDefault();

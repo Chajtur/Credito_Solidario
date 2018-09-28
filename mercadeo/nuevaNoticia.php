@@ -213,7 +213,8 @@
             fecha: phpDate, 
             estado: $('#estado').val(),
             usuario: $('#usuario').val(),
-            accion: 'agregar'
+            accion: 'agregar',
+            tipo: 1
         };
 
         $.ajax({
