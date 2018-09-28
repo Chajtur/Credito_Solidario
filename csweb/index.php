@@ -322,7 +322,7 @@
                         el: mt,
                         animation: 'count',
                         value: 0,
-                        format: '(,ddd).dd',
+                        format: '(,ddd)',
                         theme: 'default'
                     });
                     od2.update(informacion.Monto);
@@ -371,7 +371,7 @@
                         departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.idDepartamento +'">';
                         //departamentosTxt += '<div>';
                         departamentosTxt += '<div>';
-                        departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="responsive-img circle">';
+                        departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="carrusel-img circle">';
                         departamentosTxt += '</div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<span>'+ departamento.nombre +'</span>';

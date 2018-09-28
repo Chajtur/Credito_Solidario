@@ -89,6 +89,10 @@ header .brand-logo object {
     height: 1px;
 }
 
+.carrusel-img {
+    width: 200px;
+    height: 150px;
+}
 
 .news-content {
     padding-top: 55px;
