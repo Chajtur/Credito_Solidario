@@ -371,7 +371,7 @@
                         departamentosTxt += '<a class="carousel-item" href="departamento.php?departamentoId='+ departamento.idDepartamento +'">';
                         //departamentosTxt += '<div>';
                         departamentosTxt += '<div>';
-                        departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="carrusel-img circle">';
+                        departamentosTxt += '<img src="'+ departamento.url +'" alt="" class="circle carrusel-img">';
                         departamentosTxt += '</div>';
                         departamentosTxt += '<div>';
                         departamentosTxt += '<span>'+ departamento.nombre +'</span>';
