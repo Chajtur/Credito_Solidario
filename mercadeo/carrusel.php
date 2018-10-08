@@ -165,6 +165,8 @@
             data.append('modulo', 'carrusel');
             data.append('archivo', imagenCarrusel);
 
+            $('#btnRegistrarImagen').addClass('disabled');
+
             if (carruselId) {
                 guardarImagen(carruselId, etiquetaPrincipal, etiquetaSecundaria, alineacion, rutaImagen, usuario);
             } else {
@@ -183,6 +185,8 @@
                         } else {
                             console.log('Archivo no enviado.');
                         }
+
+                        $('#btnRegistrarImagen').removeClass('disabled');
                     },
                     error: function (xhr, status, error) {
                         console.log(error);

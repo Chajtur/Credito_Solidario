@@ -54,6 +54,10 @@
                             $cargo = $_POST['cargo'];
                         }
 
+                        if (isset($_POST['estado'])) {
+                            $estado = $_POST['estado'];
+                        }
+
                         $stat = $conn->prepare('call actualizar_usuario_pagina(?,?,?,?);');
                         $stat->bindParam(1, $id, PDO::PARAM_INT);
                         $stat->bindParam(2, $nombre, PDO::PARAM_STR);
@@ -78,9 +82,10 @@
                             $url = $_POST['url'];
                         }
 
-                        $stat = $conn->prepare('call actualizar_imagen_usuario_pagina(?,?,?);');
+                        $stat = $conn->prepare('call actualizar_imagen_usuario_pagina(?,?);');
                         $stat->bindParam(1, $id, PDO::PARAM_INT);
                         $stat->bindParam(2, $url, PDO::PARAM_STR);
+                        //$stat->bindParam(3, $estado, PDO::PARAM_STR);   
 
                         if ($stat->execute()) {
                             $respuesta = array('error' => 0);

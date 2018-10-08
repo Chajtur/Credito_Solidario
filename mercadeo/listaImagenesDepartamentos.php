@@ -156,6 +156,8 @@
             data.append('modulo', 'departamento');
             data.append('archivo', imagenDepartamento);
 
+            $('#btnRegistrarImagen').addClass('disabled');
+
             // Primero hace el guardado de la imagen en el servidor de imagenes.
             $.ajax({
                 type: 'POST',
@@ -174,6 +176,8 @@
                     } else {
                         console.log('Archivo no enviado.');
                     }
+
+                    $('#btnRegistrarImagen').removeClass('disabled');
                 },
                 error: function(xhr, status, error) {
                     console.log(error);

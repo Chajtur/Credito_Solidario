@@ -160,6 +160,8 @@
             data.append('modulo', 'noticia');
             data.append('archivo', imagenNoticia);
 
+            $('#btnRegistrarImagen').addClass('disabled');
+
             $.ajax({
                 type: 'POST',
                 enctype: 'multipart/form-data',
@@ -178,6 +180,8 @@
                     } else {
                         console.log('Archivo no enviado');
                     }
+
+                    $('#btnRegistrarImagen').removeClass('disabled');
                 },
                 error: function () {
 

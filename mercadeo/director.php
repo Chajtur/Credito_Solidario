@@ -172,6 +172,8 @@
             data.append('modulo', 'director');
             data.append('archivo', imagenDirector);
 
+            $('#btn-registrar-imagen').addClass('disabled');
+
             $.ajax({
                 type: 'POST',
                 enctype: 'multipart/form-data',
@@ -187,6 +189,7 @@
                     } else {
                         console.log('Archivo no enviado.');
                     }
+                    $('#btn-registrar-imagen').removeClass('disabled');
                 },
                 error: function (xhr, status, error) {
                     console.log(error);

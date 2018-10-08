@@ -113,6 +113,8 @@
             data.append('modulo', 'galeria');
             data.append('archivo', imagenBanco);
 
+            $('#btnRegistrarImagen').addClass('disabled');
+
             $.ajax({
                 type: 'POST',
                 enctype: 'multipart/form-data',
@@ -129,6 +131,8 @@
                     } else {
                         console.log('Archivo no enviado.');
                     }
+
+                    $('#btnRegistrarImagen').removeClass('disabled');
                 },
                 error: function (xhr, status, error) {
                     console.log(error);
