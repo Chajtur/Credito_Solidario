@@ -195,6 +195,14 @@
                                 </ul>
                             </div>
                         </li>
+                        <li>
+                            <a class="collapsible-header">Agenda<i class="material-icons">assignment</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-credito" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Visualizar</a></li>
+                                </ul>
+                            </div>
+                        </li>
 
                         </ul>
                     </li>
@@ -368,6 +376,13 @@
             $('#menu-btn-agenda').click(function (evt) {
                 $('#loading').show();
                 $('#main-container').load('agenda.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-solicitud-credito').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('solicitud_credito.php', function () {
                     $('#loading').hide();
                 });
                 evt.preventDefault();
