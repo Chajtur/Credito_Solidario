@@ -4,36 +4,44 @@
 <script src="../js/plugins/pignose-datepicker/dist/moment.min.js"></script>
 <link rel="stylesheet" href="../js/plugins/pignose-datepicker/dist/pignose.calendar.css">
 <script src="../js/plugins/pignose-datepicker/dist/pignose.calendar.js"></script>
+<script type="text/javascript" src="../auxiliar-creditos/buscarcenso.js"></script>
 
-<div class="row">
-    <div id="contenedorError" class="col s12">
-        
+
+<!-- MAIN -->
+<div class="section">
+    <div class="row">
+        <div id="contenedorError" class="col s12">
+
+        </div>
     </div>
-</div>
 
-<div id="toolbar-agenda" class="row">
-    <div class="col s10"></div>
-    <div class="col s2"><a href="#!" id="btn-nueva-noticia" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Nueva...</a></div>
-</div>
+    <div id="toolbar-agenda" class="row">
+        <div class="col s2"><a href="#!" id="btn-nueva-noticia" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Registrar</a></div>
+    </div>
 
-<div id="tareas" class="row">
+    <div id="tareas" class="row">
     <div class="col s12">
         <div class="card">
             <div class="card-content">
-                <div class="card-title">Tareas</div>
+                <div class="card-title">Visitas</div>
                 <div id="contenedor-tareas"></div>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 <div id="tarea-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Tarea</h4>
+        <h4>Nueva Visita</h4>
         <form id="tarea-form">
-            <div class="input-field">
-                <input type="text" name="beneficiario" id="beneficiario" required maxlength="100">
-                <label for="beneficiario">Benificiario ID</label>
+            <div class="input-field col s4">
+                <input id="programa" name="beneficiarios[]" type="text" class="validate buscarcenso" maxlength="13" required>
+                <label for="programa">Identidad</label>
+            </div>
+            <div class="input-field col s5">
+                <input readonly id="nombre" name="nombre[]" type="text" class="black-text">
+                <label for="nombre">Nombre</label>
             </div>
             <div class="input-field">
                 <textarea name="detalle" id="detalle" class="materialize-textarea" required maxlength="2000"></textarea>
@@ -67,6 +75,7 @@
     </div>
 </div>
 
+
 <script>
     $(document).ready(function () {
         $('.collapsible').collapsible();
@@ -85,6 +94,8 @@
         $('#registrar_tarea').click(function (evt) {
             guardarTarea();
         });
+        agregarBuscarCensoListeners(13);
+    
 
         //revisarSiGeolocacionActivado();
     });
