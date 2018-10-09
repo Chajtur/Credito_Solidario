@@ -22,7 +22,7 @@
     <div class="row">
         <form id="form-informacion-vivienda">
             <div class="input-field col s12">
-                <input type="range" name="tiempo-vivienda" id="tiempo-vivienda" min="0" max="100"><br>
+                <input type="range" name="tiempo-vivienda" id="tiempo-vivienda" min="0" max="20"><br>
                 <p class="custom-label">Tiempo de residir en la vivienda</p>
             </div>
             <div class="input-field col s12">
@@ -59,23 +59,23 @@
                 <label>Marque los servicios públicos que tiene en su vivienda</label>
             </div>
             <div class="input-field col s12">
-                <input type="range" name="personas-vivienda" id="personas-vivienda" min="0" max="100"><br>
+                <input type="range" name="personas-vivienda" id="personas-vivienda" min="0" max="15"><br>
                 <p class="custom-label"># de personas que habitan en la vivienda</p>
             </div>
             <div class="input-field col s12">
-                <input type="range" name="familias-vivienda" id="familias-vivienda" min="0" max="100"><br>
+                <input type="range" name="familias-vivienda" id="familias-vivienda" min="0" max="4"><br>
                 <p class="custom-label"># de familias que habitan en la vivienda</p>
             </div>
             <div class="input-field col s12">
-                <input type="range" name="trabajadores-vivienda" id="trabajadores-vivienda" min="0" max="100"><br>
+                <input type="range" name="trabajadores-vivienda" id="trabajadores-vivienda" min="0" max="10"><br>
                 <p class="custom-label"># de trabajadores que habitan en la vivienda</p>
             </div>
             <div class="input-field col s12">
-                <input type="range" name="dependientes-vivienda" id="dependientes-vivienda" min="0" max="100"><br>
+                <input type="range" name="dependientes-vivienda" id="dependientes-vivienda" min="0" max="10"><br>
                 <p class="custom-label"># de dependientes que habitan en la vivienda</p>
             </div>
             <div class="input-field col s12">
-                <input type="range" name="desempleados-vivienda" id="desempleados-vivienda" min="0" max="100"><br>
+                <input type="range" name="desempleados-vivienda" id="desempleados-vivienda" min="0" max="10"><br>
                 <p class="custom-label"># de desempleados que habitan en la vivienda</p>
             </div>
         </form>
