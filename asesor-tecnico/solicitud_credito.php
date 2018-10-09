@@ -149,6 +149,14 @@
                 <th>Objetivo</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>Objetivo 1</td>
+            </tr>
+            <tr>
+                <td>Objetivo 2</td>
+            </tr>
+        </tbody>
     </table>
     <h4>Valores</h4>
     <table>
@@ -157,25 +165,305 @@
                 <th>Valor</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>Valor 1</td>
+            </tr>
+            <tr>
+                <td>Valor 2</td>
+            </tr>
+        </tbody>
     </table>
     <h4>FODA</h4>
     <div class="row">
-        <div class="input-field col s6">
-            <textarea class="materialize-textarea" name="plan-fortalezas" id="plan-fortalezas"></textarea>
-            <label for="plan-fortalezas">Fortalezas</label>
+        <form id="form-foda">
+            <div class="input-field col s6">
+                <textarea class="materialize-textarea" name="plan-fortalezas" id="plan-fortalezas"></textarea>
+                <label for="plan-fortalezas">Fortalezas</label>
+            </div>
+            <div class="input-field col s6">
+                <textarea class="materialize-textarea" name="plan-oportunidades" id="plan-oportunidades"></textarea>
+                <label for="plan-oportunidades">Oportunidades</label>
+            </div>
+            <div class="input-field col s6">
+                <textarea class="materialize-textarea" name="plan-debilidades" id="plan-debilidades"></textarea>
+                <label for="plan-debilidades">Debilidades</label>
+            </div>
+            <div class="input-field col s6">
+                <textarea class="materialize-textarea" name="plan-amenazas" id="plan-amenazas"></textarea>
+                <label for="plan-amenazas">Amenazas</label>
+            </div>
+        </form>
+    </div>
+
+    <h5>ASPECTOS ORGANIZATIVOS</h5>
+    <form id="frm-aspectos-organizativos">
+        <div class="input-field">
+            <input type="range" name="empleos-genera" id="empleos-genera">
+            <p class="custom-label">Empleos que genera</p>
         </div>
-        <div class="input-field col s6">
-            <textarea class="materialize-textarea" name="plan-oportunidades" id="plan-oportunidades"></textarea>
-            <label for="plan-oportunidades">Oportunidades</label>
-        </div>
-        <div class="input-field col s6">
-            <textarea class="materialize-textarea" name="plan-debilidades" id="plan-debilidades"></textarea>
-            <label for="plan-debilidades">Debilidades</label>
-        </div>
-        <div class="input-field col s6">
-            <textarea class="materialize-textarea" name="plan-amenazas" id="plan-amenazas"></textarea>
-            <label for="plan-amenazas">Amenazas</label>
-        </div>
+    </form>
+    <h6>Empleados</h6>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Persona</th>
+                <th>Cualidad</th>
+                <th>Responsabilidad y funciones</th>
+                <th>Reconocimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>PRODUCTO Y FORMA DE DISTRIBUCIÓN</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Ventaja competitiva</th>
+                <th>Forma de distribución</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>CLIENTES FRECUENTES</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ubicación de clientes o tipo de relación</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="plan-inversion">
+    <h4>PLAN DE INVERSIÓN</h4>
+    <h5>REQUERIMIENTOS</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Requerimiento</th>
+                <th>Cantidad</th>
+                <th>Costo Unitario</th>
+                <th>Monto L</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>INVENTARIO EXISTENTE</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Monto L</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>REGISTROS DE COSTOS</h5>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Semana 1</th>
+                <th colspan="3">Semana 2</th>
+                <th colspan="3">Semana 3</th>
+                <th colspan="3">Semana 4</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Subtotal</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Subtotal</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Subtotal</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Subtotal</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Subtotal</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h5>PROYECCIÓN DE VENTA (SEMANAS)</h5>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="2">Semana 1</th>
+                <th colspan="2">Semana 2</th>
+                <th colspan="2">Semana 3</th>
+                <th colspan="2">Semana 4</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>EGRESOS</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Aporte del Empresario/Emprendedor</th>
+                <th>Aporte Familiar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alquileres</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Alimentación</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Transporte</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Educación</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pago de préstamos</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Gastos de servicios públicos</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Otros</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>VERIFICACIÓN DEL PLAN DE INVERSIÓN</h5>
+    <div class="row">
+        <form id="frm-verificacion-plan">
+            <div class="input-field">
+                <input type="text" name="fecha-inspeccion" id="fecha-inspeccion">
+                <label for="fecha-inspeccion">Fecha de inspección</label>
+            </div>
+            <div class="input-field">
+                <input type="text" name="nombre-cliente" id="nombre-cliente">
+                <label for="nombre-cliente">Nombre del cliente</label>
+            </div>
+            <div class="input-field">
+                <input type="text" name="grupo-solidario" id="grupo-solidario">
+                <label for="grupo-solidario">Grupo solidario</label>
+            </div>
+            <div class="input-field">
+                <select name="inversion-aprobada" id="inversion-aprobada">
+                    <option value="1">Sí</option>
+                    <option value="0">No</option>
+                </select>
+                <label for="inversion-aprobada">¿Realizó la inversión según lo aprobado?</label>
+            </div>
+            <div class="input-field">
+                <textarea name="verificacion-observercion" id="verificacion-observercion" class="materialize-textarea"></textarea>
+                <label for="verificacion-observercion">Observaciones</label>
+            </div>
+        </form>
     </div>
 </section>
 
