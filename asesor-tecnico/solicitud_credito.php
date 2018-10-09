@@ -21,11 +21,11 @@
     <h5>Información sobre la vivienda.</h5>
     <div class="row">
         <form id="form-informacion-vivienda">
-            <div class="input-field col s12">
-                <input type="range" name="tiempo-vivienda" id="tiempo-vivienda" min="0" max="20"><br>
-                <p class="custom-label">Tiempo de residir en la vivienda</p>
+            <div class="input-field col s12 l6 m12">
+                <input type="number" name="tiempo-vivienda" id="tiempo-vivienda" min="0" max="20" step="1"><br>
+                <label for="tiempo-vivienda">Tiempo de residir en la vivienda</label>
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col s12 l6 m12">
                 <select name="material-vivienda" id="material-vivienda">
                     <option value="1">Ladrillo</option>
                     <option value="2">Adobe</option>
