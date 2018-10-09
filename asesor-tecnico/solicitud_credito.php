@@ -142,9 +142,41 @@
             <label for="plan-vision">Visión</label>
         </div>
     </form>
+    <h4>Objetivos</h4>
     <table>
-        
+        <thead>
+            <tr>
+                <th>Objetivo</th>
+            </tr>
+        </thead>
     </table>
+    <h4>Valores</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Valor</th>
+            </tr>
+        </thead>
+    </table>
+    <h4>FODA</h4>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea class="materialize-textarea" name="plan-fortalezas" id="plan-fortalezas"></textarea>
+            <label for="plan-fortalezas">Fortalezas</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea class="materialize-textarea" name="plan-oportunidades" id="plan-oportunidades"></textarea>
+            <label for="plan-oportunidades">Oportunidades</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea class="materialize-textarea" name="plan-debilidades" id="plan-debilidades"></textarea>
+            <label for="plan-debilidades">Debilidades</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea class="materialize-textarea" name="plan-amenazas" id="plan-amenazas"></textarea>
+            <label for="plan-amenazas">Amenazas</label>
+        </div>
+    </div>
 </section>
 
 <script>
