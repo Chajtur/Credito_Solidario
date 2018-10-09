@@ -82,6 +82,71 @@
     </div>
 </section>
 
+<section class="nivel-educacion">
+    <h4>NIVEL DE EDUCACIÓN Y OCUPACIÓN DE LOS MIEMBROS DE SU FAMILIA</h4>
+    <h5>Nivel educativo</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Parentesco</th>
+                <th>Fecha de nacimiento</th>
+                <th>Sexo</th>
+                <th>Ocupación</th>
+                <th>Primaria</th>
+                <th>Secundaria</th>
+                <th>Universidad</th>
+                <th>Ninguno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5>Enfermedades que afectan con mayor frecuencia a los niños y adultos de su familia y como las tratan</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Parentesco</th>
+                <th>Enfermedad</th>
+                <th>Tratamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="plan-negocio">
+    <h5>MARCO ESTRATÉGICO</h5>
+    <form id="plan-negocio">
+        <div class="input-field">
+            <input type="text" name="plan-mision" id="plan-mision">
+            <label for="plan-mision">Misión</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="plan-vision" id="plan-vision">
+            <label for="plan-vision">Visión</label>
+        </div>
+    </form>
+    <table>
+        
+    </table>
+</section>
+
 <script>
     $(document).ready(function() {
         $('select').material_select();
