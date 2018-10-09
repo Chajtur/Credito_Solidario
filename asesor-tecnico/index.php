@@ -26,7 +26,7 @@
 
 
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    
     <link href="../css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="../fonts/material-icons/material-icons.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link rel="stylesheet" href="../js/plugins/sweetalert-master/dist/sweetalert.css">
@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="../css/plugins/select2/select2.min.css">
     <link rel="stylesheet" href="../css/plugins/select2/select2.materialize.css">
     <link rel="stylesheet" href="../css/materialize.clockpicker.css">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
     <style>
         .button-collapse {
@@ -196,10 +197,10 @@
                             </div>
                         </li>
                         <li>
-                            <a class="collapsible-header">Agenda<i class="material-icons">assignment</i></a>
+                            <a class="collapsible-header">Solicitud de crédito<i class="material-icons">monetization_on</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li class="menu-btn"><a id="menu-btn-solicitud-credito" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Visualizar</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-credito" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Registrar</a></li>
                                 </ul>
                             </div>
                         </li>
