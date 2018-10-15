@@ -63,96 +63,7 @@
 
     <section class="familia">
         <div class="container">
-            <div class="row">
-                <h3 class="fondoPrincipal-text center">FAMILIA CRÉDITO SOLIDARIO</h3>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="familia-img-container">
-                        <img src="img/400X400-02.jpg" alt="" class="responsive-img">
-                        <div class="overlay">
-                            <div class="text">
-                                <p>Carlos Gunter</p>
-                                <p class="titulo">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="familia-cs">
             </div>
         </div>
     </section>
@@ -170,6 +81,41 @@
     <?php require 'layout/footer.php';?>
 
     <?php require 'layout/scripts.php';?>
+
+    <script>
+        $(document).ready(function () {
+            obtenerFamilia();            
+        });
+
+        function obtenerFamilia() {
+            let familiaCs = $('#familia-cs');
+            let familiaTxt = '<h3 class="fondoPrincipal-text center">FAMILIA CRÉDITO SOLIDARIO</h3>';
+
+            $.ajax({
+                type: 'GET',
+                url: '../php/mercadeo/personalCtrl.php?accion=listar&estado=1',
+                success: function (data) {
+                    let personal = JSON.parse(data);
+
+                    $.each(personal, function(i, persona) {                        
+                        familiaTxt += '<div class="col s12 m3">';
+                        familiaTxt += '<div class="familia-img-container">';
+                        familiaTxt += '<img src="'+ persona.url +'" alt="" class="responsive-img">';
+                        familiaTxt += '<div class="overlay">';
+                        familiaTxt += '<div class="text">';
+                        familiaTxt += '<p>'+ persona.nombre +'</p>';
+                        familiaTxt += '<p class="titulo">'+ persona.cargo +'</p>';
+                        familiaTxt += '</div>';
+                        familiaTxt += '</div>';
+                        familiaTxt += '</div>';
+                        familiaTxt += '</div>';
+                    });
+
+                    familiaCs.html(familiaTxt);
+                }
+            });
+        }
+    </script>
 
 </body>
 
