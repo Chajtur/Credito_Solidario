@@ -58,25 +58,25 @@
                 </p>
                 <label>Marque los servicios públicos que tiene en su vivienda</label>
             </div>
-            <div class="input-field col s12">
-                <input type="range" name="personas-vivienda" id="personas-vivienda" min="0" max="15"><br>
-                <p class="custom-label"># de personas que habitan en la vivienda</p>
+            <div class="input-field col s12 l6">
+                <input type="number" name="personas-vivienda" id="personas-vivienda" min="0" max="15" step="1"><br>
+                <label for="personas-vivenda"># de personas que habitan en la vivienda</label>
             </div>
-            <div class="input-field col s12">
-                <input type="range" name="familias-vivienda" id="familias-vivienda" min="0" max="4"><br>
-                <p class="custom-label"># de familias que habitan en la vivienda</p>
+            <div class="input-field col s12 l6">
+                <input type="number" name="familias-vivienda" id="familias-vivienda" min="0" max="4" step="1"><br>
+                <label for="familias-vivienda"># de familias que habitan en la vivienda</label>
             </div>
-            <div class="input-field col s12">
-                <input type="range" name="trabajadores-vivienda" id="trabajadores-vivienda" min="0" max="10"><br>
-                <p class="custom-label"># de trabajadores que habitan en la vivienda</p>
+            <div class="input-field col s12 l6">
+                <input type="number" name="trabajadores-vivienda" id="trabajadores-vivienda" min="0" max="10" step="1"><br>
+                <label for="tarbajadores-vivienda"># de trabajadores que habitan en la vivienda</label>
             </div>
-            <div class="input-field col s12">
-                <input type="range" name="dependientes-vivienda" id="dependientes-vivienda" min="0" max="10"><br>
-                <p class="custom-label"># de dependientes que habitan en la vivienda</p>
+            <div class="input-field col s12 l6">
+                <input type="number" name="dependientes-vivienda" id="dependientes-vivienda" min="0" max="10" step="1"><br>
+                <label for="dependientes-vivienda"># de dependientes que habitan en la vivienda</label>
             </div>
-            <div class="input-field col s12">
-                <input type="range" name="desempleados-vivienda" id="desempleados-vivienda" min="0" max="10"><br>
-                <p class="custom-label"># de desempleados que habitan en la vivienda</p>
+            <div class="input-field col s12 l6">
+                <input type="number" name="desempleados-vivienda" id="desempleados-vivienda" min="0" max="10" step="1"><br>
+                <label for="desempleados-vivienda"># de desempleados que habitan en la vivienda</label>
             </div>
         </form>
     </div>
@@ -133,12 +133,12 @@
 <section class="plan-negocio">
     <h5>MARCO ESTRATÉGICO</h5>
     <form id="plan-negocio">
-        <div class="input-field">
-            <input type="text" name="plan-mision" id="plan-mision">
+        <div class="input-field col s12 l6">
+            <textarea class="materialize-textarea" name="plan-mision" id="plan-mision"></textarea>
             <label for="plan-mision">Misión</label>
         </div>
-        <div class="input-field">
-            <input type="text" name="plan-vision" id="plan-vision">
+        <div class="input-field col s12 l6">
+            <textarea class="materialize-textarea"  name="plan-vision" id="plan-vision"></textarea>
             <label for="plan-vision">Visión</label>
         </div>
     </form>
