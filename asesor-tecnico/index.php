@@ -197,10 +197,16 @@
                             </div>
                         </li>
                         <li>
-                            <a class="collapsible-header">Solicitud de crédito<i class="material-icons">monetization_on</i></a>
+                            <a class="collapsible-header">Beneficiario<i class="material-icons">monetization_on</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li class="menu-btn"><a id="menu-btn-solicitud-credito" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Registrar</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-visita" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Visita</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-generales" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Generales</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-linea-base" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Línea base</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-plan-negocios" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Plan de negocios</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-plan-inversion" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Plan de inversión</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-foda" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>FODA</a></li>
+                                    <li class="menu-btn"><a id="menu-btn-solicitud-empleos-generados" class="waves-effect waves-light no-margin"><i class="material-icons">keyboard_arrow_right</i>Empleos generados</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -381,9 +387,37 @@
                 });
                 evt.preventDefault();
             });
-            $('#menu-btn-solicitud-credito').click(function (evt) {
+            $('#menu-btn-solicitud-linea-base').click(function (evt) {
                 $('#loading').show();
-                $('#main-container').load('solicitud_credito.php', function () {
+                $('#main-container').load('linea_base.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-solicitud-plan-negocios').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('plan_negocios.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-solicitud-plan-inversion').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('plan_inversion.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-solicitud-foda').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('plan_foda.php', function () {
+                    $('#loading').hide();
+                });
+                evt.preventDefault();
+            });
+            $('#menu-btn-solicitud-empleos-generados').click(function (evt) {
+                $('#loading').show();
+                $('#main-container').load('plan_empleados.php', function () {
                     $('#loading').hide();
                 });
                 evt.preventDefault();
