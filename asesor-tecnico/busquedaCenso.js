@@ -18,7 +18,7 @@ function buscarEnCenso (campoIdentidad, campoNombre, notificaciones = true) {
                 campoNombre.val(persona.nombre);
 
                 if (notificaciones) {
-                    Materialize.toast(persona.nombre);
+                    Materialize.toast(persona.nombre, 2000);
                 }
             }
         },
