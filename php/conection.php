@@ -9,7 +9,8 @@ try{
         ));
     if(!isset($conn2))
         $conn2 = new PDO('mysql:host=localhost;dbname=larahrm','credito_solidario_usr','12345678', array(
-            PDO::ATTR_PERSISTENT => true //El hecho que las conexiones sean persistentes provoca que haya un aumento en la velocidad de las consultas, pero puede existir una sobrecarga en el servidor de MySql
+            PDO::ATTR_PERSISTENT => true, //El hecho que las conexiones sean persistentes provoca que haya un aumento en la velocidad de las consultas, pero puede existir una sobrecarga en el servidor de MySql
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ));
     if(!isset($conn3))
         $conn3 = new PDO('mysql:host=181.210.15.138;dbname=censo nacional','ricardo','icsric2016', array(
