@@ -331,7 +331,7 @@
             success: function (data) {
                 var tareas = JSON.parse(data);
                 var tarea = tareas[0];
-                console.log(tarea);
+                
                 $('#tareaId').val(tarea.tareaId);
                 $('#beneficiario').val(tarea.beneficiarioId);
                 $('#detalle').val(tarea.detalle);
