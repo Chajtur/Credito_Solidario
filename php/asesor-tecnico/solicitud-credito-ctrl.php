@@ -88,6 +88,16 @@
                             echo json_encode($respuesta, 16);
                         }
                         break;
+
+                    case 'guardar-linea-base':
+                        if (isset($_POST['programa'])) {
+                            $programa = $_POST['programa'];
+                        }
+
+                        if (isset($_POST[''])) {
+                            
+                        }
+                        break;
                     
                     default:
                         # code...

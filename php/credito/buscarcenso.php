@@ -3,7 +3,7 @@ if(isset($_POST['id'])){
     
     try{
 
-        require_once "../conection.php";
+        require_once "../conection.php"; 
         $stat = $conn3->prepare('select * from censo where identidad = :id');
         $stat->bindValue(':id', $_POST['id'], PDO::PARAM_STR);
         

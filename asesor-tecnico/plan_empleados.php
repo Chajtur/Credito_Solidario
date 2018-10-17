@@ -5,6 +5,7 @@
 <script type="text/javascript" src="./busquedaCenso.js"></script>
 
 <section class="plan-empleados">
+    <h4>GENERACIÓN DE EMPLEO</h4> 
     <div class="row">
         <h5>Información del beneficiario</h5>
         <form id="form-beneficiario">

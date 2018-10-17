@@ -1,5 +1,5 @@
 <?php
-    //require '../php/auth.php';
+    require '../php/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

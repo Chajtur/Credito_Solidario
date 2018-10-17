@@ -18,7 +18,6 @@
             </div>
         </form>
     </div>
-
     
     <div class="row">
         <h5>Información sobre la vivienda</h5>
@@ -47,16 +46,6 @@
                 </p>
             </div>
             <div class="input-field col s12 m6">
-                <select name="material-vivienda" id="material-vivienda">
-                    <option value="1">Ladrillo</option>
-                    <option value="2">Adobe</option>
-                    <option value="3">Madera</option>
-                    <option value="4">Bloque</option>
-                    <option value="5">Otro</option>
-                </select>
-                <label for="material-vivienda">Material que predomina en vivienda</label>
-            </div>
-            <div class="input-field col s12 m6">
                 <input type="number" name="tiempo-vivienda" id="tiempo-vivienda" min="0" max="20" step="1"><br>
                 <label for="tiempo-vivienda">Tiempo de residir en la vivienda</label>
             </div>
@@ -79,6 +68,16 @@
             <div class="input-field col s12 m6">
                 <input type="number" name="desempleados-vivienda" id="desempleados-vivienda" min="0" max="10" step="1"><br>
                 <label for="desempleados-vivienda"># de desempleados que habitan en la vivienda</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <select name="material-vivienda" id="material-vivienda">
+                    <option value="1">Ladrillo</option>
+                    <option value="2">Adobe</option>
+                    <option value="3">Madera</option>
+                    <option value="4">Bloque</option>
+                    <option value="5">Otro</option>
+                </select>
+                <label for="material-vivienda">Material que predomina en vivienda</label>
             </div>
             <div class="input-field col s12">
                 <button type="submit" id="btn-registrar" class="modal-action btn blue white-text">Registrar<i class="material-icons right">send</i> </button>
