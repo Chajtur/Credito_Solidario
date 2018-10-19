@@ -13,6 +13,7 @@
                 <label for="programa">Identidad del beneficiario</label>
             </div>
             <div class="input-field col m6 s12">
+                <input type="hidden" name="usuario" id="usuario" value="<?php $_SESSION['user'] ?>">
                 <input type="text" name="nombre[]" id="nombre" placeholder="Nombre del beneficiario" readonly>
                 <label for="nombre">Nombre del beneficiario</label>
             </div>
@@ -112,6 +113,7 @@
         let dependientesVivienda = $('#dependientes-vivienda').val();
         let desempleadosVivienda = $('#desempleados-vivienda').val();
         let materialVivienda = $('#material-vivienda').val();
+        let usuario = $('#usuario').val();
         let accion = 'guardar-linea-base';
 
         let lineaBase = {
@@ -124,7 +126,8 @@
             dependientesVivienda: dependientesVivienda,
             desempleadosVivienda: desempleadosVivienda,
             materialVivienda:materialVivienda,
-            accion: accion
+            accion: accion,
+            usuario: usuario
         };
 
         $('#btn-registrar').addClass('disabled');

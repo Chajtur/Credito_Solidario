@@ -121,7 +121,7 @@
                             $serviciosPublicos = $_POST['serviciosPublicos'];
                             $serviciosPublicosArr = explode(',', $serviciosPublicos);
 
-                            foreach ($serviciosPublicosArr as $algo) { 
+                            foreach ($serviciosPublicosArr as $algo) {
                                 if ($algo == 'energia-electrica') {
                                     $energia_electrica = 1;
                                     break;
