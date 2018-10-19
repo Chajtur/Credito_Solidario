@@ -17,7 +17,7 @@ if(isset($_POST['data'])){
         $obj = json_decode($_POST['data']);
         $sql_enfermedades = 'select guardar_linea_base_enfermedad(:id, :enfermedad, :tratamiento);';
         $sql_educacion = 'select guardar_linea_base_educacion(:id, :nombre, :educacion, :edad, :oficio, :genero);';
-        $sql_guardar_linea_base = 'call guardar_linea_base(:id, :identidad, :ciclo, :material_predomina, :cantidad_habitantes, :cantidad_familias, :cantidad_trabajadores, :cantidad_buscan_empleo, :energia_electrica, :aguas_negras, :agua_potable, :pozo_septico, :telefono_fijo, :micro_empresa, :emprendera_micro, :unidad_vivienda, :tiempo_residir, :idusuario);';
+        $sql_guardar_linea_base = 'call guardar_linea_base(:id, :identidad, :ciclo, :material_predomina, :cantidad_habitantes, :cantidad_familias, :cantidad_trabajadores, :cantidad_buscan_empleo, :energia_electrica, :aguas_negras, :agua_potable, :pozo_septico, :telefono_fijo, :micro_empresa, :emprendera_micro, :unidad_vivienda, :tiempo_residir, :idusuario, :cantidad_dependientes);';
 
         // Primero se guardan todas las enfermedades
         $stat = $conn->prepare($sql_enfermedades);
@@ -84,6 +84,7 @@ if(isset($_POST['data'])){
         $stat->bindValue(':micro_empresa', $obj->tieneMicroempresa, PDO::PARAM_STR);
         $stat->bindValue(':emprendera_micro', $obj->emprenderMicroempresa, PDO::PARAM_STR);
         $stat->bindValue(':idusuario', $obj->idusuario, PDO::PARAM_STR);
+        $stat->bindValue(':cantidad_dependientes', 0, PDO::PARAM_STR);
         $stat->execute();
 
         $stat = $conn->prepare('update cartera_consolidada set estatus_archivo = 3 where id = :id');
