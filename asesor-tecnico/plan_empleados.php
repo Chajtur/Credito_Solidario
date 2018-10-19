@@ -145,7 +145,7 @@
             success: function (data) {
                 $('#registrar_tarea').removeClass('disabled');
                 let existeEmpleado = obtenerEmpleado(identidadBeneficiario, identidadEmpleado, true);
-                console.log('existe', existeEmpleado);
+                
                 if (existeEmpleado) {
                     Materialize.toast('El empleado ya esta registrado con este beneficiario.');
                 } else {
