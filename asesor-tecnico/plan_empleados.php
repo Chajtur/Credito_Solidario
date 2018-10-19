@@ -21,7 +21,7 @@
     </div>
     <div class="row">
         <div class="col s12">
-            <button class="modal-action btn teal white-text right" id="btn-buscar-empleado">Buscar<i class="material-icons right">refresh</i></button>
+            <button class="modal-action btn teal white-text right" id="btn-buscar-empleado">Buscar<i class="material-icons right">search</i></button>
             <button class="modal-action btn blue white-text right" id="btn-nuevo-empleado">Nuevo<i class="material-icons right">add</i></button>
         </div>
         <h5>Empleados</h5>
@@ -45,7 +45,7 @@
         </form>
     </div>
     <div class="modal-footer">
-        <a href="#!" id="registrar_tarea" class="modal-action btn blue white-text">Guardar</a>
+        <a href="#!" id="registrar_tarea" class="modal-action btn green white-text">Guardar</a>
         <a href="#!" id="cancelar_tarea" class="modal-action btn red white-text" onclick="cerrarModalTarea()">Cancelar</a>
     </div>
 </div>

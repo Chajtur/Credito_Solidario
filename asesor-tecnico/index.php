@@ -355,9 +355,9 @@
             $('#btn-menu-usuario').sideNav({
                 menuWidth: 300,
                 edge: 'left',
-                closeOnClick: false,
+                closeOnClick: true,
                 draggable: true
-            });
+        });
 
             $('#menu-btn-dashboard').click(function (evt) {
                 $('#loading').show();
