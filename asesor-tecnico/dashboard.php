@@ -2,8 +2,8 @@
 
 require '../php/conection.php';
 session_start();
-$usuario		= $_SESSION['first_name']." ".$_SESSION['last_name'];
-console.log($usuario);
+$usuario = $_SESSION['first_name']." ".$_SESSION['last_name'];
+/*console.log($usuario);*/
 
 /*query para obtener los departamentos*/
 $sql = $conn->prepare('select count(*) as Cartera, sum(Monto_Desembolsado) as Desembolsado, sum(saldo_capital) as Saldo, sum(capital_mora) as Mora, sum(capital_mora)/sum(saldo_capital)*100 as Porcentaje from prestamo where Estado_Credito = "Desembolsado" and gestor = :usuario');
@@ -24,6 +24,8 @@ $cardstats = $sql->fetchAll();
 <!--animate css-->
 <link rel="stylesheet" href="../js/plugins/animate-css/animate.css">
 
+<!-- Style CSS-->
+<link rel="stylesheet" href="../css/style.css">
 
 <div class="secction">
 
@@ -34,7 +36,7 @@ $cardstats = $sql->fetchAll();
             <div class="row">
                 <div class="col s12 m6 l4 wow fadeInLeft" data-wow-offset="10" data-wow-duration="1.5s">
                     <div id="cardStat1" class="card">
-                        <div class="card-content  teal accent-4 white-text">
+                        <div class="card-content gradient-45deg-green-teal gradient-shadow accent-4 white-text">
                             <p class="card-stats-title"><i class="material-icons">timeline</i> Cartera Activa</p>
                             <h4 id="cartera-activa" class="card-stats-number"><?php echo $cardstats[0]["Cartera"]?></h4>
                             <!--<p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 15% <span class="green-text text-lighten-5">desde ayer</span>
@@ -47,7 +49,7 @@ $cardstats = $sql->fetchAll();
                 </div>
                 <div class="col s12 m6 l4 wow fadeInDown" data-wow-offset="10" data-wow-duration="1.5s">
                     <div id="cardStat2" class="card">
-                        <div class="card-content pink lighten-2 white-text">
+                        <div class="card-content gradient-45deg-red-pink gradient-shadow white-text">
                             <p class="card-stats-title"><i class="material-icons">trending_down</i>Total de Mora</p>
                             <h4 id="total-mora" class="card-stats-number">L. <?php echo number_format($cardstats[0]["Mora"], 2, ".", ","); ?></h4>
                             <!--<p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 70% <span class="purple-text text-lighten-5">en la última semana</span>
@@ -61,7 +63,7 @@ $cardstats = $sql->fetchAll();
                 </div>
                 <div class="col s12 m6 l4 wow fadeInRight" data-wow-offset="10" data-wow-duration="1.5s">
                     <div id="cardStat3" class="card wow fadeInDown" data-wow-duration="1s">
-                        <div class="card-content blue accent-2 white-text">
+                        <div class="card-content gradient-45deg-blue-grey-blue gradient-shadow accent-2 white-text">
                             <p class="card-stats-title"><i class="material-icons">equalizer</i> Porcentaje Mora</p>
                             <h4 id="porcentaje-mora" class="card-stats-number"><?php echo number_format($cardstats[0]["Porcentaje"], 2, ".", ","); ?>%</h4>
                             <!--<p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 80% <span class="blue-grey-text text-lighten-5">último mes</span>
